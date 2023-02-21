@@ -1,5 +1,4 @@
 package pills;
-
 public abstract class GelCap
 {
 	protected String name;
@@ -82,16 +81,13 @@ public abstract class GelCap
 		System.out.println("... completed manufacturing\n");
 	}
 	
-	protected void addCasing()
-	{
-	}
+	protected abstract void addCasing();
+
 	
-	protected void addSolution()
-	{
-	}
+	protected abstract void addSolution();
 	
-	protected void addActive()
-	{
-	} 
+	
+	protected abstract void addActive();
+	 
 	 
 }
