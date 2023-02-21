@@ -1,3 +1,5 @@
+package pills;
+
 public abstract class GelCap
 {
 	protected String name;
