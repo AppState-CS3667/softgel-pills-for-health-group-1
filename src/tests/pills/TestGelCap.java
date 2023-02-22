@@ -24,20 +24,13 @@ public class TestGelCap {
     private GelCapMock obj;
 
     private class GelCapMock extends GelCap{
-        protected String name;
-        protected double strength;
-        protected double size;
-        protected String color;
         protected String casing;
         protected String solution;
         protected String active;
 
 
         GelCapMock(String name, double strength, double size, String color) {
-            this.name = name;
-            this.strength = strength;
-            this.size = size;
-            this.color = color;
+            super(name, strength, size, color);
         }
 
         protected void addCasing() {
