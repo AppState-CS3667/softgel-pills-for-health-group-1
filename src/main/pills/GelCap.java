@@ -20,7 +20,7 @@ public abstract class GelCap
 	public String toString()
 	{
 		String s = "";
-		s += String.format("%.2f", strength) + "mg " + name + " Pill";
+		s = String.format("%.2fmg %s Pill", strength, name);
 		return s;
 	}
 	
