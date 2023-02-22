@@ -56,16 +56,21 @@ public class TestGelCap {
         }
     }
 
-    private void getOutput() {
-        this.oldOut = System.out;
-        this.baos = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(baos));
+    private String getOutput() {
+        // flush all data from the PrintStream into our ByteArrayOutputStream
+        System.out.flush();	
+        // return the output with return characters stripped.
+        // stripping return characters ensure the test works on mac, unix, and windows
+        return baos.toString().replaceAll("\r", "");
     }
 
     @BeforeEach
     public void beforeEach() {
         this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
-        getOutput();
+        
+        this.oldOut = System.out;
+        this.baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
     }
     
     @AfterEach
