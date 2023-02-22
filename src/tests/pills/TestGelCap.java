@@ -13,8 +13,11 @@ public class TestGelCap {
     private final double TEST_SIZE = 2.2;
     private final String TEST_COLOR = "White";
     private final String TEST_CASING = "X";
-    private final String TEST_SOLUTOIN = "Y";
+    private final String TEST_SOLUTION = "Y";
     private final String TEST_ACTIVE = "Z";
+    private final String TOSTRING_FSTRING = "";
+    private final String DESCRIPTION_FSTRING = "";
+    private final String MANUFACTURE_FSTRING = "";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -71,27 +74,50 @@ public class TestGelCap {
     }
 
     @Test
-    public void TestName() {
+    public void testName() {
         assertEquals(TEST_NAME, obj.getName());
     }
 
     @Test
-    public void TestStrength() {
+    public void testStrength() {
         assertEquals(TEST_STRENGTH, obj.getStrength());
     }
 
     @Test
-    public void TestSize() {
+    public void testSize() {
         assertEquals(TEST_SIZE, obj.getSize());
     }
 
     @Test
-    public void TestColor() {
+    public void testColor() {
         assertEquals(TEST_COLOR, obj.getColor());
     }
 
     @Test
-    public void TestCasing() {
+    public void testCasing() {
         assertEquals(TEST_CASING, obj.getCasing());
+    }
+
+    @Test
+    public void testSolution() {
+        assertEquals(TEST_SOLUTION, obj.getSolution());
+    }
+
+    @Test
+    public void testActive() {
+        assertEquals(TEST_ACTIVE, obj.getActive());
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals(String.format(TOSTRING_FSTRING, obj.getStrength(), obj.getName()), obj.toString());    }
+
+    @Test
+    public void testDescription() {
+        assertEquals(String.format(DESCRIPTION_FSTRING, obj.getStrength(), obj.getName()), obj.description());    }
+
+    @Test
+    public void testManufactureProcess() {
+        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getStrength(), obj.getName()), getOutput());
     }
 }
