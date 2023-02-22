@@ -27,13 +27,7 @@ public abstract class GelCap
 	public String description()
 	{
 		String s = "";
-		s+= name + " Pill\n";
-		s+= "\tStrength: " + String.format("%.2f", strength) + "n";
-		s+= "\tSize: " + String.format("%.2f", size) + "\n";
-		s+= "\tColor: " + color + "\n";
-		s+= "\tCasing: " + casing + "\n";
-		s+= "\tSolution: " + solution + "\n";
-		s+= "\tActive: " + active + "\n";
+		s = String.format("%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %f\n\tSolution: %f\n\tActive: %f\n", name, strength, size, color, casing, solution, active);
 		return s;
 	}
 	
