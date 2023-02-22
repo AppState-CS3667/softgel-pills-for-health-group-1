@@ -15,9 +15,9 @@ public class TestGelCap {
     private final String TEST_CASING = "X";
     private final String TEST_SOLUTION = "Y";
     private final String TEST_ACTIVE = "Z";
-    private final String TOSTRING_FSTRING = "";
-    private final String DESCRIPTION_FSTRING = "";
-    private final String MANUFACTURE_FSTRING = "";
+    private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
+    private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %f\n\tSolution: %f\n\tActive: %f\n";
+    private final String MANUFACTURE_FSTRING = "Manufacturing... \n%s\n%s\n%s\n... Manufacturing... \n";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -119,10 +119,10 @@ public class TestGelCap {
 
     @Test
     public void testDescription() {
-        assertEquals(String.format(DESCRIPTION_FSTRING, obj.getStrength(), obj.getName()), obj.description());    }
+        assertEquals(String.format(DESCRIPTION_FSTRING, obj.getName(), obj.getStrength(), obj.getSize(), obj.getColor(), obj.getCasing(), obj.getSolution(), obj.getActive()), obj.description());    }
 
     @Test
     public void testManufactureProcess() {
-        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getStrength(), obj.getName()), getOutput());
+        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing()), obj.getSolution(), obj.getActive()), getOutput());
     }
 }
