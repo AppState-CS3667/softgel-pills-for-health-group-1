@@ -15,6 +15,7 @@ public abstract class GelCap
 		this.strength = strength;
 		this.size = size;
 		this.color = color;
+		manufacture();
 	}
 	
 	public String toString()

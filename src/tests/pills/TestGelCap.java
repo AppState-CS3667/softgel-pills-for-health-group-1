@@ -1,6 +1,9 @@
 package tests.pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import pills.GelCap;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
@@ -21,16 +24,20 @@ public class TestGelCap {
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
-    private GelCapMock obj;
+    private GelCap obj;
 
     private class GelCapMock extends GelCap{
-        protected String casing;
-        protected String solution;
-        protected String active;
+        // protected String casing;
+        // protected String solution;
+        // protected String active;
 
 
         GelCapMock(String name, double strength, double size, String color) {
             super(name, strength, size, color);
+            // System.out.println("\nCasing: " + (casing));
+            // System.out.println("Solution: " + (solution));
+            // System.out.println("Active: " + (active));
+            // manufacture();
         }
 
         protected void addCasing() {
@@ -108,14 +115,16 @@ public class TestGelCap {
 
     @Test
     public void testToString() {
-        assertEquals(String.format(TOSTRING_FSTRING, obj.getStrength(), obj.getName()), obj.toString());    }
+        assertEquals(String.format(TOSTRING_FSTRING, obj.getStrength(), obj.getName()), obj.toString());   
+    }
 
     @Test
     public void testDescription() {
-        assertEquals(String.format(DESCRIPTION_FSTRING, obj.getName(), obj.getStrength(), obj.getSize(), obj.getColor(), obj.getCasing(), obj.getSolution(), obj.getActive()), obj.description());    }
+        assertEquals(String.format(DESCRIPTION_FSTRING, obj.getName(), obj.getStrength(), obj.getSize(), obj.getColor(), obj.getCasing(), obj.getSolution(), obj.getActive()), obj.description());
+    }
 
     @Test
     public void testManufactureProcess() {
-        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing()), obj.getSolution(), obj.getActive()), getOutput());
+        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing(), obj.getSolution(), obj.getActive()), getOutput());
     }
 }
