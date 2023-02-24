@@ -40,16 +40,19 @@ public class TestGelCap {
             // manufacture();
         }
 
+        @Override
         protected void addCasing() {
             casing = "X";
             System.out.print(casing + "\n");
         }
 
+        @Override
         protected void addSolution() {
             solution = "Y";
             System.out.print(solution + "\n");
         }
 
+        @Override
         protected void addActive() {
             active = "Z";
             System.out.print(active + "\n");
