@@ -20,7 +20,7 @@ public class TestGelCap {
     private final String TEST_ACTIVE = "Z";
     private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
     private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n";
-    private final String MANUFACTURE_FSTRING = "Manufacturing... \n%s\n%s\n%s\n... Manufacturing... \n";
+    private final String MANUFACTURE_FSTRING = "\nManufacturing...\n%s\n%s\n%s\n... completed manufacturing.\n";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -66,11 +66,12 @@ public class TestGelCap {
 
     @BeforeEach
     public void beforeEach() {
-        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
+        // this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
         
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
+        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
     }
     
     @AfterEach
