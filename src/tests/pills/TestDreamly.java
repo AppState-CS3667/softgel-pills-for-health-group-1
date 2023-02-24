@@ -13,12 +13,12 @@ import java.io.PrintStream;
 
 public class TestDreamly {
     private final String CORRECT_NAME = "Dreamly";
-    private final double TEST_STRENGTH = 1.1;
-    private final double TEST_SIZE = 2.2;
-    private final String TEST_COLOR = "White";
-    private final String TEST_CASING = "X";
-    private final String TEST_SOLUTION = "Y";
-    private final String TEST_ACTIVE = "Z";
+    private final double CORRECT_STRENGTH = 1.1;
+    private final double CORRECT_SIZE = 2.2;
+    private final String CORRECT_COLOR = "White";
+    private final String CORRECT_CASING = "X";
+    private final String CORRECT_SOLUTION = "Y";
+    private final String CORRECT_ACTIVE = "Z";
     private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
     private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n";
     private final String MANUFACTURE_FSTRING = "\nManufacturing...\n%s\n%s\n%s\n... completed manufacturing.\n";
@@ -57,32 +57,32 @@ public class TestDreamly {
 
     @Test
     public void testStrength() {
-        assertEquals(TEST_STRENGTH, obj.getStrength());
+        assertEquals(CORRECT_STRENGTH, obj.getStrength());
     }
 
     @Test
     public void testSize() {
-        assertEquals(TEST_SIZE, obj.getSize());
+        assertEquals(CORRECT_SIZE, obj.getSize());
     }
 
     @Test
     public void testColor() {
-        assertEquals(TEST_COLOR, obj.getColor());
+        assertEquals(CORRECT_COLOR, obj.getColor());
     }
 
     @Test
     public void testCasing() {
-        assertEquals(TEST_CASING, obj.getCasing());
+        assertEquals(CORRECT_CASING, obj.getCasing());
     }
 
     @Test
     public void testSolution() {
-        assertEquals(TEST_SOLUTION, obj.getSolution());
+        assertEquals(CORRECT_SOLUTION, obj.getSolution());
     }
 
     @Test
     public void testActive() {
-        assertEquals(TEST_ACTIVE, obj.getActive());
+        assertEquals(CORRECT_ACTIVE, obj.getActive());
     }
 
     @Test
