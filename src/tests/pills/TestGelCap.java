@@ -1,6 +1,9 @@
 package tests.pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import pills.GelCap;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
@@ -116,6 +119,6 @@ public class TestGelCap {
 
     @Test
     public void testManufactureProcess() {
-        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing()), obj.getSolution(), obj.getActive()), getOutput());
+        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing(), obj.getSolution(), obj.getActive()), getOutput());
     }
 }
