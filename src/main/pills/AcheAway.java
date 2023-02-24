@@ -1,5 +1,5 @@
 package main.pills;
 
-public class AcheAway {
+public class AcheAway extends GelCap{
     
 }
