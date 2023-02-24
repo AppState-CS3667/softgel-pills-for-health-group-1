@@ -16,12 +16,12 @@ public class TestDreamly {
     private final double CORRECT_STRENGTH = 1.1;
     private final double CORRECT_SIZE = 2.2;
     private final String CORRECT_COLOR = "White";
-    private final String CORRECT_CASING = "X";
-    private final String CORRECT_SOLUTION = "Y";
-    private final String CORRECT_ACTIVE = "Z";
+    private final String CORRECT_CASING = "Plasticizer";
+    private final String CORRECT_SOLUTION = "Oil";
+    private final String CORRECT_ACTIVE = "Zolpidem";
     private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
     private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n";
-    private final String MANUFACTURE_FSTRING = "\nManufacturing...\n%s\n%s\n%s\n... completed manufacturing.\n";
+    private final String MANUFACTURE_FSTRING = "\nManufacturing...\nadd %s casing\nadd %s solution\nadd %s active\n... completed manufacturing.\n";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -42,7 +42,7 @@ public class TestDreamly {
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
-        this.obj = new Dreamly(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
+        this.obj = new Dreamly(CORRECT_STRENGTH, CORRECT_SIZE, CORRECT_COLOR);
     }
     
     @AfterEach
