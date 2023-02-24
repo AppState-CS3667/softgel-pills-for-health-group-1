@@ -1,6 +1,9 @@
 package pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import pills.AcheAway;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
@@ -13,21 +16,25 @@ public class AcheAwayTest{
     private final String CORRECT_CASING = "Gelatin";
     private final String CORRECT_SOLUTION = "Saline";
     private final String CORRECT_ACTIVE = "Acetaminophen";
-    private final String MANUFACTURE_FSTRING = "Manufacturing... \n%s\n%s\n%s\n... Manufacturing... \n";
+    private final String MANUFACTURE_FSTRING = "\nManufacturing...\nadding %s casing\nadding %s solution\nadding %s active\n... completed manufacturing.\n";
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
     private AcheAway obj;
-     private String getOutput() {
+    
+    private String getOutput() {
     // flush all data from the PrintStream into our ByteArrayOutputStream
          System.out.flush();
          // return the output with return characters stripped.
          // stripping return characters ensure the test works on mac, unix, and windows
-           return baos.toString().replaceAll("\r", "");
+        return baos.toString().replaceAll("\r", "");
       }
+
     @BeforeEach
     public void beforeEach() {
-        this.obj = new AcheAway(CORRECT_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
-        getOutput();
+        this.oldOut = System.out;
+        this.baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
+        this.obj = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
     }
 
     @AfterEach

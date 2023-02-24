@@ -2,7 +2,7 @@ package pills;
 import pills.GelCap;
 
 public class AcheAway extends GelCap{
-    public AcheAway(double strength, String color, double size ) {
+    public AcheAway(double strength, double size, String color)  {
         super("AcheAway", strength, size, color);
     }
     
@@ -15,13 +15,13 @@ public class AcheAway extends GelCap{
     @Override
     protected void addSolution() {
         solution = "Saline";
-        System.out.printf("adding %s solution\n", casing);
+        System.out.printf("adding %s solution\n", solution);
     }
 
     @Override
     protected void addActive() {
         active = "Acetaminophen";
-        System.out.printf("adding %s active\n", casing);
+        System.out.printf("adding %s active\n", active);
     }
     
 }
