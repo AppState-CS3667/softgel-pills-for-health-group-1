@@ -1,5 +1,5 @@
 package pills;
-import pills.GelCap;
+
 public class Dreamly extends GelCap
 {
 	public Dreamly(double strength, double size, String color)

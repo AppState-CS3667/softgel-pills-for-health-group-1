@@ -21,9 +21,7 @@
         <module name="AvoidStarImport"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
-        <module name="Indentation">
-            <property name="caseIndent" value="4"/>
-        </module>
+        
         <module name="JavadocStyle"/>
         <module name="JavadocType">
             <property name="authorFormat" value="\S"/>
@@ -38,7 +36,7 @@
             <property name="max" value="80"/>
         </module>
         <module name="LeftCurly">
-            <property name="option" value="eol"/>
+            <property name="option" value="nl"/>
         </module>
         <module name="RightCurly">
             <property name="option" value="alone"/>
@@ -67,8 +65,13 @@
             <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
         </module>
         <module name="LocalVariableName"/>
-        <module name="MemberName"/>
+        <module name="MemberName">
+            <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
+            <property name="applyToPrivate" value="false"/>
+            <property name="applyToProtected" value="false"/>
+        </module>
         <module name="MethodName"/>
+            <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="MagicNumber">

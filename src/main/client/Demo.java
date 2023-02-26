@@ -14,11 +14,13 @@ public class Demo
         double dreamlySize = 7.00;
         String dreamlyColor = "white";
 
-        AcheAway acheAway = new AcheAway(acheAwayStrength, acheAwaySize, acheAwayColor);
+        AcheAway acheAway = new AcheAway(acheAwayStrength, 
+                                         acheAwaySize, acheAwayColor);
         System.out.println(acheAway);
         System.out.println(acheAway.description());
-        
-        Dreamly dreamly = new Dreamly(dreamlyStrength, dreamlySize, dreamlyColor);
+
+        Dreamly dreamly = new Dreamly(dreamlyStrength, 
+                                      dreamlySize, dreamlyColor);
         System.out.println(dreamly);
         System.out.println(dreamly.description());
 
