@@ -71,7 +71,6 @@
             <property name="applyToProtected" value="false"/>
         </module>
         <module name="MethodName"/>
-            <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="MagicNumber">
