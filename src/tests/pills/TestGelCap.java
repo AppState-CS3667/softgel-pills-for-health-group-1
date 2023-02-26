@@ -19,8 +19,8 @@ public class TestGelCap {
     private final String TEST_SOLUTION = "Y";
     private final String TEST_ACTIVE = "Z";
     private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
-    private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n";
-    private final String MANUFACTURE_FSTRING = "\nManufacturing...\n%s\n%s\n%s\n... completed manufacturing.\n";
+    private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s";
+    private final String MANUFACTURE_FSTRING = "Manufacturing...\n%s\n%s\n%s\n... completed manufacturing\n";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;

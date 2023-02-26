@@ -28,7 +28,7 @@ public abstract class GelCap
 	public String description()
 	{
 		String s = "";
-		s = String.format("%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n", name, strength, size, color, casing, solution, active);
+		s = String.format("%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s", name, strength, size, color, casing, solution, active);
 		return s;
 	}
 	
@@ -69,11 +69,11 @@ public abstract class GelCap
 	
 	protected void manufacture()
 	{
-		System.out.println("\nManufacturing...");
+		System.out.print("Manufacturing...\n");
 		addCasing();
 		addSolution();
 		addActive();
-		System.out.println("... completed manufacturing.");
+		System.out.println("... completed manufacturing");
 	}
 	
 	protected abstract void addCasing();
