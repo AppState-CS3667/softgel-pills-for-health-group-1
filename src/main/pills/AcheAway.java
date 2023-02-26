@@ -2,7 +2,7 @@ package pills;
 
 /**
  * This is the AcheAway class, a subclass of the GelCap class.
- * @author Subteam B
+ * @author Subteam A
  * @version 1.2
  */
 public class AcheAway extends GelCap

@@ -2,7 +2,7 @@ package pills;
 
 /**
  * This is the Dreamly class, a subclass of the GelCap class.
- * @author Subteam A
+ * @author Subteam B
  * @version 1.0
  */
 public class Dreamly extends GelCap
