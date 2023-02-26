@@ -11,6 +11,11 @@ import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;	
 
+/**
+ * This is the TestDreamly class, which tests the Dreamly class.
+ * @author Subteam A
+ * @version 1.1
+ */
 public class TestDreamly 
 {
     private final String CORRECT_NAME = "Dreamly";
@@ -34,6 +39,10 @@ public class TestDreamly
     private PrintStream oldOut;
     private Dreamly obj;
 
+    /**
+     * Flushes data from PrintStream into boas.
+     * @return the ouput with return characters stripped
+     */
     private String getOutput() 
     {
         // flush all data from the PrintStream into our ByteArrayOutputStream
@@ -44,6 +53,9 @@ public class TestDreamly
         return baos.toString().replaceAll("\r", "");
     }
 
+    /**
+     *  Redirect output and create a new test Dreamly object before each test.
+     */
     @BeforeEach
     public void beforeEach() 
     {   
@@ -53,54 +65,81 @@ public class TestDreamly
         this.obj = new Dreamly(CORRECT_STRENGTH, CORRECT_SIZE, CORRECT_COLOR);
     }
     
+    /**
+     * Reset ouput after each test.
+     */
     @AfterEach
     public void afterEach() 
     {
         System.setOut(oldOut);
     }
 
+    /**
+     * Test a Dreamly object's getName() method against an expected value.
+     */
     @Test
     public void testName() 
     {
         assertEquals(CORRECT_NAME, obj.getName());
     }
 
+    /**
+     * Test a Dreamly object's getStrength() method against an expected value.
+     */
     @Test
     public void testStrength() 
     {
         assertEquals(CORRECT_STRENGTH, obj.getStrength());
     }
 
+    /**
+     * Test a Dreamly object's getSize() method against an expected value.
+     */
     @Test
     public void testSize() 
     {
         assertEquals(CORRECT_SIZE, obj.getSize());
     }
 
+    /**
+     * Test a Dreamly object's getColor() method against an expected value.
+     */
     @Test
     public void testColor() 
     {
         assertEquals(CORRECT_COLOR, obj.getColor());
     }
 
+    /**
+     * Test a Dreamly object's getCasing() method against an expected value.
+     */
     @Test
     public void testCasing() 
     {
         assertEquals(CORRECT_CASING, obj.getCasing());
     }
 
+    /**
+     * Test a Dreamly object's getSolution() method against an expected value.
+     */
     @Test
     public void testSolution() 
     {
         assertEquals(CORRECT_SOLUTION, obj.getSolution());
     }
 
+    /**
+     * Test a Dreamly object's getActive() method against an expected value.
+     */
     @Test
     public void testActive() 
     {
         assertEquals(CORRECT_ACTIVE, obj.getActive());
     }
 
+    /**
+     * Test a Dreamly object's manufacture() method against an expected value.
+     */
     @Test
     public void testManufactureProcess() 
     {

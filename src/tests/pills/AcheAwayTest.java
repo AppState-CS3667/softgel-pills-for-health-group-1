@@ -9,6 +9,11 @@ import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+/**
+ * This is the AcheAwayTest class, which tests the AcheAway class.
+ * @author Subteam B
+ * @version 1.6
+ */
 public class AcheAwayTest
 {
     private final String CORRECT_NAME = "AcheAway";
@@ -27,6 +32,10 @@ public class AcheAwayTest
     private PrintStream oldOut;
     private AcheAway obj;
     
+    /**
+     * Flushes data from PrintStream into boas.
+     * @return the ouput with return characters stripped
+     */
     private String getOutput() 
     {
     // flush all data from the PrintStream into our ByteArrayOutputStream
@@ -37,6 +46,9 @@ public class AcheAwayTest
         return baos.toString().replaceAll("\r", "");
       }
 
+    /**
+     *  Redirect output and create a new test AcheAway object before each test.
+     */  
     @BeforeEach
     public void beforeEach() 
     {
@@ -46,49 +58,81 @@ public class AcheAwayTest
         this.obj = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
     }
 
+    /**
+     * Reset ouput after each test.
+     */
     @AfterEach
     public void afterEach() 
     {
         System.setOut(oldOut);
     }
+
+    /**
+     * Test an AcheAway object's getName() method against an expected value.
+     */
     @Test
     public void testName() 
     {
         assertEquals(CORRECT_NAME, obj.getName());
     }
 
+    /**
+     * Test an AcheAway object's getStrength() method against an expected value.
+     */
     @Test
     public void testStrength() 
     {
         assertEquals(TEST_STRENGTH, obj.getStrength());
     }
 
+    /**
+     * Test an AcheAway object's getSize() method against an expected value.
+     */
     @Test
     public void testSize() 
     {
         assertEquals(TEST_SIZE, obj.getSize());
     }
 
+    /**
+     * Test an AcheAway object's getColor() method against an expected value.
+     */
     @Test
     public void testColor() 
     {
         assertEquals(TEST_COLOR, obj.getColor());
     }
+
+    /**
+     * Test an AcheAway object's getCasing() method against an expected value.
+     */
     @Test
     public void testCasing() 
     {
         assertEquals(CORRECT_CASING, obj.getCasing());
     }
+
+    /**
+     * Test an AcheAway object's getSolution() method against an expected value.
+     */
     @Test
     public void testSolution() 
     {
         assertEquals(CORRECT_SOLUTION, obj.getSolution());
     }
-@Test
+
+    /**
+     * Test an AcheAway object's getActive() method against an expected value.
+     */
+    @Test
     public void testActive()
     {
         assertEquals(CORRECT_ACTIVE, obj.getActive());
-    }   
+    }
+    
+    /**
+     * Test an AcheAway object's manufacture() method against an expected value.
+     */
     @Test
     public void testManufactureProcess() 
     {
@@ -96,6 +140,4 @@ public class AcheAwayTest
                                    obj.getSolution(), obj.getActive()), 
                                    getOutput());
     }   
-}   
-
-
+}
