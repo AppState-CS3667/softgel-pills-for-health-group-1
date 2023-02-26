@@ -33,18 +33,10 @@ public class TestGelCap
 
     private class GelCapMock extends GelCap
     {
-        // protected String casing;
-        // protected String solution;
-        // protected String active;
-
 
         GelCapMock(String name, double strength, double size, String color) 
         {
             super(name, strength, size, color);
-            // System.out.println("\nCasing: " + (casing));
-            // System.out.println("Solution: " + (solution));
-            // System.out.println("Active: " + (active));
-            // manufacture();
         }
 
         @Override
