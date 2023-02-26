@@ -20,8 +20,8 @@ public class TestDreamly {
     private final String CORRECT_SOLUTION = "Oil";
     private final String CORRECT_ACTIVE = "Zolpidem";
     private final String TOSTRING_FSTRING = "%.2fmg %s Pill";
-    private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s\n";
-    private final String MANUFACTURE_FSTRING = "\nManufacturing...\nadd %s casing\nadd %s solution\nadd %s active\n... completed manufacturing.\n";
+    private final String DESCRIPTION_FSTRING = "%s Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: %s\n\tCasing: %s\n\tSolution: %s\n\tActive: %s";
+    private final String MANUFACTURE_FSTRING = "Manufacturing...\nadding %s casing\nadding %s solution\nadding %s active\n... completed manufacturing\n";
     
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;

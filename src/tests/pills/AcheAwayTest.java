@@ -1,4 +1,4 @@
-package pills;
+package tests.pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ public class AcheAwayTest{
     private final String CORRECT_CASING = "Gelatin";
     private final String CORRECT_SOLUTION = "Saline";
     private final String CORRECT_ACTIVE = "Acetaminophen";
-    private final String MANUFACTURE_FSTRING = "\nManufacturing...\nadding %s casing\nadding %s solution\nadding %s active\n... completed manufacturing.\n";
+    private final String MANUFACTURE_FSTRING = "Manufacturing...\nadding %s casing\nadding %s solution\nadding %s active\n... completed manufacturing\n";
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
     private AcheAway obj;
