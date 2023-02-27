@@ -1,6 +1,6 @@
 # SoftGelPills Project
 ## Subteams:
-- Subteam A - Alex, Thayer, Wesley
+- Subteam A - Alex, Thayer
 - Subteam B - May, Patricia
 
 ## Subteam Assignments
