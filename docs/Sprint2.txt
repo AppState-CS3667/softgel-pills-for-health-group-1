@@ -1,7 +1,7 @@
 Sprint Planning: 
-
 ________________________________________________________________________
 Sprint Backlog
+
 1. Update GelCap
 2. Update the tests for GelCap
 3. Update Dreamly and AcheAway
@@ -10,13 +10,17 @@ Sprint Backlog
 6. Create tests for the child and adult version of Dreamly
 7. Create child and adult versions of AcheAway
 8. Create tests for the child and adult version of AcheAway
+
 _________________________________________________________________________
+
 Subteam A: 
 Assign backlog items: 1, 4, 5, 8
 Subteam B: 
 Assign backlog items: 2, 3, 6, 7
 _________________________________________________________________________
+
 Sprint Review:
 
 _________________________________________________________________________
+
 Sprint Retrospective:
