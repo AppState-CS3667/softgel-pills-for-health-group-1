@@ -13,7 +13,7 @@ Sprint Backlog
 
 _________________________________________________________________________
 
-Subteam A: 
+Subteam A: Thayer Ackerman, 
 Assign backlog items: 1, 4, 5, 8
 Subteam B: 
 Assign backlog items: 2, 3, 6, 7
