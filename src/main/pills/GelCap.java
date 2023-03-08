@@ -1,9 +1,11 @@
 package pills;
 
+import net.sf.saxon.expr.instruct.SlotManager;
+
 /**
  * This is the GelCap class, an abstract class for a soft gel pill.
- * @author Subteam B
- * @version 1.5
+ * @author Subteam A
+ * @version 1.6
  */
 public abstract class GelCap
 {
@@ -23,13 +25,15 @@ public abstract class GelCap
 	 * @param size the size of the GelCap
 	 * @param color the color of the GelCap
 	 */
-	public GelCap(String name, double strength, double size, String color)
+	public GelCap(String name, double strength, double size, String color, String casing, String solution, String active)
 	{
 		this.name = name;
 		this.strength = strength;
 		this.size = size;
 		this.color = color;
-		manufacture();
+		this.casing = casing;
+		this.solution = solution;
+		this.active = active;
 	}
 	
 	/**
@@ -120,30 +124,4 @@ public abstract class GelCap
 		return active;
 	}
 	
-	/**
-	 * Prints the stages of manufacturing.
-	 */
-	protected void manufacture()
-	{
-		System.out.print("Manufacturing...\n");
-		addCasing();
-		addSolution();
-		addActive();
-		System.out.println("... completed manufacturing");
-	}
-	
-	/**
-	 * This method must be implemented by classes that extend GelCap.
-	 */
-	protected abstract void addCasing();
-
-	/**
-	 * This method must be implemented by classes that extend GelCap.
-	 */
-	protected abstract void addSolution();
-	
-	/**
-	 * This method must be implemented by classes that extend GelCap.
-	 */
-	protected abstract void addActive();
 }
