@@ -3,6 +3,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import pills.AcheAway;
+import pills.AdultAcheAway;
+import pills.ChildAcheAway;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
@@ -16,35 +18,46 @@ import java.io.PrintStream;
  */
 public class AcheAwayTest
 {
-    private final String CORRECT_NAME = "AcheAway";
-    private final double TEST_STRENGTH = 2.0;
-    private final double TEST_SIZE = 5.0;
+    // AcheAway test constants
+    private final double TEST_STRENGTH = 5.0;
+    private final double TEST_SIZE = 4.5;
     private final String TEST_COLOR = "Yellow";
-    private final String CORRECT_CASING = "Gelatin";
-    private final String CORRECT_SOLUTION = "Saline";
-    private final String CORRECT_ACTIVE = "Acetaminophen";
-    private final String MANUFACTURE_FSTRING = "Manufacturing..."
-                                               + "\nadding %s casing\n"
-                                               + "adding %s solution"
-                                               + "\nadding %s active\n... "
-                                               + "completed manufacturing\n";
-    private ByteArrayOutputStream baos;
-    private PrintStream oldOut;
-    private AcheAway obj;
+    private final String TEST_CASING = "X";
+    private final String TEST_SOLUTION = "Y";
+    private final String TEST_ACTIVE = "Z";
+    // Adult AcheAway test constants
+    private final double ADULT_STRENGTH = 10.0;
+    private final double ADULT_SIZE = 9.5;
+    private final String ADULT_COLOR = "Blue";
+    // Child AcheAway test constants
+    private final double CHILD_STRENGTH = 1.0;
+    private final double CHILD_SIZE = 0.5;
+    private final String CHILD_COLOR = "Red";
+
+    // AcheAway test fields
+    private AcheAway acheAway;
+    private AdultAcheAway adultAcheAway;
+    private ChildAcheAway childAcheAway;
     
     /**
-     * Flushes data from PrintStream into boas.
-     * @return the ouput with return characters stripped
-     */
-    private String getOutput() 
+     *  A mock AcheAway class for testing.
+     */                                             
+    private class AcheAwayMock extends AcheAway
     {
-    // flush all data from the PrintStream into our ByteArrayOutputStream
-         System.out.flush();
-         // return the output with return characters stripped.
-         // stripping return characters ensure the test works
-         // on mac, unix, and windows
-        return baos.toString().replaceAll("\r", "");
-      }
+        /**
+         * Constructor for a mock AcheAway class.
+	     * @param strength the strength of the AcheAway mock class
+	     * @param size the size of the AcheAway mock class
+	     * @param color the color of the AcheAway mock class
+         * @param casing the casing of the AcheAway mock class
+         * @param solution the solution of the AcheAway mock class
+         * @param active the active of the AcheAway mock class
+         */
+        AcheAwayMock(double strength, double size, String color, String casing, String solution, String active)
+        {
+            super(strength, size, color, casing, solution, active);
+        }
+    }
 
     /**
      *  Redirect output and create a new test AcheAway object before each test.
@@ -52,28 +65,10 @@ public class AcheAwayTest
     @BeforeEach
     public void beforeEach() 
     {
-        this.oldOut = System.out;
-        this.baos = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(baos));
-        this.obj = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
-    }
+        this.acheAway = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR, TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.adultAcheAway = new AdultAcheAway(ADULT_STRENGTH, ADULT_SIZE, ADULT_COLOR);
+        this.childAcheAway = new ChildAcheAway(CHILD_STRENGTH, CHILD_SIZE, CHILD_COLOR);
 
-    /**
-     * Reset ouput after each test.
-     */
-    @AfterEach
-    public void afterEach() 
-    {
-        System.setOut(oldOut);
-    }
-
-    /**
-     * Test an AcheAway object's getName() method against an expected value.
-     */
-    @Test
-    public void testName() 
-    {
-        assertEquals(CORRECT_NAME, obj.getName());
     }
 
     /**
@@ -82,7 +77,9 @@ public class AcheAwayTest
     @Test
     public void testStrength() 
     {
-        assertEquals(TEST_STRENGTH, obj.getStrength());
+        assertEquals(TEST_STRENGTH, acheAway.getStrength());
+        assertEquals(ADULT_STRENGTH, acheAway.getStrength());
+        assertEquals(CHILD_STRENGTH, acheAway.getStrength());
     }
 
     /**
@@ -91,53 +88,19 @@ public class AcheAwayTest
     @Test
     public void testSize() 
     {
-        assertEquals(TEST_SIZE, obj.getSize());
+        assertEquals(TEST_SIZE, acheAway.getSize());
+        assertEquals(ADULT_SIZE, acheAway.getSize());
+        assertEquals(CHILD_SIZE, acheAway.getSize());
     }
 
     /**
-     * Test an AcheAway object's getColor() method against an expected value.
+     * Test an AcheAway object's getSize() method against an expected value.
      */
     @Test
     public void testColor() 
     {
-        assertEquals(TEST_COLOR, obj.getColor());
+        assertEquals(TEST_SIZE, acheAway.getColor());
+        assertEquals(ADULT_COLOR, acheAway.getColor());
+        assertEquals(CHILD_COLOR, acheAway.getColor());
     }
-
-    /**
-     * Test an AcheAway object's getCasing() method against an expected value.
-     */
-    @Test
-    public void testCasing() 
-    {
-        assertEquals(CORRECT_CASING, obj.getCasing());
-    }
-
-    /**
-     * Test an AcheAway object's getSolution() method against an expected value.
-     */
-    @Test
-    public void testSolution() 
-    {
-        assertEquals(CORRECT_SOLUTION, obj.getSolution());
-    }
-
-    /**
-     * Test an AcheAway object's getActive() method against an expected value.
-     */
-    @Test
-    public void testActive()
-    {
-        assertEquals(CORRECT_ACTIVE, obj.getActive());
-    }
-    
-    /**
-     * Test an AcheAway object's manufacture() method against an expected value.
-     */
-    @Test
-    public void testManufactureProcess() 
-    {
-        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing(), 
-                                   obj.getSolution(), obj.getActive()), 
-                                   getOutput());
-    }   
 }
