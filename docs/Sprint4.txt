@@ -1,0 +1,24 @@
+Sprint Planning: 
+________________________________________________________________________
+Sprint Backlog
+
+1. Create the Adult and Child factory classes
+2. Create tests for the Adult and Child factories
+3. Create the Store from SoftGelPillStore constructor to login() void
+4. Create the Store from login(name: String, age: int) void to getInput(): Scanner
+5. Create tests for the store from login(name: String, age: int) void to getInput(): Scanner
+6. Create tests for the store from constructor to login() void. 
+
+_________________________________________________________________________
+
+Subteam A: Thayer Ackerman, Alex Somer  
+Assign backlog items: 2, 3, 6
+Subteam B: Patricia Garcia, May Jiang
+Assign backlog items: 1, 4, 5
+_________________________________________________________________________
+
+Sprint Review:
+
+_________________________________________________________________________
+
+Sprint Retrospective:
