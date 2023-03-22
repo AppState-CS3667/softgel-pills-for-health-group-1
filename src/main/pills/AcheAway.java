@@ -5,7 +5,7 @@ package pills;
  * @author Subteam A
  * @version 1.2
  */
-public class AcheAway extends GelCap
+public abstract class AcheAway extends GelCap
 {
     /**
      * Constructor for an AcheAway object.
@@ -13,38 +13,9 @@ public class AcheAway extends GelCap
      * @param size the size of the AcheAway object
      * @param color the color of AcheAway object
      */
-    public AcheAway(double strength, double size, String color)  
+    public AcheAway(double strength, double size, String color, String casing, String solution, String active)  
     {
-        super("AcheAway", strength, size, color);
+        super("AcheAway", strength, size, color, casing, solution, active);
     }
     
-    /**
-     * Prints the casing field.
-    */
-    @Override
-    protected void addCasing() 
-    {
-        casing = "Gelatin";
-        System.out.printf("adding %s casing\n", casing);
-    }
-
-    /**
-     * Prints the solution field.
-    */
-    @Override
-    protected void addSolution() 
-    {
-        solution = "Saline";
-        System.out.printf("adding %s solution\n", solution);
-    }
-
-    /**
-     * Prints the active field.
-    */
-    @Override
-    protected void addActive() 
-    {
-        active = "Acetaminophen";
-        System.out.printf("adding %s active\n", active);
-    }
 }

@@ -5,7 +5,7 @@ package pills;
  * @author Subteam B
  * @version 1.0
  */
-public class Dreamly extends GelCap
+public abstract class Dreamly extends GelCap
 {
 	/**
 	 * Constructor for a Dreamly object.
@@ -13,39 +13,10 @@ public class Dreamly extends GelCap
      * @param size the size of the AcheAway object
      * @param color the color of AcheAway object
 	 */
-	public Dreamly(double strength, double size, String color)
+	public Dreamly(double strength, double size, String color, String casing, String solution, String active)
 	{
-		super("Dreamly", strength, size, color);
+		super("Dreamly", strength, size, color, casing, solution, active);
 	}
 
-	/**
-	 * Prints the casing field.
-	 */
-	@Override	
-	protected void addCasing()
-	{
-		casing = "Plasticizer";
-		System.out.println("adding Plasticizer casing");
-	}
-	
-	/**
-	 * Prints the solution field.
-	 */
-	@Override
-	protected void addSolution()
-	{
-		solution = "Oil";
-		System.out.println("adding Oil solution");
-	}
-	
-	/**
-	 * Prints the active field.
-	 */
-	@Override
-	protected void addActive()
-	{
-		active = "Zolpidem";
-		System.out.println("adding Zolpidem active");
-	}
 
 }
