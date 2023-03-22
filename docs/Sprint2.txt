@@ -19,8 +19,22 @@ Subteam B: Patricia Garcia, May Jiang
 Assign backlog items: 2, 3, 6, 7
 _________________________________________________________________________
 
-Sprint Review:
+Sprint Review: We are happy with the outcome and how the project came to be. 
+  The steps we took I think were very beneficial and effective. We set a solid 
+  foundation for the next sprint by fixing the errors from the first sprint. 
 
 _________________________________________________________________________
 
 Sprint Retrospective:
+Good things we did: 
+          Lenient on distribution of work and due dates 
+          Had very good communication especially during break 
+          Good time manangement 
+Bad things we did: 
+          We did not update the files after grade for sprint 1
+          Write comments after reviewing pull requests
+          Ask questions before merging
+Improvements for next sprint: 
+          Let the group know as soon as at least one task is completed 
+          Ask for more help from the professor
+          Ask each other for help with minor issues
