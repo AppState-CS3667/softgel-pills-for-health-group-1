@@ -1,7 +1,5 @@
 package pills;
 
-import net.sf.saxon.expr.instruct.SlotManager;
-
 /**
  * This is the GelCap class, an abstract class for a soft gel pill.
  * @author Subteam A
