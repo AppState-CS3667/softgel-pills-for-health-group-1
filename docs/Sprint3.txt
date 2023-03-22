@@ -1,0 +1,26 @@
+Sprint Planning: 
+________________________________________________________________________
+Sprint Backlog
+
+1. Create the CasingGenerator interface and the two types of Solution Generators
+2. Create tests for the two types of solution generators
+3. Create the ActiveGenerator interface and the two types of Active Generators
+4. Create tests for the two types of active generators
+5. Create the GelCapRecipes class.
+6. Create tests for GelCapRecipes
+7. Create the GelCapFactory class
+8. Create tests for GelCapFactory
+
+_________________________________________________________________________
+
+Subteam A: Thayer Ackerman, Alex Somer  
+Assign backlog items: 2, 3, 6, 7
+Subteam B: Patricia Garcia, May Jiang
+Assign backlog items: 1, 4, 5, 8
+_________________________________________________________________________
+
+Sprint Review:
+
+_________________________________________________________________________
+
+Sprint Retrospective:
