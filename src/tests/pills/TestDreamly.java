@@ -1,4 +1,4 @@
-package tests.pills;
+package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -33,24 +33,21 @@ public class TestDreamly
                                                + "Size: %.2f\n\tColor: %s\n\t"
                                                + "Casing: %s\n\tSolution: %s"
                                                + "\n\tActive: %s";
-    private final String MANUFACTURE_FSTRING = "Manufacturing...\nadding %s "
-                                               + "casing\nadding %s solution\n"
-                                               + "adding %s active\n... "
-                                               + "completed manufacturing\n";
+
    // Adult Dreamly test constants
     private final double ADULT_STRENGTH = 5.2;
     private final double ADULT_SIZE = 12.24;
-    private final String ADULT_COLOR = "Tan"; 
+    private final String ADULT_COLOR = "tan"; 
  
  //  Child Dreamly test constants
 	private final double CHILD_STRENGTH = 1.25;
     private final double CHILD_SIZE = 4.5;
-    private final String CHILD_COLOR = "Fuchsia";
+    private final String CHILD_COLOR = "fuchsia";
    
 	
 	private DreamlyMock dreamly;
-	private ChildDreamly child; 
-	private AdultDreamly adult; 
+	private ChildDreamly childDreamly; 
+	private AdultDreamly adultDreamly; 
 	
 	private class DreamlyMock extends Dreamly{
 		DreamlyMock(double strength, double size, String color, String casing, String solution, String active){
@@ -66,20 +63,42 @@ public class TestDreamly
     public void beforeEach() 
     {   
         this.dreamly = new DreamlyMock(CORRECT_STRENGTH, CORRECT_SIZE, CORRECT_COLOR, CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE);
-    	this.adult = new AdultDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
-		this.child = new ChildDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
+    	this.adultDreamly = new AdultDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
+		this.childDreamly = new ChildDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
 	}
     
+    /**
+    * Test a Dreamly object's toString() method against an expected value.
+    */ 
+    @Test
+    public void testToString() 
+    {
+        assertEquals(String.format(TOSTRING_FSTRING, dreamly.getStrength(), dreamly.getName()), dreamly.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, adultDreamly.getStrength(), adultDreamly.getName()), adultDreamly.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, childDreamly.getStrength(), childDreamly.getName()), childDreamly.toString());
+    }
+
+    /**
+    * Test a Dreamly object's description() method against an expected value.
+    */ 
+    @Test
+    public void testDescription() 
+    {
+        assertEquals(String.format(DESCRIPTION_FSTRING, dreamly.getName(), dreamly.getStrength(), dreamly.getSize(), dreamly.getColor(), dreamly.getCasing(), dreamly.getSolution(), dreamly.getActive()), dreamly.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  adultDreamly.getName(), adultDreamly.getStrength(), adultDreamly.getSize(), adultDreamly.getColor(), adultDreamly.getCasing(), adultDreamly.getSolution(), adultDreamly.getActive()), adultDreamly.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  childDreamly.getName(), childDreamly.getStrength(), childDreamly.getSize(), childDreamly.getColor(), childDreamly.getCasing(), childDreamly.getSolution(), childDreamly.getActive()), childDreamly.description());
+    }
 
     /**
      * Test a Dreamly object's getName() method against an expected value.
-     
+    */ 
     @Test
     public void testName() 
     {
         assertEquals(CORRECT_NAME, dreamly.getName());
-
-    }	*/
+        assertEquals(CORRECT_NAME, adultDreamly.getName());
+        assertEquals(CORRECT_NAME, childDreamly.getName());
+    }
 
     /**
      * Test a Dreamly object's getStrength() method against an expected value.
@@ -88,8 +107,8 @@ public class TestDreamly
     public void testStrength() 
     {
         assertEquals(CORRECT_STRENGTH, dreamly.getStrength());
-    	assertEquals(ADULT_STRENGTH, adult.getStrength()); 
-		assertEquals(CHILD_STRENGTH, child.getStrength()); 
+    	assertEquals(ADULT_STRENGTH, adultDreamly.getStrength()); 
+		assertEquals(CHILD_STRENGTH, childDreamly.getStrength()); 
 	}
 
     /**
@@ -99,8 +118,8 @@ public class TestDreamly
     public void testSize() 
     {
         assertEquals(CORRECT_SIZE, dreamly.getSize());
-    	assertEquals(ADULT_SIZE, adult.getSize()); 
-		assertEquals(CHILD_SIZE, child.getSize()); 
+    	assertEquals(ADULT_SIZE, adultDreamly.getSize()); 
+		assertEquals(CHILD_SIZE, childDreamly.getSize()); 
 	}
 
     /**
@@ -110,8 +129,8 @@ public class TestDreamly
     public void testColor() 
     {
         assertEquals(CORRECT_COLOR, dreamly.getColor());
-    	assertEquals(ADULT_COLOR, adult.getColor());
-		assertEquals(CHILD_COLOR, child.getColor()); 
+    	assertEquals(ADULT_COLOR, adultDreamly.getColor());
+		assertEquals(CHILD_COLOR, childDreamly.getColor()); 
 	}
 
     /**
@@ -121,6 +140,8 @@ public class TestDreamly
     public void testCasing() 
     {
         assertEquals(CORRECT_CASING, dreamly.getCasing());
+        assertEquals(CORRECT_CASING, adultDreamly.getCasing());
+        assertEquals(CORRECT_CASING, childDreamly.getCasing());
     }
 
     /**
@@ -130,6 +151,8 @@ public class TestDreamly
     public void testSolution() 
     {
         assertEquals(CORRECT_SOLUTION, dreamly.getSolution());
+        assertEquals(CORRECT_SOLUTION, adultDreamly.getSolution());
+        assertEquals(CORRECT_SOLUTION, childDreamly.getSolution());
     }
 	
 	/**
@@ -139,18 +162,8 @@ public class TestDreamly
     public void testActive() 
     {
         assertEquals(CORRECT_ACTIVE, dreamly.getActive());
+        assertEquals(CORRECT_ACTIVE, adultDreamly.getActive());
+        assertEquals(CORRECT_ACTIVE, childDreamly.getActive());
     }
-
-    /**
-     * Test a Dreamly object's manufacture() method against an expected value.
-    
-    @Test
-	public void testManufactureProcess() 
-    {
-        assertEquals(String.format(MANUFACTURE_FSTRING, obj.getCasing(), 
-                                   obj.getSolution(), obj.getActive()), 
-                                   getOutput());
-    }
-		*/
 
 }
