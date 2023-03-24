@@ -1,4 +1,10 @@
 Sprint Planning: 
+
+
+Branches will be named with the following convention: SprintXItemY, 
+where X is the current sprint number and Y is the backlog item number specified below.
+EX: "Sprint3Item1" would be the branch name for the first task in the following list.
+
 ________________________________________________________________________
 Sprint Backlog
 
