@@ -46,13 +46,26 @@ public class TestGelCapFactory
 
 	private class GelCapFactoryMock extends GelCapFactory
 	{
+		/**
+		 * Updating abstract method constructDreamly for GelCapFactoryMock to print called statements.
+		 * @param casing
+		 * @param solution
+		 * @param active
+		 * @return DreamlyMock
+		 */
 		@Override
 		protected Dreamly constructDreamly(String casing, String solution, String active)
 		{
 			System.out.print("constructDreamly called\n");
 			return super.constructDreamly(casing, solution, active);
 		}
-		
+		/**
+		 * Updating abstract method constructAcheAway for GelCapFactoryMock to print called statements.
+		 * @param casing
+		 * @param solution
+		 * @param active
+		 * @return AcheAwayMock
+		 */
 		@Override
 		protected AcheAway constructAcheAway(String casing, String solution, String active)
 		{
@@ -60,6 +73,10 @@ public class TestGelCapFactory
 			return super.constructAcheAway(casing, solution, active);
 		}
 		
+		/**
+		 * Updating abstract method getDreamlyStrength for GelCapFactoryMock to print called statements.
+		 * @return default value of 0
+		 */
 		@Override
 		protected int getDreamlyStrength()
 		{
@@ -67,6 +84,10 @@ public class TestGelCapFactory
 			return 0;
 		}
 		
+		/**
+		 * Updating abstract method getAcheAwayStrength for GelCapFactoryMock to print called statements.
+		 * @return default value of 0
+		 */
 		@Override
 		protected int getAcheAwayStrength()
 		{
@@ -76,6 +97,10 @@ public class TestGelCapFactory
 		
 	}
 
+	/**
+	 * Flushes data from PrintStream into baos
+	 * @return the output with return characters stripped
+	 */
 	private String getOutput()
 	{
 		System.out.flush();
@@ -83,7 +108,7 @@ public class TestGelCapFactory
 	}
 
 	/**
- 	 * Create a new GelCapFactory object before each test.
+ 	 * Redirect output and create a new GelCapFactory object before each test.
  	 */
 	@BeforeEach
 	public void beforeEach()
@@ -104,7 +129,7 @@ public class TestGelCapFactory
 	} 
 
 	/**
- 	 * Test produceDreamly() method.
+ 	 * Test produceDreamly() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
  	 */
 	public void testProduceDreamly()
 	{
@@ -129,6 +154,9 @@ public class TestGelCapFactory
 		}
 		assertTrue(fail >= 7 && fail <= 13);
 	}
+	/**
+ 	 * Test produceAcheAway() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
+ 	 */
 	public void testProduceAcheAway()
 	{
 		int fail = 0;
