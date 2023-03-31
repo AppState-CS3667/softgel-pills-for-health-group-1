@@ -7,13 +7,10 @@ import pills.GelCap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;	
-
 /**
  * This is the TestGelCap class, which tests the GelCap class.
  * @author Subteam B
- * @version 1.5
+ * @version 1.6
  */
 public class TestGelCap 
 {
@@ -23,10 +20,7 @@ public class TestGelCap
     private final String TEST_COLOR = "White";
     private final String TEST_CASING = "X";
     private final String TEST_SOLUTION = "Y";
-    private final String TEST_ACTIVE = "Z";    
-    private ByteArrayOutputStream baos;
-    private PrintStream oldOut;
-    private GelCap obj;
+    private final String TEST_ACTIVE = "Z";
 
     /**
      * A mock GelCap class for testing.
