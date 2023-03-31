@@ -12,8 +12,8 @@ public abstract class GelCapFactory {
  	 */ 	
     public final Dreamly produceDreamly() {
         System.out.print("Creating a Dreamly pill...\n");
-        constructDreamly(GelCapRecipies.CASINGS.get("dreamly"), GelCapRecipies.SOLUTIONS.get("dreamly"), GelCapRecipies.ACTIVES.get("dreamly"));
-        Dreamly result;
+        Dreamly result = constructDreamly(GelCapRecipes.CASINGS.get("dreamly").generateCasing(), GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
+
         if (qualityCheck()) {
             System.out.print("Returning a good Dreamly GelCap Pill\n");
             return result;
@@ -30,8 +30,7 @@ public abstract class GelCapFactory {
  	 */ 	
     public final AcheAway produceAcheAway() {
         System.out.print("Creating a AcheAway pill...\n");
-        constructDreamly(GelCapRecipies.CASINGS.get("dreamly"), GelCapRecipies.SOLUTIONS.get("dreamly"), GelCapRecipies.ACTIVES.get("dreamly"))
-        AcheAway result;
+        AcheAway result = constructAcheAway(GelCapRecipes.CASINGS.get("acheAway").generateCasing(), GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
         if (qualityCheck()) {
             System.out.print("Returning a good AcheAway GelCap Pill\n");
             return result;

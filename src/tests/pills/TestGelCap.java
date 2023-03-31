@@ -21,6 +21,7 @@ public class TestGelCap
     private final String TEST_CASING = "X";
     private final String TEST_SOLUTION = "Y";
     private final String TEST_ACTIVE = "Z";
+    private GelCapMock obj;
 
     /**
      * A mock GelCap class for testing.
@@ -46,8 +47,7 @@ public class TestGelCap
     @BeforeEach
     public void beforeEach()
     {
-        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, 
-        TEST_SIZE, TEST_COLOR, TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR, TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
     }
 
 

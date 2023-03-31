@@ -57,7 +57,8 @@ public class TestGelCapFactory
 		protected Dreamly constructDreamly(String casing, String solution, String active)
 		{
 			System.out.print("constructDreamly called\n");
-			return super.constructDreamly(casing, solution, active);
+			// return super.constructDreamly(casing, solution, active);
+			return null;
 		}
 		/**
 		 * Updating abstract method constructAcheAway for GelCapFactoryMock to print called statements.
@@ -70,7 +71,8 @@ public class TestGelCapFactory
 		protected AcheAway constructAcheAway(String casing, String solution, String active)
 		{
 			System.out.print("constructAcheAway called\n");
-			return super.constructAcheAway(casing, solution, active);
+			// return super.constructAcheAway(casing, solution, active);
+			return null;
 		}
 		
 		/**
@@ -78,7 +80,7 @@ public class TestGelCapFactory
 		 * @return default value of 0
 		 */
 		@Override
-		protected int getDreamlyStrength()
+		protected double getDreamlyStrength()
 		{
 			System.out.print("getDreamlyStrength called\n");
 			return 0;
@@ -89,7 +91,7 @@ public class TestGelCapFactory
 		 * @return default value of 0
 		 */
 		@Override
-		protected int getAcheAwayStrength()
+		protected double getAcheAwayStrength()
 		{
 			System.out.print("getAcheAwayStrength called\n");
 			return 0;
@@ -167,7 +169,7 @@ public class TestGelCapFactory
 		{
 			obj.produceAcheAway();
 			String output = getOutput();
-			if (obj.qualityCheck(TEST_PA_P))
+			if (output.equals(TEST_PA_P))
 			{
 				success++;
 			}
