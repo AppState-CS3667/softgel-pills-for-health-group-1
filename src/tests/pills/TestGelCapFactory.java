@@ -131,6 +131,7 @@ public class TestGelCapFactory
 	/**
  	 * Test produceDreamly() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
  	 */
+	@Test
 	public void testProduceDreamly()
 	{
 		int fail = 0;
@@ -157,6 +158,7 @@ public class TestGelCapFactory
 	/**
  	 * Test produceAcheAway() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
  	 */
+	@Test
 	public void testProduceAcheAway()
 	{
 		int fail = 0;
