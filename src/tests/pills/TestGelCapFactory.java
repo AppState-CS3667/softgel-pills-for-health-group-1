@@ -24,15 +24,23 @@ public class TestGelCapFactory
 	private final String TEST_D_ACTIVE = "Zolpidem";
 	private final String TEST_PD_P = "Creating a Dreamly pill...\n"
 					+ "constructDreamly called\n"
+					+ "Performing quality check...\n"
+					+ "quality check passed\n"
 					+ "Returning a good Dreamly GelCap Pill\n";
 	private final String TEST_PD_F = "Creating a Dreamly pill...\n"
-                                        + "constructDreamly called\n"
+                                        + "constructDreamly called\n" 
+					+ "Performing quality check...\n"
+					+ "quality check failed\n"
                                         + "Error during Dreamly production. Returning null.\n";
 	private final String TEST_PA_P = "Creating a AcheAway pill...\n"
                                         + "constructAcheAway called\n"
+					+ "Performing quality check...\n"
+					+ "quality check passed\n"
                                         + "Returning a good AcheAway GelCap Pill\n";
 	private final String TEST_PA_F = "Creating a AcheAway pill...\n"
                                         + "constructAcheAway called\n"
+					+ "Performing quality check...\n"
+					+ "quality check failed\n"
                                         + "Error during AcheAway production. Returning null.\n";
 
 
