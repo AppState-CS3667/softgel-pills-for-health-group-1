@@ -9,7 +9,7 @@ public class SalineSolution implements SolutionGenerator{
     
     @Override
     public String generateSolution() {
-        String output = String.format("Mixing salt and water .\nVerifying ratio .\nReturning saline solution\n");
+        String output = String.format("Mixing salt and water...\nVerifying ratio...\nReturning saline solution\n");
         System.out.print(output);
         return "saline";
     }
