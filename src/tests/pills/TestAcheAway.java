@@ -3,10 +3,6 @@ package pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import pills.AcheAway;
-import pills.AdultAcheAway; 
-import pills.ChildAcheAway; 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 

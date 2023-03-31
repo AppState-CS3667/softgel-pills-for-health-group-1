@@ -10,16 +10,16 @@ import org.junit.jupiter.api.BeforeEach;
  * @version 1.0
  */
 public class TestGelCapRecipes {
-    private GelCapRecipes gelCapRecipes;
+    // private GelCapRecipes gelCapRecipes;
     
-    /**
-     *  Create a new test GelCapRecipies object before each test.
-     */
-    @BeforeEach
-    public void beforeEach()
-    {
-        gelCapRecipes = new GelCapRecipes();
-    }
+    // /**
+    //  *  Create a new test GelCapRecipies object before each test.
+    //  */
+    // @BeforeEach
+    // public void beforeEach()
+    // {
+    //     gelCapRecipes = new GelCapRecipes();
+    // }
 
     /**
      *  Test the getCasings method.
@@ -27,8 +27,8 @@ public class TestGelCapRecipes {
     @Test
     public void testCasings()
     {
-        assertTrue(gelCapRecipes.CASINGS.get("acheAway") instanceof GelatinCasing);
-        assertTrue(gelCapRecipes.CASINGS.get("dreamly") instanceof PlasticizerCasing);
+        assertTrue(GelCapRecipes.CASINGS.get("dreamly") instanceof GelatinCasing);
+        assertTrue(GelCapRecipes.CASINGS.get("acheAway") instanceof PlasticizerCasing);
     }
 
     /**
@@ -37,8 +37,8 @@ public class TestGelCapRecipes {
     @Test
     public void testSolutions()
     {
-        assertTrue(gelCapRecipes.SOLUTIONS.get("acheAway") instanceof SalineSolution);
-        assertTrue(gelCapRecipes.SOLUTIONS.get("dreamly") instanceof OilSolution);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("dreamly") instanceof OilSolution);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("acheAway") instanceof SalineSolution);
     }
 
     /**
@@ -47,7 +47,7 @@ public class TestGelCapRecipes {
     @Test
     public void testActives()
     {
-        assertTrue(gelCapRecipes.ACTIVES.get("acheAway") instanceof AcetaminophenActive);
-        assertTrue(gelCapRecipes.ACTIVES.get("dreamly") instanceof ZolpidemActive);
+        assertTrue(GelCapRecipes.ACTIVES.get("dreamly") instanceof AcetaminophenActive);
+        assertTrue(GelCapRecipes.ACTIVES.get("acheAway") instanceof ZolpidemActive);
     }
 }
