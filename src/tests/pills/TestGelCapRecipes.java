@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
  * @version 1.0
  */
 public class TestGelCapRecipes {
-    private GelCapRecipies gelCapRecipies;
+    private GelCapRecipes gelCapRecipes;
     
     /**
      *  Create a new test GelCapRecipies object before each test.
@@ -18,7 +18,7 @@ public class TestGelCapRecipes {
     @BeforeEach
     public void beforeEach()
     {
-        gelCapRecipies = new GelCapRecipies();
+        gelCapRecipes = new GelCapRecipes();
     }
 
     /**
@@ -27,8 +27,8 @@ public class TestGelCapRecipes {
     @Test
     public void testCasings()
     {
-        assertTrue(gelCapRecipies.CASINGS.get("acheAway") instanceof(GelatinCasing));
-        assertTrue(gelCapRecipies.CASINGS.get("dreamly") instanceof(PlasticizerCasing));
+        assertTrue(gelCapRecipes.CASINGS.get("acheAway") instanceof GelatinCasing);
+        assertTrue(gelCapRecipes.CASINGS.get("dreamly") instanceof PlasticizerCasing);
     }
 
     /**
@@ -37,8 +37,8 @@ public class TestGelCapRecipes {
     @Test
     public void testSolutions()
     {
-        assertTrue(gelCapRecipies.SOLUTIONS.get("acheAway") instanceof(SalineSolution));
-        assertTrue(gelCapRecipies.SOLUTIONS.get("dreamly") instanceof(OilSolution));
+        assertTrue(gelCapRecipes.SOLUTIONS.get("acheAway") instanceof SalineSolution);
+        assertTrue(gelCapRecipes.SOLUTIONS.get("dreamly") instanceof OilSolution);
     }
 
     /**
@@ -47,7 +47,7 @@ public class TestGelCapRecipes {
     @Test
     public void testActives()
     {
-        assertTrue(gelCapRecipies.ACTIVES.get("acheAway") instanceof(AcetaminophenActive));
-        assertTrue(gelCapRecipies.ACTIVES.get("dreamly") instanceof(ZolpidemActive));
+        assertTrue(gelCapRecipes.ACTIVES.get("acheAway") instanceof AcetaminophenActive);
+        assertTrue(gelCapRecipes.ACTIVES.get("dreamly") instanceof ZolpidemActive);
     }
 }
