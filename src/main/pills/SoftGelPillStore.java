@@ -37,7 +37,15 @@ public class SoftGelPillStore {
     }
 
     public void order() {
-
+        if (!this.isLoggedIn)
+        {
+            this.output.println("You must log in before you can order.\n");
+            return;
+        }
+        else
+        {
+            this.output.printf("Hello, %s. What would you like to order?\n", this.customerName);
+        }
     }
 
     public void logIn() {
@@ -48,6 +56,7 @@ public class SoftGelPillStore {
                 String inputName = this.input.nextLine();
                 this.output.println("What is your age?");
                 int inputAge = this.input.nextInt();
+                String newLine = this.input.nextLine();
                 for (int i = 0; i < inputName.length(); i++)
                 {
                     if (inputName.charAt(i) <= '0' || inputName.charAt(i) >= '9')
