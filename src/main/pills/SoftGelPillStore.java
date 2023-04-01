@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class SoftGelPillStore {
     private GelCapFactory factory;
     private ArrayList<GelCap> currentOrder;
@@ -39,6 +41,34 @@ public class SoftGelPillStore {
     }
 
     public void logIn() {
+        boolean valid = false;
+        while(valid){
+            try{
+                this.output.println("What is your name?");
+                String inputName = this.input.nextLine();
+                this.output.println("What is your age?");
+                int inputAge = this.input.nextInt();
+                for (int i = 0; i < inputName.length(); i++)
+                {
+                    if (inputName.charAt(i) <= '0' || inputName.charAt(i) >= '9')
+                    {
+                        valid = false;
+                    }
+                }
+                if (inputAge < 0)
+                {
+                    valid = false;
+                }
+                else
+                {
+                    valid = true;
+                    logIn(inputName, inputAge);
+                }
+            }
+            catch (Exception e){
+                valid = false;
+            }
+        }
 
     }
 
