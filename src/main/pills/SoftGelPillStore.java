@@ -19,6 +19,8 @@ public class SoftGelPillStore {
         this.input = input;
         this.output = output;
         this.isLoggedIn = false;  // Might not need this
+        this.customerAge = -1;
+        this.customerName = "";
     }
 
     public SoftGelPillStore(PrintStream output) {
