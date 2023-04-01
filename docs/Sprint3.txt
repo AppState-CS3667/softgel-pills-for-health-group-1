@@ -26,7 +26,17 @@ Assign backlog items: 3, 4, 7, 8
 _________________________________________________________________________
 
 Sprint Review:
-
+The branch orginzation made it much easier to tell what was being added into 
+main, but, overall, the sprint was successfull. We would all like to see some 
+improvement on communcation so we make sure we are all on the same page about 
+who is doing what.
 _________________________________________________________________________
 
 Sprint Retrospective:
+Good things we did: 
+          New branch naming scheme makes it really easy to tell what is going on
+Bad things we did: 
+          Proctastinated a little too much coming back from spring break
+Improvements for next sprint: 
+          Make sure we all know who is doing what
+          Avoid merging into main or making a pull request until certain to do so
