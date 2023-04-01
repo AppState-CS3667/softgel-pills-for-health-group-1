@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class TestSoftGelPillStore {
-    private final PrintStream OUTPUT = System.out;
+    private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
     
     private SoftGelPillStore obj;
@@ -25,7 +25,7 @@ public class TestSoftGelPillStore {
 	@BeforeEach
 	public void beforeEach()
 	{
-		obj = new SoftGelPillStore();
+		this.obj = new SoftGelPillStore();
 	}
 
     /**
@@ -35,24 +35,24 @@ public class TestSoftGelPillStore {
 	public void testConstructors()
 	{
 		// Test SoftGelPillStore(Scanner input, PrintStream output)
-        obj = new SoftGelPillStore(INPUT, OUTPUT);
-        assertEquals(obj.getInput(), INPUT);
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj = new SoftGelPillStore(INPUT, OUTPUT);
+        assertEquals(this.obj.getInput(), INPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
 
         // Test SoftGelPillStore(PrintStream output)
-        obj = new SoftGelPillStore(OUTPUT);
-        assertEquals(obj.getInput(), INPUT);
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj = new SoftGelPillStore(OUTPUT);
+        assertEquals(this.obj.getInput(), INPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
 
         // Test SoftGelPillStore(Scanner input)
-        obj = new SoftGelPillStore(INPUT);
-        assertEquals(obj.getInput(), INPUT);
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj = new SoftGelPillStore(INPUT);
+        assertEquals(this.obj.getInput(), INPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
 
         // Test oftGelPillStore()
-        obj = new SoftGelPillStore();
-        assertEquals(obj.getInput(), INPUT);
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj = new SoftGelPillStore();
+        assertEquals(this.obj.getInput(), INPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
 	}
 
     /**
@@ -61,7 +61,8 @@ public class TestSoftGelPillStore {
 	@Test
 	public void testGetInput()
 	{
-        assertEquals(obj.getInput(), INPUT);
+        this.obj.setInput(INPUT);
+        assertEquals(this.obj.getInput(), INPUT);
     }
 
     /**
@@ -70,7 +71,8 @@ public class TestSoftGelPillStore {
 	@Test
 	public void testGetOutput()
 	{
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj.setOutput(OUTPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
     }
 
     /**
@@ -79,8 +81,8 @@ public class TestSoftGelPillStore {
 	@Test
 	public void testSetInput()
 	{
-        obj.setInput(INPUT);
-        assertEquals(obj.getInput(), INPUT);
+        this.obj.setInput(INPUT);
+        assertEquals(this.obj.getInput(), INPUT);
     }
 
     /**
@@ -89,7 +91,7 @@ public class TestSoftGelPillStore {
 	@Test
 	public void testSetOutput()
 	{
-        obj.setOutput(OUTPUT);
-        assertEquals(obj.getOutput(), OUTPUT);
+        this.obj.setOutput(OUTPUT);
+        assertEquals(this.obj.getOutput(), OUTPUT);
     }
 }
