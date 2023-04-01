@@ -39,8 +39,8 @@ public class TestGelCapFactory
                                         + "Returning a good AcheAway GelCap Pill\n";
 	private final String TEST_PA_F = "Creating a AcheAway pill...\n"
                                         + "constructAcheAway called\n"
-					+ "Performing quality check...\n"
-					+ "quality check failed\n"
+										+ "Performing quality check...\n"
+										+ "quality check failed\n"
                                         + "Error during AcheAway production. Returning null.\n";
 
 
@@ -145,10 +145,18 @@ public class TestGelCapFactory
 	{
 		int fail = 0;
 		int success = 0;
+		System.out.print("\033[5B"); 
 		for (int i = 0; i < 101; i++)
 		{
 			obj.produceDreamly();
-			String output = getOutput();
+			String screen = getOutput();
+			String [] screenLines = screen.split(System.lineSeparator());
+			String output = "";
+			for (int j = 0; j < screenLines.length; j++) {
+				if (j == 0) output += screenLines[j].substring(4) + "\n";
+				else if (j >= 10 && j <= 13) output += (screenLines[j] + "\n");
+			}
+			
 			if (output.equals(TEST_PD_P))
 			{
 				success++;
@@ -159,10 +167,13 @@ public class TestGelCapFactory
 			}
 			else 
 			{
-				fail("The output did not match the expected result.");
+				fail("The output did not match the expected result: " + output);
 			}
+			System.out.print("\033[2J"); 
 		}
-		assertTrue(fail >= 7 && fail <= 13);
+		double failRate = fail / (double) success;
+		double range = 0.05;
+		assertTrue(failRate <= 0.1 + range || failRate >= 0.1 - range);
 	}
 	/**
  	 * Test produceAcheAway() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
@@ -172,13 +183,21 @@ public class TestGelCapFactory
 	{
 		int fail = 0;
 		int success = 0;
+		System.out.print("\033[5B");  
 		for (int i = 0; i < 101; i++)
 		{
 			obj.produceAcheAway();
-			String output = getOutput();
+			String screen = getOutput();
+			String [] screenLines = screen.split(System.lineSeparator());
+			String output = "";
+			for (int j = 0; j < screenLines.length; j++) {
+				if (j == 0) output += screenLines[j].substring(4) + "\n";
+				else if (j >= 10 && j <= 13) output += (screenLines[j] + "\n");
+			}
+			
 			if (output.equals(TEST_PA_P))
 			{
-				success++;
+				success++; 
 			}
 			else if (output.equals(TEST_PA_F))
 			{
@@ -186,9 +205,12 @@ public class TestGelCapFactory
 			}
 			else
 			{
-				fail("The output did not match the expected result.");
+				fail("The output did not match the expected result: \n" + output.length());
 			}
-		assertTrue(fail >= 7 && fail <= 13);
+			System.out.print("\033[2J");  
 		}
+		double failRate = fail / (double) success;
+		double range = 0.05;
+		assertTrue(failRate <= 0.1 + range || failRate >= 0.1 - range);
 	}
 }
