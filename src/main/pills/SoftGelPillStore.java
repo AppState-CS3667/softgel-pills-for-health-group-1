@@ -51,18 +51,18 @@ public class SoftGelPillStore {
     }
 
     public void setOutput(PrintStream output) {
-
+        this.output = output;
     }
 
     public void setInput(Scanner input) {
-
+        this.input = input;
     }
 
     public PrintStream getOutput() {
-
+        return this.output;
     }
 
     public Scanner getInput() {
-        
+        return this.input;
     }
 }
