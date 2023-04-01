@@ -14,19 +14,20 @@ public class SoftGelPillStore {
     private boolean isLggedIn;
 
     public SoftGelPillStore(Scanner input, PrintStream output) {
-
+        this.input = input;
+        this.output = output;
     }
 
     public SoftGelPillStore(PrintStream output) {
-
+        this(new Scanner(System.in), output);
     }
 
     public SoftGelPillStore(Scanner input) {
-
+        this(input, new PrintStream(System.out));
     }
 
     public SoftGelPillStore() {
-
+        this(new Scanner(System.in), new PrintStream(System.out));
     }
 
     public GelCap [] checkOut() {
