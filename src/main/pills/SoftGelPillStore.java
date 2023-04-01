@@ -13,7 +13,7 @@ public class SoftGelPillStore {
     private PrintStream output;
     private String customerName;
     private int customerAge;
-    private boolean isLggedIn;
+    private boolean isLoggedIn;
 
     public SoftGelPillStore(Scanner input, PrintStream output) {
         this.input = input;
@@ -73,7 +73,17 @@ public class SoftGelPillStore {
     }
 
     public void logIn(String name, int age) {
-
+        this.customerName = name;
+        this.customerAge = age;
+        if (age < 18)
+        {
+            this.factory = new ChildGelCapFactory();
+        }
+        else{
+            this.factory = new AdultGelCapFactory();
+        }
+        this.isLoggedIn = true;
+        this.currentOrder = new ArrayList<GelCap>();
     }
 
     public boolean logOut() {
