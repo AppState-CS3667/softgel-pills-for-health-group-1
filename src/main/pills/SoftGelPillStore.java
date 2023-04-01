@@ -34,7 +34,23 @@ public class SoftGelPillStore {
     }
 
     public GelCap [] checkOut() {
-
+        if (!this.isLoggedIn || this.currentOrder.size() == 0)
+        {
+            this.output.println("You need to log in and order before you can checkout\n");
+            return null;
+        }
+        else
+        {
+            this.output.println("Thanks for shopping!\nHere is your order\n");
+            for (GelCap g : this.currentOrder)
+            {
+                this.output.println(g.toString());
+            }
+            GelCap orderArray[] = new GelCap[this.currentOrder.size()];
+            orderArray = this.currentOrder.toArray(orderArray);
+            this.currentOrder.clear();
+            return orderArray;
+        }
     }
 
     public void order() {
