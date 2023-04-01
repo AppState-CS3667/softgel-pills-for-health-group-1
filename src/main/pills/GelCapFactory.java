@@ -47,7 +47,7 @@ public abstract class GelCapFactory {
  	 */ 	
     private final boolean qualityCheck() {
         System.out.print("Performing quality check...\n");
-        if (Math.random() >= 0.9) {
+        if (Math.random() < 0.9) {
             System.out.print("quality check passed\n");
             return true;
         }

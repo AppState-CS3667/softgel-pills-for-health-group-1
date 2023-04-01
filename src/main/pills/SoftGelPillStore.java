@@ -67,11 +67,12 @@ public class SoftGelPillStore {
         this.output.println("Options:\n1) Dreamly\n2) AcheAway\n3) Cancel");
         while (!valid)
         {
+            String userInput = this.input.nextLine();
             try
             {
-                int userInput = this.input.nextInt();
-                this.input.nextLine();
-                if (userInput != '1' || userInput != '2' || userInput != '3')
+                int userChoice = Integer.parseInt(userInput);
+                
+                if (userChoice != 1 && userChoice != 2 && userChoice != 3)
                 {
                     valid = false;
                     this.output.println("Please enter a 1, 2, or 3\n");
@@ -79,13 +80,15 @@ public class SoftGelPillStore {
                 else
                 {
                     valid = true;
-                    if (userInput == '1')
+                    if (userChoice == 1)
                     {
-                        this.currentOrder.add(this.factory.produceDreamly());
+                        Dreamly pendingOrder = this.factory.produceDreamly();
+                        if (pendingOrder != null) this.currentOrder.add(pendingOrder);
                     }
-                    if (userInput == '2')
+                    else if (userChoice == 2)
                     {
-                        this.currentOrder.add(this.factory.produceAcheAway());
+                        AcheAway pendingOrder = this.factory.produceAcheAway();
+                        if (pendingOrder != null) this.currentOrder.add(pendingOrder);
                     }
                     else
                     {
@@ -93,7 +96,7 @@ public class SoftGelPillStore {
                     }
                 }
             }
-            catch (Exception e)
+            catch (NumberFormatException e)
             {
                 valid = false;
                 this.output.println("Please enter a 1, 2, or 3\n");
@@ -157,31 +160,19 @@ public class SoftGelPillStore {
         else if(this.currentOrder.size() > 0)
         {
             this.output.println("You have an order that you have not checked out. Are you sure you want to log out? (y/N)");
-            try
-            {
-                String userInput = this.input.nextLine();
-                if (userInput != "y")
-                {  
-                    this.isLoggedIn = false;
-                    this.currentOrder = null;
-                    this.customerName = "";
-                    this.customerAge = -1;
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
+
+            String userInput = this.input.nextLine();
+            if (!userInput.equals("y"))
+            {  
                 return false;
             }
+
         }
-        else
-        {
-            return false;
-        }
+        this.isLoggedIn = false;
+        this.currentOrder = null;
+        this.customerName = "";
+        this.customerAge = -1;
+        return true;
     }
 
     public void setOutput(PrintStream output) {
