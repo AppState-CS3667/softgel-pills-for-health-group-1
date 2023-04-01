@@ -11,9 +11,9 @@ Sprint Backlog
 _________________________________________________________________________
 
 Subteam A: Thayer Ackerman, Alex Somer  
-Assign backlog items: 1, 4, 5
+Assign backlog items: 1, 4-5
 Subteam B: Patricia Garcia, May Jiang
-Assign backlog items: 2, 3
+Assign backlog items: 2-3
 _________________________________________________________________________
 
 Sprint Review:
