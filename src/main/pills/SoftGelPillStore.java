@@ -18,6 +18,7 @@ public class SoftGelPillStore {
     public SoftGelPillStore(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
+        this.isLoggedIn = false;  // Might not need this
     }
 
     public SoftGelPillStore(PrintStream output) {
@@ -37,6 +38,7 @@ public class SoftGelPillStore {
     }
 
     public void order() {
+        boolean valid = false;
         if (!this.isLoggedIn)
         {
             this.output.println("You must log in before you can order.\n");
@@ -46,11 +48,46 @@ public class SoftGelPillStore {
         {
             this.output.printf("Hello, %s. What would you like to order?\n", this.customerName);
         }
+        this.output.println("Options:\n1) Dreamly\n2) AcheAway\n3) Cancel");
+        while (!valid)
+        {
+            try
+            {
+                int userInput = this.input.nextInt();
+                String newLine = this.input.nextLine();
+                if (userInput != '1' || userInput != '2' || userInput != '3')
+                {
+                    valid = false;
+                    this.output.println("Please enter a 1, 2, or 3\n");
+                }
+                else
+                {
+                    valid = true;
+                    if (userInput == '1')
+                    {
+                        this.currentOrder.add(this.factory.produceDreamly());
+                    }
+                    if (userInput == '2')
+                    {
+                        this.currentOrder.add(this.factory.produceAcheAway());
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                valid = false;
+                this.output.println("Please enter a 1, 2, or 3\n");
+            }
+        }
     }
 
     public void logIn() {
         boolean valid = false;
-        while(valid){
+        while(!valid){
             try{
                 this.output.println("What is your name?");
                 String inputName = this.input.nextLine();
