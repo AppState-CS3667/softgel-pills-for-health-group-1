@@ -70,7 +70,7 @@ public class SoftGelPillStore {
             try
             {
                 int userInput = this.input.nextInt();
-                String newLine = this.input.nextLine();
+                this.input.nextLine();
                 if (userInput != '1' || userInput != '2' || userInput != '3')
                 {
                     valid = false;
@@ -109,7 +109,7 @@ public class SoftGelPillStore {
                 String inputName = this.input.nextLine();
                 this.output.println("What is your age?");
                 int inputAge = this.input.nextInt();
-                String newLine = this.input.nextLine();
+                this.input.nextLine();
                 for (int i = 0; i < inputName.length(); i++)
                 {
                     if (inputName.charAt(i) <= '0' || inputName.charAt(i) >= '9')
@@ -149,7 +149,39 @@ public class SoftGelPillStore {
     }
 
     public boolean logOut() {
-
+        if (!this.isLoggedIn)
+        {
+            this.output.println("You are not logged in.");
+            return false;
+        }
+        else if(this.currentOrder.size() > 0)
+        {
+            this.output.println("You have an order that you have not checked out. Are you sure you want to log out? (y/N)");
+            try
+            {
+                String userInput = this.input.nextLine();
+                if (userInput != "y")
+                {  
+                    this.isLoggedIn = false;
+                    this.currentOrder = null;
+                    this.customerName = "";
+                    this.customerAge = -1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void setOutput(PrintStream output) {
