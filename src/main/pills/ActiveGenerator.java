@@ -5,6 +5,7 @@ package pills;
  * @author Subteam A
  * @version 1.0
  */
-public interface ActiveGenerator {
+public interface ActiveGenerator 
+{
     public String generateActive(double amount);
 }

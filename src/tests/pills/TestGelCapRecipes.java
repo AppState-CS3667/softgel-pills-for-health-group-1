@@ -2,14 +2,14 @@ package pills;
 
 import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 /**
  * This is the TestGelCapRecipes class, which tests the GelCapRecpies class.
  * @author Subteam A
  * @version 1.0
  */
-public class TestGelCapRecipes {
+public class TestGelCapRecipes 
+{
     // private GelCapRecipes gelCapRecipes;
     
     // /**

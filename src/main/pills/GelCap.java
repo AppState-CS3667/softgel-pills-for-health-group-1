@@ -22,8 +22,12 @@ public abstract class GelCap
 	 * @param strength the strength of the GelCap
 	 * @param size the size of the GelCap
 	 * @param color the color of the GelCap
+	 * @param casing
+	 * @param solution
+	 * @param active
 	 */
-	public GelCap(String name, double strength, double size, String color, String casing, String solution, String active)
+	public GelCap(String name, double strength, double size, String color, 
+				  String casing, String solution, String active)
 	{
 		this.name = name;
 		this.strength = strength;

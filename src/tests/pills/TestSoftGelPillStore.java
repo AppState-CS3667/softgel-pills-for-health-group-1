@@ -1,19 +1,17 @@
 package pills;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
  * This is the SoftGelPillStore Test.
- * author Subteam A
+ * @author Subteam A
  * @version 1.0
  */
-public class TestSoftGelPillStore {
+public class TestSoftGelPillStore 
+{
     private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
     
@@ -42,7 +40,7 @@ public class TestSoftGelPillStore {
         // // // Test SoftGelPillStore(Scanner input)
         this.obj = new SoftGelPillStore(INPUT);
         assertEquals(this.obj.getInput(), INPUT);
-        // assertEquals(this.obj.getOutput(), new PrintStream(System.out));  // no idea how to fix this
+        // assertEquals(this.obj.getOutput(), new PrintStream(System.out));
 
         // // Test SoftGelPillStore(PrintStream output)
         this.obj = new SoftGelPillStore(OUTPUT);

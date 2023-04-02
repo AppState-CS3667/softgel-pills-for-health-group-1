@@ -4,9 +4,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner6;
-
-public class SoftGelPillStore {
+public class SoftGelPillStore 
+{
     private GelCapFactory factory;
     private ArrayList<GelCap> currentOrder;
     private Scanner input;
@@ -15,27 +14,32 @@ public class SoftGelPillStore {
     private int customerAge;
     private boolean isLoggedIn;
 
-    public SoftGelPillStore(Scanner input, PrintStream output) {
+    public SoftGelPillStore(Scanner input, PrintStream output) 
+    {
         this.input = input;
         this.output = output;
-        this.isLoggedIn = false;  // Might not need this
+        this.isLoggedIn = false;
         this.customerAge = -1;
         this.customerName = "";
     }
 
-    public SoftGelPillStore(PrintStream output) {
+    public SoftGelPillStore(PrintStream output) 
+    {
         this(new Scanner(System.in), output);
     }
 
-    public SoftGelPillStore(Scanner input) {
+    public SoftGelPillStore(Scanner input) 
+    {
         this(input, new PrintStream(System.out));
     }
 
-    public SoftGelPillStore() {
+    public SoftGelPillStore() 
+    {
         this(new Scanner(System.in), new PrintStream(System.out));
     }
 
-    public GelCap [] checkOut() {
+    public GelCap[] checkOut() 
+    {
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
             this.output.println("You need to log in and order before you can checkout\n");
@@ -55,7 +59,8 @@ public class SoftGelPillStore {
         }
     }
 
-    public void order() {
+    public void order() 
+    {
         boolean valid = false;
         if (!this.isLoggedIn)
         {
@@ -85,12 +90,18 @@ public class SoftGelPillStore {
                     if (userChoice == 1)
                     {
                         Dreamly pendingOrder = this.factory.produceDreamly();
-                        if (pendingOrder != null) this.currentOrder.add(pendingOrder);
+                        if (pendingOrder != null)
+                        { 
+                            this.currentOrder.add(pendingOrder);
+                        }
                     }
                     else if (userChoice == 2)
                     {
                         AcheAway pendingOrder = this.factory.produceAcheAway();
-                        if (pendingOrder != null) this.currentOrder.add(pendingOrder);
+                        if (pendingOrder != null)
+                        {
+                            this.currentOrder.add(pendingOrder);
+                        }
                     }
                     else
                     {
@@ -106,62 +117,71 @@ public class SoftGelPillStore {
         }
     }
 
-    public void logIn() {
+    public void logIn() 
+    {
         boolean valid = false;
-        while(!valid){
-            try{
+        while (!valid)
+        {
+            try
+            {
                 this.output.println("What is your name?");
-                String inputName = this.input.nextLine();
+                String customerName = this.input.nextLine();
                 this.output.println("What is your age?");
-                int inputAge = this.input.nextInt();
+                this.customerAge = this.input.nextInt();
                 this.input.nextLine();
-                for (int i = 0; i < inputName.length(); i++)
+                for (int i = 0; i < customerName.length(); i++)
                 {
-                    if (inputName.charAt(i) <= '0' || inputName.charAt(i) >= '9')
+                    if (customerName.charAt(i) <= '0' || customerName.charAt(i) >= '9')
                     {
                         valid = false;
                     }
                 }
-                if (inputAge < 0)
+                if (customerAge < 0)
                 {
                     valid = false;
                 }
                 else
                 {
                     valid = true;
-                    logIn(inputName, inputAge);
+                    logIn(customerName, customerAge);
                 }
             }
-            catch (Exception e){
+            catch (Exception e)
+            {
                 valid = false;
             }
         }
 
     }
 
-    public void logIn(String name, int age) {
+    public void logIn(String name, int age) 
+    {
         this.customerName = name;
         this.customerAge = age;
-        if (age < 18)
+        final int ADULTAGE = 18;
+        if (age < ADULTAGE)
         {
             this.factory = new ChildGelCapFactory();
         }
-        else{
+        else
+        {
             this.factory = new AdultGelCapFactory();
         }
         this.isLoggedIn = true;
         this.currentOrder = new ArrayList<GelCap>();
     }
 
-    public boolean logOut() {
+    public boolean logOut() 
+    {
         if (!this.isLoggedIn)
         {
             this.output.println("You are not logged in.");
             return false;
         }
-        else if(this.currentOrder.size() > 0)
+        else if (this.currentOrder.size() > 0)
         {
-            this.output.println("You have an order that you have not checked out. Are you sure you want to log out? (y/N)");
+            this.output.println("You have an order that you have not checked out. "
+                                + "Are you sure you want to log out? (y/N)");
 
             String userInput = this.input.nextLine();
             if (!userInput.equals("y"))
@@ -177,19 +197,23 @@ public class SoftGelPillStore {
         return true;
     }
 
-    public void setOutput(PrintStream output) {
+    public void setOutput(PrintStream output) 
+    {
         this.output = output;
     }
 
-    public void setInput(Scanner input) {
+    public void setInput(Scanner input) 
+    {
         this.input = input;
     }
 
-    public PrintStream getOutput() {
+    public PrintStream getOutput() 
+    {
         return this.output;
     }
 
-    public Scanner getInput() {
+    public Scanner getInput() 
+    {
         return this.input;
     }
 }

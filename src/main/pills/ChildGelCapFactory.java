@@ -1,6 +1,7 @@
 package pills;
 
-public class ChildGelCapFactory extends GelCapFactory{
+public class ChildGelCapFactory extends GelCapFactory
+{
     /**
  	 * The constructDreamly method.
      * @param casing
@@ -9,7 +10,9 @@ public class ChildGelCapFactory extends GelCapFactory{
  	 * @return a Dreamly object 
  	 */ 
     @Override
-    protected Dreamly constructDreamly(String casing, String solution, String active) {
+    protected Dreamly constructDreamly(String casing, String solution, 
+                                       String active) 
+    {
         System.out.print("Constructing child version of Dreamly");
         return new ChildDreamly(casing, solution, active);
     }
@@ -22,7 +25,9 @@ public class ChildGelCapFactory extends GelCapFactory{
     * @return a AcheAway object 
     */ 
     @Override
-    protected AcheAway constructAcheAway(String casing, String solution, String active) {
+    protected AcheAway constructAcheAway(String casing, String solution, 
+                                         String active) 
+    {
         System.out.print("Constructing child version of AcheAway");
         return new ChildAcheAway(casing, solution, active);
     }
@@ -32,7 +37,8 @@ public class ChildGelCapFactory extends GelCapFactory{
     * @return a double
     */ 
     @Override
-    protected double getDreamlyStrength() {
+    protected double getDreamlyStrength() 
+    {
         return ChildDreamly.STRENGTH;
     }
   
@@ -41,7 +47,8 @@ public class ChildGelCapFactory extends GelCapFactory{
      * @return a double
      */ 
     @Override
-    protected double getAcheAwayStrength() {
+    protected double getAcheAwayStrength() 
+    {
         return ChildAcheAway.STRENGTH;
     }
 }

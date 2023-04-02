@@ -5,6 +5,7 @@ package pills;
  * @author Subteam B
  * @version 1.0
  */
-public interface CasingGenerator {
+public interface CasingGenerator 
+{
     public String generateCasing();
 }

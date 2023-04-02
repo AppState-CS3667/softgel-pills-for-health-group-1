@@ -11,10 +11,13 @@ import java.io.PrintStream;
  * @author Subteam B
  * @version 1.0
  */
-public class TestActive {
+public class TestActive 
+{
     private final String TEST_ACETAMINOPHEN_RETURN = "acetaminophen";
-    private final String TEST_ACETAMINOPHEN_PRINT = "Acetylating para-aminophenol with acetic anhydride\n"
-                                                    + "Carefully extracting 5.00mg of acetaminophen\n"
+    private final String TEST_ACETAMINOPHEN_PRINT = "Acetylating para-aminophenol"
+                                                    + " with acetic anhydride\n"
+                                                    + "Carefully extracting 5.00mg "
+                                                    + "of acetaminophen\n"
                                                     + "Returning 5.00mg of acetaminophen\n";
     private final String TEST_ZOLPIDEM_RETURN = "zolpidem";
     private final String TEST_ZOLPIDEM_PRINT = "Opening secure storage area...\n"
@@ -66,7 +69,8 @@ public class TestActive {
     @Test
     public void testAcetaminophenActive()
     {
-        String result = AActive.generateActive(5.00);
+        final double AMOUNT = 5.00;
+        String result = AActive.generateActive(AMOUNT);
         assertEquals(TEST_ACETAMINOPHEN_RETURN, result);
         assertEquals(TEST_ACETAMINOPHEN_PRINT, getOutput());
     }
@@ -76,7 +80,8 @@ public class TestActive {
     @Test
     public void testZolpidemActive()
     {
-        String result = ZActive.generateActive(2.20);
+        final double AMOUNT = 2.20;
+        String result = ZActive.generateActive(AMOUNT);
         assertEquals(TEST_ZOLPIDEM_RETURN, result);
         assertEquals(TEST_ZOLPIDEM_PRINT, getOutput());
     }

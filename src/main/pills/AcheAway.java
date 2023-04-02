@@ -12,8 +12,12 @@ public abstract class AcheAway extends GelCap
      * @param strength the strength of the AcheAway object
      * @param size the size of the AcheAway object
      * @param color the color of AcheAway object
+     * @param casing
+     * @param solution
+     * @param active
      */
-    public AcheAway(double strength, double size, String color, String casing, String solution, String active)  
+    public AcheAway(double strength, double size, String color, 
+                    String casing, String solution, String active)
     {
         super("AcheAway", strength, size, color, casing, solution, active);
     }

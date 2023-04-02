@@ -2,12 +2,8 @@ package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;	
 
 /**
  * This is the TestAcheAway class, which tests the AcheAway class.
@@ -45,8 +41,12 @@ public class TestAcheAway
 	private ChildAcheAway childAcheAway; 
 	private AdultAcheAway adultAcheAway; 
 	
-	private class AcheAwayMock extends AcheAway{
-		AcheAwayMock(double strength, double size, String color, String casing, String solution, String active){
+	private class AcheAwayMock extends AcheAway
+    {
+		AcheAwayMock(double strength, double size, 
+                     String color, String casing, 
+                     String solution, String active)
+        {
 			super(strength, size, color, casing, solution, active);
 		}
 	}
@@ -58,7 +58,9 @@ public class TestAcheAway
     @BeforeEach
     public void beforeEach() 
     {   
-        this.AcheAway = new AcheAwayMock(CORRECT_STRENGTH, CORRECT_SIZE, CORRECT_COLOR, CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE);
+        this.AcheAway = new AcheAwayMock(CORRECT_STRENGTH, CORRECT_SIZE, 
+                                         CORRECT_COLOR, CORRECT_CASING, 
+                                         CORRECT_SOLUTION, CORRECT_ACTIVE);
     	this.adultAcheAway = new AdultAcheAway(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
 		this.childAcheAway = new ChildAcheAway(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
 	}
@@ -69,9 +71,18 @@ public class TestAcheAway
     @Test
     public void testToString() 
     {
-        assertEquals(String.format(TOSTRING_FSTRING, AcheAway.getStrength(), AcheAway.getName()), AcheAway.toString());
-        assertEquals(String.format(TOSTRING_FSTRING, adultAcheAway.getStrength(), adultAcheAway.getName()), adultAcheAway.toString());
-        assertEquals(String.format(TOSTRING_FSTRING, childAcheAway.getStrength(), childAcheAway.getName()), childAcheAway.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   AcheAway.getStrength(), 
+                                   AcheAway.getName()), 
+                                   AcheAway.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   adultAcheAway.getStrength(), 
+                                   adultAcheAway.getName()), 
+                                   adultAcheAway.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   childAcheAway.getStrength(), 
+                                   childAcheAway.getName()), 
+                                   childAcheAway.toString());
     }
 
     /**
@@ -80,9 +91,33 @@ public class TestAcheAway
     @Test
     public void testDescription() 
     {
-        assertEquals(String.format(DESCRIPTION_FSTRING, AcheAway.getName(), AcheAway.getStrength(), AcheAway.getSize(), AcheAway.getColor(), AcheAway.getCasing(), AcheAway.getSolution(), AcheAway.getActive()), AcheAway.description());
-        assertEquals(String.format(DESCRIPTION_FSTRING,  adultAcheAway.getName(), adultAcheAway.getStrength(), adultAcheAway.getSize(), adultAcheAway.getColor(), adultAcheAway.getCasing(), adultAcheAway.getSolution(), adultAcheAway.getActive()), adultAcheAway.description());
-        assertEquals(String.format(DESCRIPTION_FSTRING,  childAcheAway.getName(), childAcheAway.getStrength(), childAcheAway.getSize(), childAcheAway.getColor(), childAcheAway.getCasing(), childAcheAway.getSolution(), childAcheAway.getActive()), childAcheAway.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  
+                                   AcheAway.getName(), 
+                                   AcheAway.getStrength(), 
+                                   AcheAway.getSize(), 
+                                   AcheAway.getColor(), 
+                                   AcheAway.getCasing(),
+                                   AcheAway.getSolution(), 
+                                   AcheAway.getActive()), 
+                                   AcheAway.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  
+                                   adultAcheAway.getName(), 
+                                   adultAcheAway.getStrength(),
+                                   adultAcheAway.getSize(), 
+                                   adultAcheAway.getColor(), 
+                                   adultAcheAway.getCasing(), 
+                                   adultAcheAway.getSolution(), 
+                                   adultAcheAway.getActive()), 
+                                   adultAcheAway.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  
+                                   childAcheAway.getName(), 
+                                   childAcheAway.getStrength(), 
+                                   childAcheAway.getSize(), 
+                                   childAcheAway.getColor(), 
+                                   childAcheAway.getCasing(), 
+                                   childAcheAway.getSolution(), 
+                                   childAcheAway.getActive()), 
+                                   childAcheAway.description());
     }
 
     /**

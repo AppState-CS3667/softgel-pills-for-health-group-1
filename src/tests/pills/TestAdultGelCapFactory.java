@@ -14,7 +14,8 @@ import java.io.PrintStream;
  * @author Subteam A
  * @version 1.0
  */
-public class TestAdultGelCapFactory {
+public class TestAdultGelCapFactory 
+{
     private final String TEST_CASING = "Test Casing";
     private final String TEST_SOLUTION = "Test Solution";
     private final String TEST_ACTIVE = "Test Active";
@@ -29,7 +30,7 @@ public class TestAdultGelCapFactory {
     private AdultGelCapFactory obj;
 
     /**
-	 * Flushes data from PrintStream into baos
+	 * Flushes data from PrintStream into baos.
 	 * @return the output with return characters stripped
 	 */
 	private String getOutput()
@@ -63,7 +64,8 @@ public class TestAdultGelCapFactory {
      * Test the constructDreamly method.
      */
     @Test
-    public void testConstructDreamly() {
+    public void testConstructDreamly() 
+    {
         Dreamly result = obj.constructDreamly(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
         assertEquals(CORRECT_DREAMLY_PRINT, getOutput());
         assertTrue(result instanceof AdultDreamly);
@@ -73,7 +75,8 @@ public class TestAdultGelCapFactory {
      * Test the constructAcheAway method.
      */
     @Test
-    public void testConstructAcheAway() {
+    public void testConstructAcheAway() 
+    {
         AcheAway result = obj.constructAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
         assertEquals(CORRECT_ACHEAWAY_PRINT, getOutput());
         assertTrue(result instanceof AdultAcheAway);
@@ -83,7 +86,8 @@ public class TestAdultGelCapFactory {
      * Test the getDreamlyStrength method.
      */
     @Test
-    public void testGetDreamlyStrength() {
+    public void testGetDreamlyStrength() 
+    {
         assertEquals(obj.getDreamlyStrength(), CORRECT_DREAMLY_STRENGTH);
     }
 
@@ -91,7 +95,8 @@ public class TestAdultGelCapFactory {
      * Test the getAcheAwayStrength method.
      */
     @Test
-    public void testGetAcheAwayStrength() {
+    public void testGetAcheAwayStrength() 
+    {
         assertEquals(obj.getAcheAwayStrength(), CORRECT_ACHEAWAY_STRENGTH);
     }
 }

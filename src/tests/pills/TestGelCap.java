@@ -1,9 +1,8 @@
 package pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
+
 
 /**
  * This is the TestGelCap class, which tests the GelCap class.
@@ -32,8 +31,14 @@ public class TestGelCap
 	     * @param strength the strength of the GelCap mock class
 	     * @param size the size of the GelCap mock class
 	     * @param color the color of the GelCap mock class
+         * @param casing the type of casing
+         * @param solution
+         * @param active
          */
-        GelCapMock(String name, double strength, double size, String color, String casing, String solution, String active)
+        GelCapMock(String name, double strength, 
+                   double size, String color, 
+                   String casing, String solution, 
+                   String active)
         {
             super(name, strength, size, color, casing, solution, active);
         } 
@@ -45,7 +50,10 @@ public class TestGelCap
     @BeforeEach
     public void beforeEach()
     {
-        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, TEST_SIZE, TEST_COLOR, TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.obj = new GelCapMock(TEST_NAME, TEST_STRENGTH, 
+                                  TEST_SIZE, TEST_COLOR, 
+                                  TEST_CASING, TEST_SOLUTION, 
+                                  TEST_ACTIVE);
     }
 
 

@@ -1,5 +1,4 @@
 package pills;
-import pills.AcheAway;
 
 
 /**
@@ -13,7 +12,7 @@ public class AdultAcheAway extends AcheAway
 	static final double SIZE = 8.50;
 	static final String COLOR = "white";
 
-	/**
+	/*
  	 * Constructor for AdultAcheAway
  	 * @param casing
  	 * @param solution

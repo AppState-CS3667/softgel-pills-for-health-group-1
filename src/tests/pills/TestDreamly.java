@@ -2,12 +2,7 @@ package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;	
 
 /**
  * This is the TestDreamly class, which tests the Dreamly class.
@@ -45,8 +40,11 @@ public class TestDreamly
 	private ChildDreamly childDreamly; 
 	private AdultDreamly adultDreamly; 
 	
-	private class DreamlyMock extends Dreamly{
-		DreamlyMock(double strength, double size, String color, String casing, String solution, String active){
+	private class DreamlyMock extends Dreamly
+    {
+		DreamlyMock(double strength, double size, String color, 
+                    String casing, String solution, String active)
+        {
 			super(strength, size, color, casing, solution, active);
 		}
 	}
@@ -58,7 +56,9 @@ public class TestDreamly
     @BeforeEach
     public void beforeEach() 
     {   
-        this.dreamly = new DreamlyMock(CORRECT_STRENGTH, CORRECT_SIZE, CORRECT_COLOR, CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE);
+        this.dreamly = new DreamlyMock(CORRECT_STRENGTH, CORRECT_SIZE, 
+                                       CORRECT_COLOR, CORRECT_CASING, 
+                                       CORRECT_SOLUTION, CORRECT_ACTIVE);
     	this.adultDreamly = new AdultDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
 		this.childDreamly = new ChildDreamly(CORRECT_CASING, CORRECT_SOLUTION, CORRECT_ACTIVE); 
 	}
@@ -69,9 +69,18 @@ public class TestDreamly
     @Test
     public void testToString() 
     {
-        assertEquals(String.format(TOSTRING_FSTRING, dreamly.getStrength(), dreamly.getName()), dreamly.toString());
-        assertEquals(String.format(TOSTRING_FSTRING, adultDreamly.getStrength(), adultDreamly.getName()), adultDreamly.toString());
-        assertEquals(String.format(TOSTRING_FSTRING, childDreamly.getStrength(), childDreamly.getName()), childDreamly.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   dreamly.getStrength(), 
+                                   dreamly.getName()), 
+                                   dreamly.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   adultDreamly.getStrength(), 
+                                   adultDreamly.getName()), 
+                                   adultDreamly.toString());
+        assertEquals(String.format(TOSTRING_FSTRING, 
+                                   childDreamly.getStrength(), 
+                                   childDreamly.getName()), 
+                                   childDreamly.toString());
     }
 
     /**
@@ -80,9 +89,33 @@ public class TestDreamly
     @Test
     public void testDescription() 
     {
-        assertEquals(String.format(DESCRIPTION_FSTRING, dreamly.getName(), dreamly.getStrength(), dreamly.getSize(), dreamly.getColor(), dreamly.getCasing(), dreamly.getSolution(), dreamly.getActive()), dreamly.description());
-        assertEquals(String.format(DESCRIPTION_FSTRING,  adultDreamly.getName(), adultDreamly.getStrength(), adultDreamly.getSize(), adultDreamly.getColor(), adultDreamly.getCasing(), adultDreamly.getSolution(), adultDreamly.getActive()), adultDreamly.description());
-        assertEquals(String.format(DESCRIPTION_FSTRING,  childDreamly.getName(), childDreamly.getStrength(), childDreamly.getSize(), childDreamly.getColor(), childDreamly.getCasing(), childDreamly.getSolution(), childDreamly.getActive()), childDreamly.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING, 
+                                   dreamly.getName(), 
+                                   dreamly.getStrength(), 
+                                   dreamly.getSize(), 
+                                   dreamly.getColor(), 
+                                   dreamly.getCasing(), 
+                                   dreamly.getSolution(), 
+                                   dreamly.getActive()), 
+                                   dreamly.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  
+                                   adultDreamly.getName(), 
+                                   adultDreamly.getStrength(), 
+                                   adultDreamly.getSize(), 
+                                   adultDreamly.getColor(),
+                                   adultDreamly.getCasing(), 
+                                   adultDreamly.getSolution(), 
+                                   adultDreamly.getActive()), 
+                                   adultDreamly.description());
+        assertEquals(String.format(DESCRIPTION_FSTRING,  
+                                   childDreamly.getName(), 
+                                   childDreamly.getStrength(), 
+                                   childDreamly.getSize(), 
+                                   childDreamly.getColor(), 
+                                   childDreamly.getCasing(), 
+                                   childDreamly.getSolution(), 
+                                   childDreamly.getActive()), 
+                                   childDreamly.description());
     }
 
     /**

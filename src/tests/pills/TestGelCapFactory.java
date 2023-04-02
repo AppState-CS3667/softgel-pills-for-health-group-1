@@ -2,7 +2,6 @@ package pills;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.io.ByteArrayOutputStream;
@@ -10,18 +9,18 @@ import java.io.PrintStream;
 
 /**
  * This is the GelCapFactory Test.
- * author Subteam B
+ * @author Subteam B
  * @version 1.0
  */
 
 public class TestGelCapFactory
 {
-	private final String TEST_A_CASING = "Gelatin";
-	private final String TEST_D_CASING = "Plasticizer";
-	private final String TEST_A_SOLUTION = "Saline";
-	private final String TEST_D_SOLUTION = "Oil";
-	private final String TEST_A_ACTIVE = "Acetaminophen";
-	private final String TEST_D_ACTIVE = "Zolpidem";
+	// private final String TEST_A_CASING = "Gelatin";
+	// private final String TEST_D_CASING = "Plasticizer";
+	// private final String TEST_A_SOLUTION = "Saline";
+	// private final String TEST_D_SOLUTION = "Oil";
+	// private final String TEST_A_ACTIVE = "Acetaminophen";
+	// private final String TEST_D_ACTIVE = "Zolpidem";
 	private final String TEST_PD_P = "Creating a Dreamly pill...\n"
 					+ "constructDreamly called\n"
 					+ "Performing quality check...\n"
@@ -54,7 +53,8 @@ public class TestGelCapFactory
 	private class GelCapFactoryMock extends GelCapFactory
 	{
 		/**
-		 * Updating abstract method constructDreamly for GelCapFactoryMock to print called statements.
+		 * Updating abstract method constructDreamly for GelCapFactoryMock to print 
+		 * called statements.
 		 * @param casing
 		 * @param solution
 		 * @param active
@@ -68,7 +68,8 @@ public class TestGelCapFactory
 			return null;
 		}
 		/**
-		 * Updating abstract method constructAcheAway for GelCapFactoryMock to print called statements.
+		 * Updating abstract method constructAcheAway for GelCapFactoryMock to print 
+		 * called statements.
 		 * @param casing
 		 * @param solution
 		 * @param active
@@ -83,7 +84,8 @@ public class TestGelCapFactory
 		}
 		
 		/**
-		 * Updating abstract method getDreamlyStrength for GelCapFactoryMock to print called statements.
+		 * Updating abstract method getDreamlyStrength for GelCapFactoryMock to 
+		 * print called statements.
 		 * @return default value of 0
 		 */
 		@Override
@@ -94,7 +96,8 @@ public class TestGelCapFactory
 		}
 		
 		/**
-		 * Updating abstract method getAcheAwayStrength for GelCapFactoryMock to print called statements.
+		 * Updating abstract method getAcheAwayStrength for GelCapFactoryMock to 
+		 * print called statements.
 		 * @return default value of 0
 		 */
 		@Override
@@ -107,7 +110,7 @@ public class TestGelCapFactory
 	}
 
 	/**
-	 * Flushes data from PrintStream into baos
+	 * Flushes data from PrintStream into baos.
 	 * @return the output with return characters stripped
 	 */
 	private String getOutput()
@@ -138,23 +141,32 @@ public class TestGelCapFactory
 	} 
 
 	/**
- 	 * Test produceDreamly() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
+ 	 * Test produceDreamly() method, whether the printstatements are correct and
+	 * whether the chances of qualitycheck is around 10%.
  	 */
 	@Test
 	public void testProduceDreamly()
 	{
 		int fail = 0;
 		int success = 0;
-		System.out.print("\033[5B"); 
-		for (int i = 0; i < 101; i++)
+		System.out.print("\033[5B");
+		final int AMOUNT = 101; 
+		for (int i = 0; i < AMOUNT; i++)
 		{
 			obj.produceDreamly();
 			String screen = getOutput();
-			String [] screenLines = screen.split(System.lineSeparator());
+			String[] screenLines = screen.split(System.lineSeparator());
 			String output = "";
-			for (int j = 0; j < screenLines.length; j++) {
-				if (j == 0) output += screenLines[j].substring(4) + "\n";
-				else if (j >= 10 && j <= 13) output += (screenLines[j] + "\n");
+			for (int j = 0; j < screenLines.length; j++)
+			{
+				if (j == 0) 
+				{
+					output += screenLines[j].substring(4) + "\n";
+				}
+				else if (j >= 10 && j <= 13)
+				{ 
+					output += (screenLines[j] + "\n");
+				}
 			}
 			
 			if (output.equals(TEST_PD_P))
@@ -172,11 +184,13 @@ public class TestGelCapFactory
 			System.out.print("\033[2J"); 
 		}
 		double failRate = fail / (double) success;
-		double range = 0.05;
-		assertTrue(failRate <= 0.1 + range || failRate >= 0.1 - range);
+		final double RANGE = 0.05;
+		final double LOWER = 0.1;
+		assertTrue(failRate <= LOWER + RANGE || failRate >= LOWER - RANGE);
 	}
 	/**
- 	 * Test produceAcheAway() method, whether the printstatements are correct and whether the chances of qualitycheck is around 10%.
+ 	 * Test produceAcheAway() method, whether the printstatements are correct and
+	 * whether the chances of qualitycheck is around 10%.
  	 */
 	@Test
 	public void testProduceAcheAway()
@@ -184,15 +198,23 @@ public class TestGelCapFactory
 		int fail = 0;
 		int success = 0;
 		System.out.print("\033[5B");  
-		for (int i = 0; i < 101; i++)
+		final int AMOUNT = 101;
+		for (int i = 0; i < AMOUNT; i++)
 		{
 			obj.produceAcheAway();
 			String screen = getOutput();
-			String [] screenLines = screen.split(System.lineSeparator());
+			String[] screenLines = screen.split(System.lineSeparator());
 			String output = "";
-			for (int j = 0; j < screenLines.length; j++) {
-				if (j == 0) output += screenLines[j].substring(4) + "\n";
-				else if (j >= 10 && j <= 13) output += (screenLines[j] + "\n");
+			for (int j = 0; j < screenLines.length; j++) 
+			{
+				if (j == 0) 
+				{
+					output += screenLines[j].substring(4) + "\n";
+				}
+				else if (j >= 10 && j <= 13)
+				{
+					output += (screenLines[j] + "\n");
+				}
 			}
 			
 			if (output.equals(TEST_PA_P))
@@ -210,7 +232,8 @@ public class TestGelCapFactory
 			System.out.print("\033[2J");  
 		}
 		double failRate = fail / (double) success;
-		double range = 0.05;
-		assertTrue(failRate <= 0.1 + range || failRate >= 0.1 - range);
+		final double RANGE = 0.05;
+		final double LOWER = 0.1;
+		assertTrue(failRate <= LOWER + RANGE || failRate >= LOWER - RANGE);
 	}
 }

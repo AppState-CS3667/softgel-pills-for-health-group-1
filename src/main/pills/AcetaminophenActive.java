@@ -5,11 +5,16 @@ package pills;
  * @author Subteam A
  * @version 1.0
  */
-public class AcetaminophenActive implements ActiveGenerator {
+public class AcetaminophenActive implements ActiveGenerator 
+{
 
     @Override
-    public String generateActive(double amount) {
-        String output = String.format("Acetylating para-aminophenol with acetic anhydride\nCarefully extracting %.2fmg of acetaminophen\nReturning %.2fmg of acetaminophen\n", amount, amount);
+    public String generateActive(double amount) 
+    {
+        String output = String.format("Acetylating para-aminophenol" 
+        + " with acetic anhydride\n" 
+        + "Carefully extracting %.2fmg of acetaminophen\n" 
+        + "Returning %.2fmg of acetaminophen\n", amount, amount);
         System.out.print(output);
         return "acetaminophen";
     }

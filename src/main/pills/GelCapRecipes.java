@@ -2,7 +2,8 @@ package pills;
 
 import java.util.HashMap;
 
-public class GelCapRecipes {
+public class GelCapRecipes 
+{
     public static final HashMap<String, CasingGenerator> CASINGS = getCasings();
     public static final HashMap<String, SolutionGenerator> SOLUTIONS = getSolutions();
     public static final HashMap<String, ActiveGenerator> ACTIVES = getActives();

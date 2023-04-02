@@ -1,7 +1,4 @@
 package pills;
-import pills.AcheAway;
-
-
 
 
 /**
@@ -16,7 +13,7 @@ public class ChildAcheAway extends AcheAway
 	static final String COLOR = "cyan";
 	
 
-	/**
+	/*
 	 * Constructor for ChildAcheAway
 	 * @param casing
 	 * @param solution

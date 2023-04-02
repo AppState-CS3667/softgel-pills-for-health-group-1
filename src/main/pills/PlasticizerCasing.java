@@ -5,11 +5,14 @@ package pills;
  * @author Subteam A
  * @version 1.0
  */
-public class PlasticizerCasing implements CasingGenerator{
+public class PlasticizerCasing implements CasingGenerator
+{
     
     @Override
-    public String generateCasing() {
-        String output = String.format("Mixing starch, water, opacifier, and glycerin...\nShaping...\nReturning plasticizer casing...\n");
+    public String generateCasing() 
+    {
+        String output = String.format("Mixing starch, water, opacifier, and glycerin...\n"
+                                      + "Shaping...\nReturning plasticizer casing...\n");
         System.out.print(output);
         return "plasticizer";
     }

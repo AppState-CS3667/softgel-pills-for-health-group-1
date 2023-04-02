@@ -14,11 +14,15 @@ import java.io.PrintStream;
  * @author Subteam A
  * @version 1.0
  */
-public class TestSolution {
+public class TestSolution
+{
     private final String TEST_OIL_RETURN = "oil";
-    private final String TEST_OIL_PRINT = "Extracting pill-sized quantity of oil...\nReturning oil solution\n";
+    private final String TEST_OIL_PRINT = "Extracting pill-sized quantity of oil..."
+                                        + "\nReturning oil solution\n";
     private final String TEST_SALINE_RETURN = "saline";
-    private final String TEST_SALINE_PRINT = "Mixing salt and water...\nVerifying ratio...\nReturning saline solution\n";
+    private final String TEST_SALINE_PRINT = "Mixing salt and water...\n"
+                                             + "Verifying ratio...\n"
+                                             + "Returning saline solution\n";
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
