@@ -28,7 +28,7 @@ public class AdultGelCapFactory extends GelCapFactory
     protected AcheAway constructAcheAway(String casing, String solution, 
                                          String active) 
     {
-        System.out.print("Constructing adult version of AcheAway");
+        System.out.print("Constructing adult version of AcheAway\n");
         return new AdultAcheAway(casing, solution, active);
     }
 
