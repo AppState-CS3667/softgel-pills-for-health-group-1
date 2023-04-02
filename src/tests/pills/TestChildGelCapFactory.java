@@ -21,8 +21,8 @@ public class TestChildGelCapFactory
     private final String TEST_ACTIVE = "Test Active";
     private final double CORRECT_DREAMLY_STRENGTH = 1.25;
     private final double CORRECT_ACHEAWAY_STRENGTH = 415.00;
-    private final String CORRECT_DREAMLY_PRINT = "Constructing child version of Dreamly";
-    private final String CORRECT_ACHEAWAY_PRINT = "Constructing child version of AcheAway";
+    private final String CORRECT_DREAMLY_PRINT = "Constructing child version of Dreamly\n";
+    private final String CORRECT_ACHEAWAY_PRINT = "Constructing child version of AcheAway\n";
     
     private ByteArrayOutputStream baos;
 	private PrintStream oldOut;

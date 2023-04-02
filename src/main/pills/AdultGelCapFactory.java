@@ -13,7 +13,7 @@ public class AdultGelCapFactory extends GelCapFactory
     protected Dreamly constructDreamly(String casing, String solution, 
                                        String active) 
     {
-        System.out.print("Constructing adult version of Dreamly");
+        System.out.print("Constructing adult version of Dreamly\n");
         return new AdultDreamly(casing, solution, active);
     }
 

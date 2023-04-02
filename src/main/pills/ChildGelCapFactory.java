@@ -28,7 +28,7 @@ public class ChildGelCapFactory extends GelCapFactory
     protected AcheAway constructAcheAway(String casing, String solution, 
                                          String active) 
     {
-        System.out.print("Constructing child version of AcheAway");
+        System.out.print("Constructing child version of AcheAway\n");
         return new ChildAcheAway(casing, solution, active);
     }
   
