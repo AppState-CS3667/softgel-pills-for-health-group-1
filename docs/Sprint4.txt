@@ -17,7 +17,15 @@ Assign backlog items: 2-3
 _________________________________________________________________________
 
 Sprint Review:
-
+Overall this was our fastest sprint and it was a little rushed, but besides 
+that, most things turned out successful.
 _________________________________________________________________________
 
 Sprint Retrospective:
+Good things we did: 
+          Combining related tasks on similar branches to make debugging easier
+Bad things we did: 
+          Lack of communication on where work was being done and/or too much work directly on main
+Improvements for next sprint: 
+          Make sure we all where changes are being made
+          Avoid merging into main or making a pull request until certain to do so

@@ -30,24 +30,24 @@ public class SoftGelPillStore
 
     public SoftGelPillStore(Scanner input) 
     {
-        this(input, new PrintStream(System.out));
+        this(input, System.out);
     }
 
     public SoftGelPillStore() 
     {
-        this(new Scanner(System.in), new PrintStream(System.out));
+        this(new Scanner(System.in), System.out);
     }
 
     public GelCap[] checkOut() 
     {
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
-            this.output.println("You need to log in and order before you can checkout\n");
+            this.output.print("You need to log in and order before you can checkout\n");
             return null;
         }
         else
         {
-            this.output.println("Thanks for shopping!\nHere is your order\n");
+            this.output.print("Thanks for shopping!\nHere is your order\n");
             for (GelCap g : this.currentOrder)
             {
                 this.output.println(g.toString());
@@ -64,14 +64,14 @@ public class SoftGelPillStore
         boolean valid = false;
         if (!this.isLoggedIn)
         {
-            this.output.println("You must log in before you can order.\n");
+            this.output.print("You must log in before you can order.\n");
             return;
         }
         else
         {
             this.output.printf("Hello, %s. What would you like to order?\n", this.customerName);
         }
-        this.output.println("Options:\n1) Dreamly\n2) AcheAway\n3) Cancel");
+        this.output.print("Options:\n1) Dreamly\n2) AcheAway\n3) Cancel\n");
         while (!valid)
         {
             String userInput = this.input.nextLine();
@@ -82,7 +82,7 @@ public class SoftGelPillStore
                 if (userChoice != 1 && userChoice != 2 && userChoice != 3)
                 {
                     valid = false;
-                    this.output.println("Please enter a 1, 2, or 3\n");
+                    this.output.print("Please enter a 1, 2, or 3\n");
                 }
                 else
                 {
@@ -112,7 +112,7 @@ public class SoftGelPillStore
             catch (NumberFormatException e)
             {
                 valid = false;
-                this.output.println("Please enter a 1, 2, or 3\n");
+                this.output.print("Please enter a 1, 2, or 3\n");
             }
         }
     }
