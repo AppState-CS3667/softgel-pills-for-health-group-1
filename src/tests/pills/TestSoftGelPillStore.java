@@ -20,9 +20,13 @@ public class TestSoftGelPillStore
     private final String TEST_LOGIN_INPUT = "Tester\n50\n";
     private final String TEST_LOGIN_OUTPUT = "What is your name?\nWhat is your age?\n";
     private final String TEST_LOGOUT_INPUT = "y\n";
-    private final String TEST_CHECKOUT_OUTPUT = "You need to log in and order before you can checkout\n";
+    private final String TEST_CHECKOUT_OUTPUT = "You need to log in and order" 
+                                                + " before you can checkout\n";
     private final String TEST_ORDER_INPUT = "asdf\n3\n";
-    private final String TEST_ORDER_OUTPUT = "Hello, Tester. What would you like to order?\nOptions:\n1) Dreamly\n2) AcheAway\n3) Cancel\nPlease enter a 1, 2, or 3\n";
+    private final String TEST_ORDER_OUTPUT = "Hello, Tester. What would you like to" 
+                                                + " order?\nOptions:\n1) Dreamly\n2)" 
+                                                + " AcheAway\n3) Cancel\nPlease" 
+                                                + " enter a 1, 2, or 3\n";
     
     private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
