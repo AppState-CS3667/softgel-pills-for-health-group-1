@@ -1,7 +1,29 @@
 package pills;
 
+/**
+ * This is the ChildGelCapFactory singleton class that extends GelCapFactory.
+ * @author Subteam B
+ * @version 1.0
+ */
 public class ChildGelCapFactory extends GelCapFactory
 {
+    private static ChildGelCapFactory childGelCapFactoryInst;
+
+    /**
+ 	 * The getInstance method.
+ 	 * @return a ChildGelCapFactory object 
+ 	 */
+    public static ChildGelCapFactory getInstance() {
+        if (childGelCapFactoryInst == null) {
+			synchronized(ChildGelCapFactory.class) {
+				if (childGelCapFactoryInst == null) {
+                    childGelCapFactoryInst = new ChildGelCapFactory();
+                }
+            }
+        }	
+		return childGelCapFactoryInst;
+    }
+    
     /**
  	 * The constructDreamly method.
      * @param casing
