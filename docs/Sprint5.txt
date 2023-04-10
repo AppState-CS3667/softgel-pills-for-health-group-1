@@ -1,0 +1,34 @@
+Sprint Planning: 
+________________________________________________________________________
+Sprint Backlog - Complete by 4/18
+
+1. Add the UnicastRemoteObject, change generators to use the UnicastRemoteObject and 
+    Remote (implemented proxy pattern)
+2. Change generator tests to account for the proxy pattern changes
+3. Change adult and child gelcap factories to use the singleton design pattern
+4. Change gelcap factory tests to account for the singleton pattern changes
+5. Change GelCapRecipes and its tests to account for the singleton and proxy patterns
+6. Add NullAcheAway and NullDreamly, change GelCap, store, AcheAway, and Dreamly to use 
+    the null object pattern
+7. Change the GelCap, store, AcheAway, and Dreamly tests to account for the null 
+    object pattern
+
+_________________________________________________________________________
+
+Subteam A: Alex Somer, May Jiang 
+Assign backlog items: 1, 2, and 5
+Subteam B: Thayer Ackerman, Patricia Garcia 
+Assign backlog items: 3, 4, 6, and 7
+_________________________________________________________________________
+
+Sprint Review:
+
+_________________________________________________________________________
+
+Sprint Retrospective:
+Good things we did: 
+          
+Bad things we did: 
+          
+Improvements for next sprint: 
+          

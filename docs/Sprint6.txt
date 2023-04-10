@@ -1,0 +1,30 @@
+Sprint Planning: 
+________________________________________________________________________
+Sprint Backlog - Complete by 4/30
+
+1. Add the abstract inspector
+2. Add the consistency, strength, and failure inspectors
+3. Test the inspectors
+4. Change the store class to account for the inspector
+5. Change the store tests to account for the inspector
+6. Create the Demo
+
+_________________________________________________________________________
+
+Subteam A: Alex Somer, May Jiang 
+Assign backlog items: 1, 2, and 6
+Subteam B: Thayer Ackerman, Patricia Garcia 
+Assign backlog items: 3, 4, and 6
+_________________________________________________________________________
+
+Sprint Review:
+
+_________________________________________________________________________
+
+Sprint Retrospective:
+Good things we did: 
+          
+Bad things we did: 
+          
+Improvements for next sprint: 
+          
