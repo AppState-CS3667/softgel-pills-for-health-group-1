@@ -10,6 +10,13 @@ public class AdultGelCapFactory extends GelCapFactory
     private static AdultGelCapFactory adultGelCapFactoryInst;
 
     /**
+ 	 * The private constructor.
+ 	 */
+    private AdultGelCapFactory() {
+        super();
+    }
+
+    /**
  	 * The getInstance method.
  	 * @return a AdultGelCapFactory object 
  	 */

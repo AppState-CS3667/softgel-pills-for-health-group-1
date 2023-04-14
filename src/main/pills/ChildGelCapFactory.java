@@ -10,6 +10,13 @@ public class ChildGelCapFactory extends GelCapFactory
     private static ChildGelCapFactory childGelCapFactoryInst;
 
     /**
+ 	 * The private constructor.
+ 	 */
+    private ChildGelCapFactory() {
+        super();
+    }
+
+    /**
  	 * The getInstance method.
  	 * @return a ChildGelCapFactory object 
  	 */
