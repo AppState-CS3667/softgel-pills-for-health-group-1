@@ -27,8 +27,8 @@ public abstract class GelCapFactory
         else 
         {
             System.out.print("Error during Dreamly production."
-                             + " Returning null.\n");
-            return null;
+                             + " Returning a null.\n");
+            return new NullDreamly();
         }
     }
 
@@ -53,7 +53,7 @@ public abstract class GelCapFactory
         {
             System.out.print("Error during AcheAway production."
                              + " Returning null.\n");
-            return null;
+            return new NullAcheAway();
         }
     }
 
