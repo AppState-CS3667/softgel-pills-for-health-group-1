@@ -11,7 +11,7 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator 
 {
-    public ZolpidemActive(int port) throws RemoteException
+    protected ZolpidemActive(int port) throws RemoteException
     {
         super(port);
     }
