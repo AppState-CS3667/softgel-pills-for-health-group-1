@@ -11,7 +11,10 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class AcetaminophenActive extends UnicastRemoteObject  implements ActiveGenerator 
 {
-    public AcetaminophenActive() throws RemoteException {};
+    public AcetaminophenActive(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateActive(double amount) 

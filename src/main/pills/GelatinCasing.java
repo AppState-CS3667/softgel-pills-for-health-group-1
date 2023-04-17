@@ -6,7 +6,10 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class GelatinCasing extends UnicastRemoteObject implements CasingGenerator
 {
-    public GelatinCasing() throws RemoteException {};
+    protected GelatinCasing(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateCasing() throws RemoteException

@@ -11,7 +11,10 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class PlasticizerCasing extends UnicastRemoteObject  implements CasingGenerator
 {
-    public PlasticizerCasing() throws RemoteException {};
+    public PlasticizerCasing(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateCasing() 

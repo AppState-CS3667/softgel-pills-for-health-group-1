@@ -11,7 +11,10 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class SalineSolution extends UnicastRemoteObject implements SolutionGenerator
 {
-    public SalineSolution() throws RemoteException {};
+    public SalineSolution(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateSolution() 

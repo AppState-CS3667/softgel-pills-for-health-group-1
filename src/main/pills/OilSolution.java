@@ -11,7 +11,10 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class OilSolution extends UnicastRemoteObject implements SolutionGenerator
 {
-    public OilSolution() throws RemoteException {};
+    public OilSolution(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateSolution() 
