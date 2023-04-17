@@ -1,12 +1,17 @@
 package pills;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * This is the AcetaminophenActive class that implements ActiveGenerator.
  * @author Subteam A
  * @version 1.0
  */
-public class AcetaminophenActive implements ActiveGenerator 
+public class AcetaminophenActive extends UnicastRemoteObject  implements ActiveGenerator 
 {
+    public AcetaminophenActive() throws RemoteException {};
 
     @Override
     public String generateActive(double amount) 

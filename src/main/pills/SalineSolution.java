@@ -1,13 +1,18 @@
 package pills;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * This is the SalineSolution class that implements SolutionGenerator.
  * @author Subteam B
  * @version 1.0
  */
-public class SalineSolution implements SolutionGenerator
+public class SalineSolution extends UnicastRemoteObject implements SolutionGenerator
 {
-    
+    public SalineSolution() throws RemoteException {};
+
     @Override
     public String generateSolution() 
     {
