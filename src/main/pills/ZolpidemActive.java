@@ -1,12 +1,20 @@
 package pills;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * This is the ZolpidemActive class that implements ActiveGenerator.
  * @author Subteam A
  * @version 1.0
  */
-public class ZolpidemActive implements ActiveGenerator 
+public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator 
 {
+    protected ZolpidemActive(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
     public String generateActive(double amount) 

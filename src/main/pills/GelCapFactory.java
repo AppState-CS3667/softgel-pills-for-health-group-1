@@ -1,5 +1,7 @@
 package pills;
 
+import java.rmi.RemoteException;
+
 /**
  *GelCapFactory class.
  *@author Subteam A
@@ -14,11 +16,18 @@ public abstract class GelCapFactory
     public final Dreamly produceDreamly() 
     {
         System.out.print("Creating a Dreamly pill...\n");
-        Dreamly result = constructDreamly(
-            GelCapRecipes.CASINGS.get("dreamly").generateCasing(),   
-            GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
-            GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
-
+        Dreamly result;
+        try
+        {
+            result = constructDreamly(
+                GelCapRecipes.CASINGS.get("dreamly").generateCasing(),   
+                GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
+                GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
+        }
+        catch (RemoteException e)
+        {
+            return null;
+        }
         if (qualityCheck()) 
         {
             System.out.print("Returning a good Dreamly GelCap Pill\n");
@@ -39,11 +48,18 @@ public abstract class GelCapFactory
     public final AcheAway produceAcheAway()
     {
         System.out.print("Creating a AcheAway pill...\n");
-        AcheAway result = constructAcheAway(
-            GelCapRecipes.CASINGS.get("acheAway").generateCasing(), 
-            GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
-            GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
-            
+        AcheAway result;
+        try
+        {
+            result = constructAcheAway(
+                GelCapRecipes.CASINGS.get("acheAway").generateCasing(), 
+                GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
+                GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
+        }
+        catch (RemoteException e)
+        {
+            return null;
+        }
         if (qualityCheck()) 
         {
             System.out.print("Returning a good AcheAway GelCap Pill\n");
