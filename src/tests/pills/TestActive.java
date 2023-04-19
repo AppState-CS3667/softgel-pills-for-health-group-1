@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.rmi.RemoteException;
 /**
  * This is the TestActive class, a class for testing the Acetaminophen and 
  * ZolpidemActive solution classes.
@@ -52,8 +53,16 @@ public class TestActive
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
-        AActive = new AcetaminophenActive();
-        ZActive = new ZolpidemActive();
+        try
+        {
+            AActive = new AcetaminophenActive(1094);
+            ZActive = new ZolpidemActive(1093);
+        }
+        catch (RemoteException e)
+        {
+            AActive = null;
+            ZActive = null;
+        }
     }
     /**
      * Reset ouput after each test.
