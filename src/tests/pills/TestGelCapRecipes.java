@@ -27,8 +27,8 @@ public class TestGelCapRecipes
     @Test
     public void testCasings()
     {
-        assertTrue(GelCapRecipes.CASINGS.get("dreamly") instanceof GelatinCasing);
-        assertTrue(GelCapRecipes.CASINGS.get("acheAway") instanceof PlasticizerCasing);
+        assertTrue(GelCapRecipes.CASINGS.get("dreamly") instanceof CasingGenerator);
+        assertTrue(GelCapRecipes.CASINGS.get("acheAway") instanceof CasingGenerator);
     }
 
     /**
@@ -37,8 +37,8 @@ public class TestGelCapRecipes
     @Test
     public void testSolutions()
     {
-        assertTrue(GelCapRecipes.SOLUTIONS.get("dreamly") instanceof OilSolution);
-        assertTrue(GelCapRecipes.SOLUTIONS.get("acheAway") instanceof SalineSolution);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("dreamly") instanceof SolutionGenerator);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("acheAway") instanceof SolutionGenerator);
     }
 
     /**
@@ -47,7 +47,7 @@ public class TestGelCapRecipes
     @Test
     public void testActives()
     {
-        assertTrue(GelCapRecipes.ACTIVES.get("dreamly") instanceof AcetaminophenActive);
-        assertTrue(GelCapRecipes.ACTIVES.get("acheAway") instanceof ZolpidemActive);
+        assertTrue(GelCapRecipes.ACTIVES.get("dreamly") instanceof ActiveGenerator);
+        assertTrue(GelCapRecipes.ACTIVES.get("acheAway") instanceof ActiveGenerator);
     }
 }
