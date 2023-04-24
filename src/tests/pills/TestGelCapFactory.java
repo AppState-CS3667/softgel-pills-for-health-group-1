@@ -120,7 +120,9 @@ public class TestGelCapFactory
 	private String getOutput()
 	{
 		System.out.flush();
-		return baos.toString().replaceAll("\r", "");
+		String output = baos.toString().replaceAll("\r", "");
+		baos.reset();
+		return output;
 	}
 
 	/**
@@ -185,7 +187,7 @@ public class TestGelCapFactory
 	public void testProduceAcheAway()
 	{
 		int fail = 0;
-		int success = 0;  
+		int success = 0;   
 		final int AMOUNT = 101;
 		for (int i = 0; i < AMOUNT; i++)
 		{
@@ -204,10 +206,10 @@ public class TestGelCapFactory
 			{
 				fail("The output did not match the expected result: \n" + screen);
 			}
+			double failRate = fail / (double) success;
+			final double RANGE = 0.05;
+			final double LOWER = 0.1;
+			assertTrue(failRate <= LOWER + RANGE || failRate >= LOWER - RANGE);
 		}
-		double failRate = fail / (double) success;
-		final double RANGE = 0.05;
-		final double LOWER = 0.1;
-		assertTrue(failRate <= LOWER + RANGE || failRate >= LOWER - RANGE);
-	}
+	}	
 }
