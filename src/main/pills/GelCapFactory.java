@@ -22,11 +22,13 @@ public abstract class GelCapFactory
             result = constructDreamly(
                 GelCapRecipes.CASINGS.get("dreamly").generateCasing(),   
                 GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
-                GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
+                GelCapRecipes.ACTIVES.get("dreamly").generateActive(getDreamlyStrength()));
         }
         catch (RemoteException e)
         {
-            return null;
+            System.out.print("Error during Dreamly production."
+                             + " Returning null.\n");
+            return new NullDreamly();
         }
         if (qualityCheck()) 
         {
@@ -36,7 +38,7 @@ public abstract class GelCapFactory
         else 
         {
             System.out.print("Error during Dreamly production."
-                             + " Returning a null.\n");
+                             + " Returning null.\n");
             return new NullDreamly();
         }
     }
@@ -53,12 +55,14 @@ public abstract class GelCapFactory
         {
             result = constructAcheAway(
                 GelCapRecipes.CASINGS.get("acheAway").generateCasing(), 
-                GelCapRecipes.SOLUTIONS.get("dreamly").generateSolution(), 
-                GelCapRecipes.ACTIVES.get("dreamly").generateActive(getAcheAwayStrength()));
+                GelCapRecipes.SOLUTIONS.get("acheAway").generateSolution(), 
+                GelCapRecipes.ACTIVES.get("acheAway").generateActive(getAcheAwayStrength()));
         }
         catch (RemoteException e)
         {
-            return null;
+            System.out.print("Error during AcheAway production."
+                             + " Returning null.\n");
+            return new NullAcheAway();
         }
         if (qualityCheck()) 
         {

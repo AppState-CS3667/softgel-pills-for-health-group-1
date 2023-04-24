@@ -22,21 +22,25 @@ public class TestGelCapFactory
 	// private final String TEST_A_ACTIVE = "Acetaminophen";
 	// private final String TEST_D_ACTIVE = "Zolpidem";
 	private final String TEST_PD_P = "Creating a Dreamly pill...\n"
-					+ "constructDreamly called\n"
-					+ "Performing quality check...\n"
-					+ "quality check passed\n"
-					+ "Returning a good Dreamly GelCap Pill\n";
+										+ "getDreamlyStrength called\n"
+										+ "constructDreamly called\n"
+										+ "Performing quality check...\n"
+										+ "quality check passed\n"
+										+ "Returning a good Dreamly GelCap Pill\n";
 	private final String TEST_PD_F = "Creating a Dreamly pill...\n"
+										+ "getDreamlyStrength called\n"
                                         + "constructDreamly called\n" 
-					+ "Performing quality check...\n"
-					+ "quality check failed\n"
+										+ "Performing quality check...\n"
+										+ "quality check failed\n"
                                         + "Error during Dreamly production. Returning null.\n";
 	private final String TEST_PA_P = "Creating a AcheAway pill...\n"
+										+ "getAcheAwayStrength called\n"
                                         + "constructAcheAway called\n"
-					+ "Performing quality check...\n"
-					+ "quality check passed\n"
+										+ "Performing quality check...\n"
+										+ "quality check passed\n"
                                         + "Returning a good AcheAway GelCap Pill\n";
 	private final String TEST_PA_F = "Creating a AcheAway pill...\n"
+										+ "getAcheAwayStrength called\n"
                                         + "constructAcheAway called\n"
 										+ "Performing quality check...\n"
 										+ "quality check failed\n"
@@ -149,39 +153,24 @@ public class TestGelCapFactory
 	{
 		int fail = 0;
 		int success = 0;
-		System.out.print("\033[5B");
 		final int AMOUNT = 101; 
 		for (int i = 0; i < AMOUNT; i++)
 		{
 			obj.produceDreamly();
 			String screen = getOutput();
-			String[] screenLines = screen.split(System.lineSeparator());
-			String output = "";
-			for (int j = 0; j < screenLines.length; j++)
-			{
-				if (j == 0) 
-				{
-					output += screenLines[j].substring(4) + "\n";
-				}
-				else if (j >= 10 && j <= 13)
-				{ 
-					output += (screenLines[j] + "\n");
-				}
-			}
 			
-			if (output.equals(TEST_PD_P))
+			if (screen.equals(TEST_PD_P))
 			{
 				success++;
 			}
-			else if (output.equals(TEST_PD_F))
+			else if (screen.equals(TEST_PD_F))
 			{
 				fail++;
 			}
 			else 
 			{
-				fail("The output did not match the expected result: " + output);
+				fail("The output did not match the expected result: \n" + screen);
 			}
-			System.out.print("\033[2J"); 
 		}
 		double failRate = fail / (double) success;
 		final double RANGE = 0.05;
@@ -196,40 +185,25 @@ public class TestGelCapFactory
 	public void testProduceAcheAway()
 	{
 		int fail = 0;
-		int success = 0;
-		System.out.print("\033[5B");  
+		int success = 0;  
 		final int AMOUNT = 101;
 		for (int i = 0; i < AMOUNT; i++)
 		{
 			obj.produceAcheAway();
 			String screen = getOutput();
-			String[] screenLines = screen.split(System.lineSeparator());
-			String output = "";
-			for (int j = 0; j < screenLines.length; j++) 
-			{
-				if (j == 0) 
-				{
-					output += screenLines[j].substring(4) + "\n";
-				}
-				else if (j >= 10 && j <= 13)
-				{
-					output += (screenLines[j] + "\n");
-				}
-			}
-			
-			if (output.equals(TEST_PA_P))
+
+			if (screen.equals(TEST_PA_P))
 			{
 				success++; 
 			}
-			else if (output.equals(TEST_PA_F))
+			else if (screen.equals(TEST_PA_F))
 			{
 				fail++;
 			}
 			else
 			{
-				fail("The output did not match the expected result: \n" + output.length());
+				fail("The output did not match the expected result: \n" + screen);
 			}
-			System.out.print("\033[2J");  
 		}
 		double failRate = fail / (double) success;
 		final double RANGE = 0.05;
