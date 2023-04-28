@@ -2,7 +2,13 @@ package pills;
 public class ConsistencyInspector extends Inspector{
     private int adultCount;
     private int childCount;
-    @Override
+    public int getAdultCount(){
+		return adultCount; 
+	}
+	public int getChildCount(){
+		return childCount; 
+	}
+	@Override
     public void inspect(AdultAcheAway e){
    		adultCount += 1;  
 	}
@@ -19,12 +25,15 @@ public class ConsistencyInspector extends Inspector{
 		childCount += 1; 
 	}
     public String report(){
-		return "Adult Pills : " + adultCount + "Child Pills : " + childCount; 
+		return "Adult Pills : " + getAdultCount() + "Child Pills : " + getChildCount(); 
 	}
-    public void reset(){ adultCount = 0; childCount = 0;}
+    public void reset(){
+		this.adultCount = 0; 
+		this.childCount = 0;
+	}
     public boolean soFarSoConsistent(){
 		boolean check = true; 
-		if(adultCount > 0 && childCount > 0){
+		if(getAdultCount() > 0 && getChildCount() > 0){
 			check = false; 
 		}  
 		return check; 
