@@ -28,6 +28,8 @@ public class TestSoftGelPillStore
                                                 + " AcheAway\n3) Cancel\nPlease" 
                                                 + " enter a 1, 2, or 3\n";
     
+    private final String TEST_DS_ORDER_INPUT = "asdf\n1\n3\n";
+    private final String TEST_AA_ORDER_INPUT = "asdf\n2\n3\n";
     private final double TEST_DREAMLY_STRENGTH = 1.25;
     private final double TEST_ACHEAWAY_STRENGTH = 415.00;
     private final PrintStream OUTPUT = new PrintStream(System.out);
@@ -152,6 +154,10 @@ public class TestSoftGelPillStore
 	@Test 
 	public void testDreamlyStrength()
 	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE);
+        	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        	this.obj.setOutput(new PrintStream(baos));
+        	this.obj.setInput(new Scanner(TEST_DS_ORDER_INPUT));
 		assertEquals(obj.getDreamlyStrength(), TEST_DREAMLY_STRENGTH);
 	}
 	
@@ -162,6 +168,10 @@ public class TestSoftGelPillStore
 	@Test
 	public void testAcheAwayStrength()
 	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                this.obj.setOutput(new PrintStream(baos));
+                this.obj.setInput(new Scanner(TEST_AA_ORDER_INPUT));
 		assertEquals(obj.getAcheAwayStrength(), TEST_ACHEAWAY_STRENGTH);
 	}
 	
