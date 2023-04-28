@@ -40,6 +40,8 @@ public class SoftGelPillStore
 
     public GelCap[] checkOut() 
     {
+        // Changes still need to be done here
+        
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
             this.output.print("You need to log in and order before you can checkout\n");
