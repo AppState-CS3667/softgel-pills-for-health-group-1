@@ -48,10 +48,7 @@ public class SoftGelPillStore
         else
         {
             this.output.print("Thanks for shopping!\nHere is your order\n");
-            for (GelCap g : this.currentOrder)
-            {
-                this.output.println(g.toString());
-            }
+            printCurrentOrder();
             GelCap orderArray[] = new GelCap[this.currentOrder.size()];
             orderArray = this.currentOrder.toArray(orderArray);
             this.currentOrder.clear();
@@ -219,17 +216,22 @@ public class SoftGelPillStore
 
     public double getDreamlyStrength()
     {
+        // Use StrengthInspector somewhere in here
         return 1.0;
     }
 
     public double getAcheAwayStrength()
     {
+        // Use StrengthInspector somewhere in here
         return 1.0;
     }
 
     public void printCurrentOrder()
     {
-
+        for (GelCap g : this.currentOrder)
+        {
+            this.output.println(g.toString());
+        }
     }
 
     private boolean tooBigFailRate(double failRate)
