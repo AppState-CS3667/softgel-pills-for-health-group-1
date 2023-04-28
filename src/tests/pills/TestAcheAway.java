@@ -49,6 +49,11 @@ public class TestAcheAway
         {
 			super(strength, size, color, casing, solution, active);
 		}
+
+        @Override
+        public void accept(Inspector insp) {
+            System.out.println("Inspecting...");
+        }
 	}
 
 
