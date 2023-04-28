@@ -15,4 +15,7 @@ public class NullAcheAway extends AcheAway
 	{
 		super(-99.99, -99.99, "No Color", "No Casing", "No Solution", "No Active");
 	}
+	public void accept(Inspector insp){
+        insp.inspect(this);
+    }
 }
