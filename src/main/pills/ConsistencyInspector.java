@@ -25,7 +25,7 @@ public class ConsistencyInspector extends Inspector{
 		childCount += 1; 
 	}
     public String report(){
-		return "Adult Pills : " + getAdultCount() + "Child Pills : " + getChildCount(); 
+		return "Consistency Report\n\tAdult Pills : " + getAdultCount() + "\n\tChild Pills : " + getChildCount(); 
 	}
     public void reset(){
 		this.adultCount = 0; 
