@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import pills.StrengthInspector;
-
+import pills.ConsistencyInspector; 
+import pills.FailureInspector; 
 public class SoftGelPillStore 
 {
     private GelCapFactory factory;
@@ -255,13 +256,19 @@ public class SoftGelPillStore
 
     private double checkFailRate()
     {
-        // Use FailureInspector somehwere in here
-        return 1.0;
+        FailureInspector FI = new FailureInspector(); 
+		for(GelCap g: this.currentOrder){
+			g.accept(FI); 
+		}
+		return FI.getFailRate();
     }
 
     private boolean consistentOrder()
     {
-        // Use ConsistencyInspector somewhere in here
-        return false;
+		ConsistencyInspector CI = new ConsistencyInspector(); 
+		for(GelCap g: this.currentOrder){
+			g.accept(CI)
+		}        
+		return CI.soFarSoConsistent();
     }
 }
