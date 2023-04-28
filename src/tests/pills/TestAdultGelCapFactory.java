@@ -48,7 +48,7 @@ public class TestAdultGelCapFactory
 		this.oldOut = System.out;
 		this.baos = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(baos));
-		this.obj = new AdultGelCapFactory();
+		this.obj = AdultGelCapFactory.getInstance();
 	}
 
 	/**

@@ -6,7 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
 import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;	
+import java.io.PrintStream;
+import java.rmi.RemoteException;	
 
 /**
  * This is the TestSolution class, a class for testing the oil and 
@@ -53,8 +54,16 @@ public class TestSolution
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
-        oilSolution = new OilSolution();
-        salineSolution  = new SalineSolution();
+        try
+        {
+            oilSolution = new OilSolution(1096);
+            salineSolution  = new SalineSolution(1095);
+        }
+        catch (RemoteException e)
+        {
+            oilSolution = null;
+            salineSolution  = null;
+        }
     }
     
     /**

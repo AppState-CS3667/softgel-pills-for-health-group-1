@@ -89,7 +89,7 @@ public class SoftGelPillStore
                     if (userChoice == 1)
                     {
                         Dreamly pendingOrder = this.factory.produceDreamly();
-                        if (pendingOrder != null)
+                        if (!(pendingOrder instanceof NullDreamly))
                         { 
                             this.currentOrder.add(pendingOrder);
                         }
@@ -97,7 +97,7 @@ public class SoftGelPillStore
                     else if (userChoice == 2)
                     {
                         AcheAway pendingOrder = this.factory.produceAcheAway();
-                        if (pendingOrder != null)
+                        if (!(pendingOrder instanceof NullAcheAway))
                         {
                             this.currentOrder.add(pendingOrder);
                         }
@@ -160,11 +160,11 @@ public class SoftGelPillStore
         final int ADULTAGE = 18;
         if (age < ADULTAGE)
         {
-            this.factory = new ChildGelCapFactory();
+            this.factory = ChildGelCapFactory.getInstance();
         }
         else
         {
-            this.factory = new AdultGelCapFactory();
+            this.factory = AdultGelCapFactory.getInstance();
         }
         this.isLoggedIn = true;
         this.currentOrder = new ArrayList<GelCap>();
