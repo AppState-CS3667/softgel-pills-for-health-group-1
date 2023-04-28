@@ -222,22 +222,22 @@ public class SoftGelPillStore
     {
         // Use StrengthInspector somewhere in here
         StrengthInspector sid = new StrengthInspector();
-	for (int i = 0; i < currentOrder.size(); i++)
+	for (Gelcap g : this.currentOrder)
 	{
-		si.inspect(currentOrder.get(i));
+		g.accept(sid);
 	}
-	return si.getDreamlyStrength();
+	return sid.getDreamlyStrength();
     }
 
     public double getAcheAwayStrength()
     {
         // Use StrengthInspector somewhere in here
         StrengthInspector sia = new StrengthInspector();
-	for (int i = 0; i < currentOrder.size(); i++)
+	for (Gelcap g : this.currentOrder)
 	{
-		si.inspect(currentOrder.get(i));
+		g.accept(sia);
 	}
-	return si.getAcheAwayStrength();
+	return sia.getAcheAwayStrength();
     }
 
     public void printCurrentOrder()
