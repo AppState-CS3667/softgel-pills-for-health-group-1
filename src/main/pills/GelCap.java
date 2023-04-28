@@ -125,5 +125,5 @@ public abstract class GelCap
 	{
 		return active;
 	}
-	
+	public abstract void accept(Inspector insp);	
 }
