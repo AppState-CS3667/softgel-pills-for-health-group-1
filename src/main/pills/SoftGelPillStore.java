@@ -216,4 +216,34 @@ public class SoftGelPillStore
     {
         return this.input;
     }
+
+    public double getDreamlyStrength()
+    {
+        return 1.0;
+    }
+
+    public double getAcheAwayStrength()
+    {
+        return 1.0;
+    }
+
+    public void printCurrentOrder()
+    {
+
+    }
+
+    private boolean tooBigFailRate(double failRate)
+    {
+        return false;
+    }
+
+    private double checkFailRate()
+    {
+        return 1.0;
+    }
+
+    private boolean consistentOrder()
+    {
+        return false;
+    }
 }
