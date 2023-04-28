@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import pills.StrengthInspector;
+
 public class SoftGelPillStore 
 {
     private GelCapFactory factory;
@@ -219,13 +221,23 @@ public class SoftGelPillStore
     public double getDreamlyStrength()
     {
         // Use StrengthInspector somewhere in here
-        return 1.0;
+        StrengthInspector sid = new StrengthInspector();
+	for (int i = 0; i < currentOrder.size(); i++)
+	{
+		si.inspect(currentOrder.get(i));
+	}
+	return si.getDreamlyStrength();
     }
 
     public double getAcheAwayStrength()
     {
         // Use StrengthInspector somewhere in here
-        return 1.0;
+        StrengthInspector sia = new StrengthInspector();
+	for (int i = 0; i < currentOrder.size(); i++)
+	{
+		si.inspect(currrentOrder.get(i));
+	}
+	return si.getAcheAwayStrength();
     }
 
     public void printCurrentOrder()
