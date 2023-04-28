@@ -23,4 +23,7 @@ public class ChildAcheAway extends AcheAway
 	{
 		super(STRENGTH, SIZE, COLOR, casing, solution, active);
 	}
+	public void accept(Inspector insp){
+		insp.inspect(this); 
+	}
 }
