@@ -235,7 +235,7 @@ public class SoftGelPillStore
         StrengthInspector sia = new StrengthInspector();
 	for (int i = 0; i < currentOrder.size(); i++)
 	{
-		si.inspect(currrentOrder.get(i));
+		si.inspect(currentOrder.get(i));
 	}
 	return si.getAcheAwayStrength();
     }
