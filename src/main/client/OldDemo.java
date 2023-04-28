@@ -11,7 +11,7 @@ import pills.SoftGelPillStore;
  * @author Willow Sapphire
  * @version 02/24/2023
  */
-public class Demo 
+public class OldDemo 
 {
     /**
      * A simple interface to interact with the SoftGelPillStore.
