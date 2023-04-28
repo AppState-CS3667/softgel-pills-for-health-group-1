@@ -4,8 +4,13 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import pills.StrengthInspector;
+import pills.ConsistencyInspector; 
+import pills.FailureInspector; 
 public class SoftGelPillStore 
 {
+    private final double ACCEPTABLE_FAIL_RATE = 0.10;
+
     private GelCapFactory factory;
     private ArrayList<GelCap> currentOrder;
     private Scanner input;
@@ -40,18 +45,25 @@ public class SoftGelPillStore
 
     public GelCap[] checkOut() 
     {
+        // Changes still need to be done here
+        
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
             this.output.print("You need to log in and order before you can checkout\n");
             return null;
         }
+        else if (!consistentOrder()) {
+            this.output.print("Your order is not consistent\n");
+            return null;
+        }
+        else if (tooBigFailRate(checkFailRate())) {
+            this.output.print("Too many failures creating your order\n");
+            return null;
+        }
         else
         {
             this.output.print("Thanks for shopping!\nHere is your order\n");
-            for (GelCap g : this.currentOrder)
-            {
-                this.output.println(g.toString());
-            }
+            printCurrentOrder();
             GelCap orderArray[] = new GelCap[this.currentOrder.size()];
             orderArray = this.currentOrder.toArray(orderArray);
             this.currentOrder.clear();
@@ -90,7 +102,7 @@ public class SoftGelPillStore
                     if (userChoice == 1)
                     {
                         Dreamly pendingOrder = this.factory.produceDreamly();
-                        if (pendingOrder != null)
+                        if (!(pendingOrder instanceof NullDreamly))
                         { 
                             this.currentOrder.add(pendingOrder);
                         }
@@ -98,7 +110,7 @@ public class SoftGelPillStore
                     else if (userChoice == 2)
                     {
                         AcheAway pendingOrder = this.factory.produceAcheAway();
-                        if (pendingOrder != null)
+                        if (!(pendingOrder instanceof NullAcheAway))
                         {
                             this.currentOrder.add(pendingOrder);
                         }
@@ -161,11 +173,11 @@ public class SoftGelPillStore
         final int ADULTAGE = 18;
         if (age < ADULTAGE)
         {
-            this.factory = new ChildGelCapFactory();
+            this.factory = ChildGelCapFactory.getInstance();
         }
         else
         {
-            this.factory = new AdultGelCapFactory();
+            this.factory = AdultGelCapFactory.getInstance();
         }
         this.isLoggedIn = true;
         this.currentOrder = new ArrayList<GelCap>();
@@ -215,5 +227,58 @@ public class SoftGelPillStore
     public Scanner getInput() 
     {
         return this.input;
+    }
+
+    public double getDreamlyStrength()
+    {
+        // Use StrengthInspector somewhere in here
+        StrengthInspector sid = new StrengthInspector();
+        for (GelCap g : this.currentOrder)
+        {
+            g.accept(sid);
+        }
+        return sid.getDreamlyStrength();
+    }
+
+    public double getAcheAwayStrength()
+    {
+        // Use StrengthInspector somewhere in here
+        StrengthInspector sia = new StrengthInspector();
+        for (GelCap g : this.currentOrder)
+        {
+            g.accept(sia);
+        }
+        return sia.getAcheAwayStrength();
+    }
+
+    public void printCurrentOrder()
+    {
+        for (GelCap g : this.currentOrder)
+        {
+            this.output.println(g.toString());
+        }
+    }
+
+    private boolean tooBigFailRate(double failRate)
+    {
+        return (failRate > 0.1);
+    }
+
+    private double checkFailRate()
+    {
+        FailureInspector fi = new FailureInspector(); 
+		for(GelCap g: this.currentOrder){
+			g.accept(fi); 
+		}
+		return fi.getFailRate();
+    }
+
+    private boolean consistentOrder()
+    {
+		ConsistencyInspector ci = new ConsistencyInspector(); 
+		for(GelCap g: this.currentOrder){
+			g.accept(ci);
+		}        
+		return ci.soFarSoConsistent();
     }
 }

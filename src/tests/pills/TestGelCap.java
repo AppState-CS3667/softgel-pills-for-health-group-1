@@ -42,6 +42,11 @@ public class TestGelCap
         {
             super(name, strength, size, color, casing, solution, active);
         } 
+
+        @Override
+        public void accept(Inspector insp) {
+            System.out.println("Inspecting...");
+        }
     }
 
     /**

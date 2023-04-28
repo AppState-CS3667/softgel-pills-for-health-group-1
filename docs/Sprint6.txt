@@ -3,7 +3,7 @@ ________________________________________________________________________
 Sprint Backlog - Complete by 4/30
 
 1. Add the abstract inspector
-2. Add the consistency, strength, and failure inspectors
+2. Add the consistency, strength, and failure inspectors, update concrete pill classes
 3. Test the inspectors
 4. Change the store class to account for the inspector
 5. Change the store tests to account for the inspector

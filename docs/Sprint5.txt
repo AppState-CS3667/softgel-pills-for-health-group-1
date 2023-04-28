@@ -22,13 +22,21 @@ Assign backlog items: 3, 4, 6, and 7
 _________________________________________________________________________
 
 Sprint Review:
+This sprint took a little longer than it should have, but overall the 
+work was well organized and compelted in an orderly fashion.
 
 _________________________________________________________________________
 
 Sprint Retrospective:
 Good things we did: 
+- Correct work on correct branches
+- Testing went smoothly due to merging in required dependencies first
+- Improved communication about who is doing what
           
 Bad things we did: 
+- Put off fixing tests for a while likely due to other assignments and work 
+as the semester concludes
           
 Improvements for next sprint: 
+- Try our best to stay on schedule
           

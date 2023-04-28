@@ -1,10 +1,18 @@
 package pills;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class GelatinCasing implements CasingGenerator
+public class GelatinCasing extends UnicastRemoteObject implements CasingGenerator
 {
+    protected GelatinCasing(int port) throws RemoteException
+    {
+        super(port);
+    }
 
     @Override
-    public String generateCasing()
+    public String generateCasing() throws RemoteException
     {
         String output = String.format("Mixing gelatin, water, opacifier," 
                                       + " and glycerin .\nShaping .\nReturning"
