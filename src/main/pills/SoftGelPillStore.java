@@ -236,16 +236,18 @@ public class SoftGelPillStore
 
     private boolean tooBigFailRate(double failRate)
     {
-        return false;
+        return (failRate > 0.1);
     }
 
     private double checkFailRate()
     {
+        // Use FailureInspector somehwere in here
         return 1.0;
     }
 
     private boolean consistentOrder()
     {
+        // Use ConsistencyInspector somewhere in here
         return false;
     }
 }
