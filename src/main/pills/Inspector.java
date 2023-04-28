@@ -8,9 +8,4 @@ public abstract class Inspector{
 	public void inspect(NullDreamly e){};
 	public abstract String report(); 
 	public abstract void reset(); 
-	
-
-
-
-
 }
