@@ -9,6 +9,8 @@ import pills.ConsistencyInspector;
 import pills.FailureInspector; 
 public class SoftGelPillStore 
 {
+    private final double ACCEPTABLE_FAIL_RATE = 0.10;
+
     private GelCapFactory factory;
     private ArrayList<GelCap> currentOrder;
     private Scanner input;
@@ -48,6 +50,14 @@ public class SoftGelPillStore
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
             this.output.print("You need to log in and order before you can checkout\n");
+            return null;
+        }
+        else if (!consistentOrder()) {
+            this.output.print("Your order is not consistent\n");
+            return null;
+        }
+        else if (tooBigFailRate(checkFailRate())) {
+            this.output.print("Too many failures creating your order\n");
             return null;
         }
         else
@@ -256,19 +266,19 @@ public class SoftGelPillStore
 
     private double checkFailRate()
     {
-        FailureInspector FI = new FailureInspector(); 
+        FailureInspector fi = new FailureInspector(); 
 		for(GelCap g: this.currentOrder){
-			g.accept(FI); 
+			g.accept(fi); 
 		}
-		return FI.getFailRate();
+		return fi.getFailRate();
     }
 
     private boolean consistentOrder()
     {
-		ConsistencyInspector CI = new ConsistencyInspector(); 
+		ConsistencyInspector ci = new ConsistencyInspector(); 
 		for(GelCap g: this.currentOrder){
-			g.accept(CI)
+			g.accept(ci);
 		}        
-		return CI.soFarSoConsistent();
+		return ci.soFarSoConsistent();
     }
 }
