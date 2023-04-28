@@ -28,6 +28,8 @@ public class TestSoftGelPillStore
                                                 + " AcheAway\n3) Cancel\nPlease" 
                                                 + " enter a 1, 2, or 3\n";
     
+    private final double TEST_DREAMLY_STRENGTH = 1.25;
+    private final double TEST_ACHEAWAY_STRENGTH = 415.00;
     private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
     
@@ -142,4 +144,33 @@ public class TestSoftGelPillStore
 		String result = baos.toString().replaceAll("\r", "");
         assertEquals(result, TEST_ORDER_OUTPUT);
     }
+	
+	/**
+ 	 *
+ 	 * Test the getDreamlyStrength() method 
+ 	 */
+	@Test 
+	public void testDreamlyStrength()
+	{
+		assertEquals(obj.getDreamlyStrength(), TEST_DREAMLY_STRENGTH);
+	}
+	
+	/**
+ 	 * Test the getAcheAwayStrength() method
+ 	 *
+ 	 */
+	@Test
+	public void testAcheAwayStrength()
+	{
+		assertEquals(obj.getAcheAwayStrength(), TEST_ACHEAWAY_STRENGTH);
+	}
+	
+	/**
+ 	 * Test the consistentOrder() method
+ 	 */
+	@Test
+	public void testConsistentOrder() method
+	{
+		
+	}      	
 }
