@@ -27,7 +27,7 @@ public class StrengthInspector extends Inspector{
     public String report(){
 		return "Strength Report\n\tAcheAway Pills : " + getAcheAwayStrength() + "\n\tChild Pills : " + getDreamlyStrength(); 
 	}
-	 }
+	
     public void reset(){
         this.acheAwayStrength = 0;
         this.dreamlyStrength = 0;
