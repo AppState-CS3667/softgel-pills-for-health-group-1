@@ -99,4 +99,14 @@ public class TestChildGelCapFactory
     {
         assertEquals(obj.getAcheAwayStrength(), CORRECT_ACHEAWAY_STRENGTH);
     }
+
+    /**
+     * Test the getAcheAwayStrength method.
+     */
+    @Test
+    public void testOnlyOneChildFactory() 
+    {
+        ChildGelCapFactory obj2 = ChildGelCapFactory.getInstance();
+        assertEquals(this.obj.hashCode(), obj2.hashCode());
+    }
 }
