@@ -150,6 +150,32 @@ public class TestGelCapFactory
  	 * Test produceDreamly() method, whether the printstatements are correct and
 	 * whether the chances of qualitycheck is around 10%.
  	 */
+	  @Test
+	  public void testDreamlyFactoryType()
+	  {
+		GelCapFactory testAdultFactory = AdultGelCapFactory.getInstance();
+		assertTrue(testAdultFactory.produceDreamly() instanceof Dreamly);
+		testAdultFactory = ChildGelCapFactory.getInstance();
+		assertTrue(testAdultFactory.produceDreamly() instanceof Dreamly);
+	  }
+
+	  /**
+ 	 * Test produceDreamly() method, whether the printstatements are correct and
+	 * whether the chances of qualitycheck is around 10%.
+ 	 */
+	  @Test
+	  public void testAcheAwayFactoryType()
+	  {
+		GelCapFactory testAdultFactory = AdultGelCapFactory.getInstance();
+		assertTrue(testAdultFactory.produceAcheAway() instanceof AcheAway);
+		testAdultFactory = ChildGelCapFactory.getInstance();
+		assertTrue(testAdultFactory.produceAcheAway() instanceof AcheAway);
+	  }
+
+	/**
+ 	 * Test produceDreamly() method, whether the printstatements are correct and
+	 * whether the chances of qualitycheck is around 10%.
+ 	 */
 	@Test
 	public void testProduceDreamly()
 	{

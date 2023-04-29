@@ -101,19 +101,23 @@ public class SoftGelPillStore
                     valid = true;
                     if (userChoice == 1)
                     {
-                        Dreamly pendingOrder = this.factory.produceDreamly();
-                        if (!(pendingOrder instanceof NullDreamly))
-                        { 
-                            this.currentOrder.add(pendingOrder);
-                        }
+                        Dreamly pendingOrder;
+                        do {
+                            pendingOrder = this.factory.produceDreamly();
+                            
+                        } while (pendingOrder instanceof NullDreamly);
+
+                        this.currentOrder.add(pendingOrder);
                     }
                     else if (userChoice == 2)
                     {
-                        AcheAway pendingOrder = this.factory.produceAcheAway();
-                        if (!(pendingOrder instanceof NullAcheAway))
-                        {
-                            this.currentOrder.add(pendingOrder);
-                        }
+                        AcheAway pendingOrder;
+                        do {
+                            pendingOrder = this.factory.produceAcheAway();
+                            
+                        } while (pendingOrder instanceof NullAcheAway);
+
+                        this.currentOrder.add(pendingOrder);
                     }
                     else
                     {
@@ -261,7 +265,7 @@ public class SoftGelPillStore
 
     private boolean tooBigFailRate(double failRate)
     {
-        return (failRate > 0.1);
+        return (failRate > ACCEPTABLE_FAIL_RATE);
     }
 
     private double checkFailRate()
