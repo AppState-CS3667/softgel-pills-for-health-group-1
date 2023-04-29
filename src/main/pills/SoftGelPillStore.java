@@ -49,7 +49,7 @@ public class SoftGelPillStore
         
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
-            this.output.print("You need to log in and order before you can checkout\n");
+            this.output.print("Your cart is empty, please place an order\n");
             return null;
         }
         else if (!consistentOrder()) {
@@ -62,7 +62,7 @@ public class SoftGelPillStore
         }
         else
         {
-            this.output.print("Thanks for shopping!\nHere is your order\n");
+            this.output.print("|   Contains the following orders  |\n");
             printCurrentOrder();
             GelCap orderArray[] = new GelCap[this.currentOrder.size()];
             orderArray = this.currentOrder.toArray(orderArray);

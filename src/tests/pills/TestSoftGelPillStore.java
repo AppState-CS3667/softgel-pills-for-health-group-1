@@ -20,18 +20,17 @@ public class TestSoftGelPillStore
     private final String TEST_LOGIN_INPUT = "Tester\n18\n";
     private final String TEST_LOGIN_OUTPUT = "What is your name?\nWhat is your age?\n";
     private final String TEST_LOGOUT_INPUT = "y\n";
-    private final String TEST_CHECKOUT_OUTPUT_FAIL = "You need to log in and order" 
-                                                + " before you can checkout\n";
+    private final String TEST_CHECKOUT_OUTPUT_FAIL = "Your cart is empty, please place an order\n";
     private final String TEST_ORDER_INPUT_FAIL = "asdf\n3\n";
     private final String TEST_ORDER_OUTPUT = "Hello, Tester. What would you like to" 
                                                 + " order?\nOptions:\n1) Dreamly\n2)" 
                                                 + " AcheAway\n3) Cancel\nPlease" 
                                                 + " enter a 1, 2, or 3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_1 = "Thanks for shopping!\nHere is your order\n5.20mg Dreamly Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_1 = "|   Contains the following orders  |\n5.20mg Dreamly Pill\n";
 	private final String TEST_ORDER_INPUT_1 = "1\n3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_2 = "Thanks for shopping!\nHere is your order\n825.00mg AcheAway Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_2 = "|   Contains the following orders  |\n825.00mg AcheAway Pill\n";
 	private final String TEST_ORDER_INPUT_2 = "2\n3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_3 = "Thanks for shopping!\nHere is your order\n5.20mg Dreamly Pill\n825.00mg AcheAway Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_3 = "|   Contains the following orders  |\n5.20mg Dreamly Pill\n825.00mg AcheAway Pill\n";
     
     private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
