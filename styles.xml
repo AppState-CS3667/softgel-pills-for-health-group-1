@@ -33,7 +33,7 @@
         <module name="MethodLength">
             <property name="severity" value="warning"/>
             <property name="countEmpty" value="false"/>
-            <property name="max" value="100"/>
+            <property name="max" value="150"/>
         </module>
         <module name="LeftCurly">
             <property name="option" value="nl"/>

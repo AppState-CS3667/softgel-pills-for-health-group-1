@@ -12,7 +12,8 @@ public class AdultGelCapFactory extends GelCapFactory
     /**
  	 * The private constructor.
  	 */
-    private AdultGelCapFactory() {
+    private AdultGelCapFactory() 
+    {
         super();
     }
 
@@ -20,10 +21,14 @@ public class AdultGelCapFactory extends GelCapFactory
  	 * The getInstance method.
  	 * @return a AdultGelCapFactory object 
  	 */
-    public static AdultGelCapFactory getInstance() {
-        if (adultGelCapFactoryInst == null) {
-			synchronized(AdultGelCapFactory.class) {
-				if (adultGelCapFactoryInst == null) {
+    public static AdultGelCapFactory getInstance() 
+    {
+        if (adultGelCapFactoryInst == null) 
+        {
+			synchronized (AdultGelCapFactory.class) 
+            {
+				if (adultGelCapFactoryInst == null) 
+                {
                     adultGelCapFactoryInst = new AdultGelCapFactory();
                 }
             }

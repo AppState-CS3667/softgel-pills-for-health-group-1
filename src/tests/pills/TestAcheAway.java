@@ -51,7 +51,8 @@ public class TestAcheAway
 		}
 
         @Override
-        public void accept(Inspector insp) {
+        public void accept(Inspector insp) 
+        {
             System.out.println("Inspecting...");
         }
 	}

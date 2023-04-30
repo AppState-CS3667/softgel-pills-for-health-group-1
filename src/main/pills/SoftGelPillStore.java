@@ -4,9 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import pills.StrengthInspector;
-import pills.ConsistencyInspector; 
-import pills.FailureInspector; 
+
 public class SoftGelPillStore 
 {
     private final double ACCEPTABLE_FAIL_RATE = 0.10;
@@ -52,11 +50,13 @@ public class SoftGelPillStore
             this.output.print("Your cart is empty, please place an order\n");
             return null;
         }
-        else if (!consistentOrder()) {
+        else if (!consistentOrder()) 
+        {
             this.output.print("Your order is not consistent\n");
             return null;
         }
-        else if (tooBigFailRate(checkFailRate())) {
+        else if (tooBigFailRate(checkFailRate())) 
+        {
             this.output.print("Too many failures creating your order\n");
             return null;
         }
@@ -102,7 +102,8 @@ public class SoftGelPillStore
                     if (userChoice == 1)
                     {
                         Dreamly pendingOrder;
-                        do {
+                        do 
+                        {
                             pendingOrder = this.factory.produceDreamly();
                             
                         } while (pendingOrder instanceof NullDreamly);
@@ -112,7 +113,8 @@ public class SoftGelPillStore
                     else if (userChoice == 2)
                     {
                         AcheAway pendingOrder;
-                        do {
+                        do 
+                        {
                             pendingOrder = this.factory.produceAcheAway();
                             
                         } while (pendingOrder instanceof NullAcheAway);
@@ -271,7 +273,8 @@ public class SoftGelPillStore
     private double checkFailRate()
     {
         FailureInspector fi = new FailureInspector(); 
-		for(GelCap g: this.currentOrder){
+		for (GelCap g: this.currentOrder)
+        {
 			g.accept(fi); 
 		}
 		return fi.getFailRate();
@@ -280,7 +283,8 @@ public class SoftGelPillStore
     private boolean consistentOrder()
     {
 		ConsistencyInspector ci = new ConsistencyInspector(); 
-		for(GelCap g: this.currentOrder){
+		for (GelCap g: this.currentOrder)
+        {
 			g.accept(ci);
 		}        
 		return ci.soFarSoConsistent();

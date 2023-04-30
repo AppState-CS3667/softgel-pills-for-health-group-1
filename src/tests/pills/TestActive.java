@@ -55,8 +55,10 @@ public class TestActive
         System.setOut(new PrintStream(baos));
         try
         {
-            AActive = new AcetaminophenActive(1094);
-            ZActive = new ZolpidemActive(1093);
+            final int AACTIVEPORT = 1094;
+            AActive = new AcetaminophenActive(AACTIVEPORT);
+            final int ZACTIVEPORT = 1093;
+            ZActive = new ZolpidemActive(ZACTIVEPORT);
         }
         catch (RemoteException e)
         {
@@ -64,6 +66,7 @@ public class TestActive
             ZActive = null;
         }
     }
+
     /**
      * Reset ouput after each test.
      */
@@ -72,6 +75,7 @@ public class TestActive
     {
         System.setOut(oldOut);
     }
+    
     /**
      * Tests the AcetaminophenActive class.
      */
@@ -83,6 +87,7 @@ public class TestActive
         assertEquals(TEST_ACETAMINOPHEN_RETURN, result);
         assertEquals(TEST_ACETAMINOPHEN_PRINT, getOutput());
     }
+
     /**
      * Tests the ZolpidemActive class.
      */

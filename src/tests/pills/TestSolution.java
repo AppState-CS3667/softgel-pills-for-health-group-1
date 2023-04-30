@@ -56,8 +56,10 @@ public class TestSolution
         System.setOut(new PrintStream(baos));
         try
         {
-            oilSolution = new OilSolution(1096);
-            salineSolution  = new SalineSolution(1095);
+            final int OILSOLUTIONPORT = 1096;
+            oilSolution = new OilSolution(OILSOLUTIONPORT);
+            final int SALINESOLUTIONPORT = 1095;
+            salineSolution  = new SalineSolution(SALINESOLUTIONPORT);
         }
         catch (RemoteException e)
         {

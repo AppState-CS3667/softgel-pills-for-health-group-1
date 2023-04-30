@@ -2,7 +2,7 @@ package pills;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -22,9 +22,12 @@ public class TestInspector
     private final String TEST_DS_ORDER_INPUT = "1\n3\n";
     private final String TEST_AS_ORDER_INPUT = "2\n3\n";
 
-	private final String CORRECT_CONSISTENCY_REPORT = "Consistency Report\n\tAdult Pills : 0\n\tChild Pills : 0";
-	private final String CORRECT_FAILURE_REPORT = "Failure Report\n\tNull Pills : 0\n\tChild Pills : 0";
-	private final String CORRECT_STRENGTH_REPORT = "Strength Report\n\tAcheAway Pills : 0.0\n\tChild Pills : 0.0";
+	private final String CORRECT_CONSISTENCY_REPORT = "Consistency Report\n\t"
+													+ "Adult Pills : 0\n\tChild Pills : 0";
+	private final String CORRECT_FAILURE_REPORT = "Failure Report\n\t"
+												+ "Null Pills : 0\n\tChild Pills : 0";
+	private final String CORRECT_STRENGTH_REPORT = "Strength Report\n\t"
+												+ "AcheAway Pills : 0.0\n\tChild Pills : 0.0";
     
     private SoftGelPillStore obj;
 
@@ -38,8 +41,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 *
- 	 * Test the getDreamlyStrength() method 
+ 	 * Test the getDreamlyStrength() method. 
  	 */
 	@Test 
 	public void testStrengthInspectorAdultDreamly()
@@ -53,8 +55,7 @@ public class TestInspector
 	}
 
     /**
- 	 *
- 	 * Test the getDreamlyStrength() method 
+ 	 * Test the getDreamlyStrength() method.
  	 */
 	@Test 
 	public void testStrengthInspectorChildDreamly()
@@ -68,8 +69,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 * Test the getAcheAwayStrength() method
- 	 *
+ 	 * Test the getAcheAwayStrength() method.
  	 */
 	@Test
 	public void testStrengthInspectorAdultAdultAcheAway()
@@ -83,8 +83,7 @@ public class TestInspector
 	}
 
     /**
- 	 * Test the getAcheAwayStrength() method
- 	 *
+ 	 * Test the getAcheAwayStrength() method.
  	 */
 	@Test
 	public void testStrengthInspectorChildAdultAcheAway()
@@ -98,7 +97,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 * T
+ 	 * Test the report() method.
  	 */
 	@Test
 	public void testConsistencyResetReport()
@@ -109,7 +108,7 @@ public class TestInspector
 	}    
 	
 	/**
- 	 * T
+ 	 * Test the report() method.
  	 */
 	  @Test
 	  public void testFailureResetReport()
@@ -120,7 +119,7 @@ public class TestInspector
 	  } 
 
 	  /**
- 	 * T
+ 	 * Test the report() method.
  	 */
 	  @Test
 	  public void testStrengthResetReport()

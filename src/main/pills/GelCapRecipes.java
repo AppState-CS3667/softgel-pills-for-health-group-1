@@ -17,8 +17,10 @@ public class GelCapRecipes
         try
         {
             // thisMap.put("dreamly", new GelatinCasing());
-            thisMap.put("dreamly", (CasingGenerator) Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
-            thisMap.put("acheAway", (CasingGenerator) Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
+            thisMap.put("dreamly", 
+                (CasingGenerator) Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
+            thisMap.put("acheAway", 
+                (CasingGenerator) Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
             return thisMap;
         }
         catch (RemoteException e)
@@ -40,8 +42,10 @@ public class GelCapRecipes
         HashMap<String, SolutionGenerator> thisMap = new HashMap<String, SolutionGenerator>();
         try
         {
-            thisMap.put("dreamly", (SolutionGenerator) Naming.lookup("rmi://152.10.10.40/OilSolution"));
-            thisMap.put("acheAway", (SolutionGenerator) Naming.lookup("rmi://152.10.10.40/SalineSolution"));
+            thisMap.put("dreamly", 
+                (SolutionGenerator) Naming.lookup("rmi://152.10.10.40/OilSolution"));
+            thisMap.put("acheAway", 
+                (SolutionGenerator) Naming.lookup("rmi://152.10.10.40/SalineSolution"));
             return thisMap;
         }
         catch (RemoteException e)
@@ -63,16 +67,22 @@ public class GelCapRecipes
         HashMap<String, ActiveGenerator> thisMap = new HashMap<String, ActiveGenerator>();
         try
         {
-            thisMap.put("dreamly", (ActiveGenerator) Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
-            thisMap.put("acheAway", (ActiveGenerator) Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
+            thisMap.put("dreamly", 
+                (ActiveGenerator) Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
+            thisMap.put("acheAway", 
+                (ActiveGenerator) Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
             return thisMap;
         }
         catch (RemoteException e)
         {
             return thisMap;
-        } catch (MalformedURLException e) {
+        } 
+        catch (MalformedURLException e) 
+        {
             return thisMap;
-        } catch (NotBoundException e) {
+        } 
+        catch (NotBoundException e) 
+        {
             return thisMap;
         }
     }

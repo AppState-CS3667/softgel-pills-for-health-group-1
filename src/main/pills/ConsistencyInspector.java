@@ -1,39 +1,52 @@
 package pills;
-public class ConsistencyInspector extends Inspector{
+public class ConsistencyInspector extends Inspector
+{
     private int adultCount;
     private int childCount;
-    public int getAdultCount(){
+    
+	public int getAdultCount()
+	{
 		return adultCount; 
 	}
-	public int getChildCount(){
+	public int getChildCount()
+	{
 		return childCount; 
 	}
 	@Override
-    public void inspect(AdultAcheAway e){
+    public void inspect(AdultAcheAway e)
+	{
    		adultCount += 1;  
 	}
     @Override
-    public void inspect(ChildAcheAway e){
+    public void inspect(ChildAcheAway e)
+	{
     	childCount += 1; 
 	}
     @Override
-    public void inspect(AdultDreamly e){
+    public void inspect(AdultDreamly e)
+	{
 		adultCount += 1; 
 	}
     @Override
-    public void inspect(ChildDreamly e){
+    public void inspect(ChildDreamly e)
+	{
 		childCount += 1; 
 	}
-    public String report(){
-		return "Consistency Report\n\tAdult Pills : " + getAdultCount() + "\n\tChild Pills : " + getChildCount(); 
+    public String report()
+	{
+		return "Consistency Report\n\tAdult Pills : " 
+			+ getAdultCount() + "\n\tChild Pills : " + getChildCount(); 
 	}
-    public void reset(){
+    public void reset()
+	{
 		this.adultCount = 0; 
 		this.childCount = 0;
 	}
-    public boolean soFarSoConsistent(){
+    public boolean soFarSoConsistent()
+	{
 		boolean check = true; 
-		if(getAdultCount() > 0 && getChildCount() > 0){
+		if (getAdultCount() > 0 && getChildCount() > 0)
+		{
 			check = false; 
 		}  
 		return check; 

@@ -49,7 +49,8 @@ public class TestDreamly
 		}
 
         @Override
-        public void accept(Inspector insp) {
+        public void accept(Inspector insp) 
+        {
             System.out.println("Inspecting...");
         }
 	}

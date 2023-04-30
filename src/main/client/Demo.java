@@ -125,7 +125,8 @@ public class Demo
                             System.out.println();
                         }
                     }
-                    else {
+                    else 
+                    {
                         System.out.println("        Error Displaying Cart       ");
                     }
                     
@@ -138,12 +139,14 @@ public class Demo
                     System.out.println(seperator);
                     System.out.println("|         ePharm - Checkout        |");
                     System.out.println(seperator);
-                    if (orders.size() == 0) {
+                    if (orders.size() == 0) 
+                    {
                         System.out.println("|         No current order         |");
                         System.out.println(seperator);
                         System.out.print("Press enter/return to exit.");
                     }
-                    else {
+                    else 
+                    {
                         System.out.println("|  Your order is being processed   |");
                         System.out.println("|  Thank you for choosing ePharm!  |");
                         System.out.println(seperator);

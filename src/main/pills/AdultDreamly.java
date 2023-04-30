@@ -21,7 +21,8 @@ public class AdultDreamly extends Dreamly
 	{
 		super(STRENGTH, SIZE, COLOR, casing, solution, active);
 	}
-	public void accept(Inspector insp){
+	public void accept(Inspector insp)
+    {
         insp.inspect(this);
     }
 }

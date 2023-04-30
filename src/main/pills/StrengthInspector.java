@@ -1,34 +1,51 @@
 package pills;
-public class StrengthInspector extends Inspector{
+public class StrengthInspector extends Inspector
+{
     private double dreamlyStrength;
     private double acheAwayStrength;
-    public double getDreamlyStrength(){
+    
+    public double getDreamlyStrength()
+    {
         return dreamlyStrength;
     }
-    public double getAcheAwayStrength(){
+
+    public double getAcheAwayStrength()
+    {
         return acheAwayStrength;
     }
+
     @Override
-    public void inspect(AdultAcheAway e){
+    public void inspect(AdultAcheAway e)
+    {
         acheAwayStrength += e.getStrength(); 
     }
+
     @Override
-    public void inspect(ChildAcheAway e){
+    public void inspect(ChildAcheAway e)
+    {
         acheAwayStrength += e.getStrength();
     }
+
     @Override
-    public void inspect(AdultDreamly e){
+    public void inspect(AdultDreamly e)
+    {
    		dreamlyStrength += e.getStrength(); 
 	 }
+
     @Override
-    public void inspect(ChildDreamly e){
+    public void inspect(ChildDreamly e)
+    {
         dreamlyStrength += e.getStrength(); 
     }
-    public String report(){
-		return "Strength Report\n\tAcheAway Pills : " + getAcheAwayStrength() + "\n\tChild Pills : " + getDreamlyStrength(); 
+
+    public String report()
+    {
+		return "Strength Report\n\tAcheAway Pills : " 
+            + getAcheAwayStrength() + "\n\tChild Pills : " + getDreamlyStrength(); 
 	}
 	
-    public void reset(){
+    public void reset()
+    {
         this.acheAwayStrength = 0;
         this.dreamlyStrength = 0;
     }

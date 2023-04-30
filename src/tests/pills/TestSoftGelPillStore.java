@@ -26,11 +26,14 @@ public class TestSoftGelPillStore
                                                 + " order?\nOptions:\n1) Dreamly\n2)" 
                                                 + " AcheAway\n3) Cancel\nPlease" 
                                                 + " enter a 1, 2, or 3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_1 = "|   Contains the following orders  |\n5.20mg Dreamly Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_1 = "|   Contains the following orders  |\n"
+														+ "5.20mg Dreamly Pill\n";
 	private final String TEST_ORDER_INPUT_1 = "1\n3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_2 = "|   Contains the following orders  |\n825.00mg AcheAway Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_2 = "|   Contains the following orders  |\n"
+														+ "825.00mg AcheAway Pill\n";
 	private final String TEST_ORDER_INPUT_2 = "2\n3\n";
-	private final String TEST_CHECKOUT_OUTPUT_ORDER_3 = "|   Contains the following orders  |\n5.20mg Dreamly Pill\n825.00mg AcheAway Pill\n";
+	private final String TEST_CHECKOUT_OUTPUT_ORDER_3 = "|   Contains the following orders  |\n"
+												+ "5.20mg Dreamly Pill\n825.00mg AcheAway Pill\n";
     
     private final PrintStream OUTPUT = new PrintStream(System.out);
     private final Scanner INPUT = new Scanner(System.in);
