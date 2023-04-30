@@ -42,7 +42,9 @@ public class TestGelCap
         {
             super(name, strength, size, color, casing, solution, active);
         } 
-
+        /**
+         * Accepts the inspector object passed.
+         */
         @Override
         public void accept(Inspector insp) 
         {

@@ -21,6 +21,11 @@ public class AdultDreamly extends Dreamly
 	{
 		super(STRENGTH, SIZE, COLOR, casing, solution, active);
 	}
+    /**
+ 	 * Accepts an inspector objectfrom
+     * the Inspector abstract class.
+ 	 */ 
+    @Override
 	public void accept(Inspector insp)
     {
         insp.inspect(this);

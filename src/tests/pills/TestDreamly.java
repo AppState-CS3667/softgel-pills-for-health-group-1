@@ -39,15 +39,29 @@ public class TestDreamly
 	private DreamlyMock dreamly;
 	private ChildDreamly childDreamly; 
 	private AdultDreamly adultDreamly; 
-	
+	/**
+     * Dreamly class Mock for testing
+     */
 	private class DreamlyMock extends Dreamly
     {
+        /**
+         * Constructor for mock that calls the superclass's 
+         * constructor
+         * @param strength of the pill
+         * @param size of the pill
+         * @param color of the pill
+         * @param casing of the pill
+         * @param solution of the pill
+         * @param active of the pill
+         */
 		DreamlyMock(double strength, double size, String color, 
                     String casing, String solution, String active)
         {
 			super(strength, size, color, casing, solution, active);
 		}
-
+        /**
+         * Shows the accepting of the inspector object passed.
+         */
         @Override
         public void accept(Inspector insp) 
         {

@@ -17,7 +17,10 @@ public class NullAcheAway extends AcheAway
 	{
 		super(NULLDOUBLE, NULLDOUBLE, "No Color", "No Casing", "No Solution", "No Active");
 	}
-	
+	/**
+	 * Method that allows the acceptance of an 
+	 * inspector from the Inspector abstract class.
+	 */
 	public void accept(Inspector insp)
 	{
         insp.inspect(this);

@@ -9,5 +9,11 @@ import java.rmi.RemoteException;
  */
 public interface ActiveGenerator extends Remote
 {
+    /**
+     * Will generate the active needed with 
+     * the correct amount when implemented.
+     * @param amount needed for active. 
+     * @return String as active
+     */
     public String generateActive(double amount) throws RemoteException;
 }

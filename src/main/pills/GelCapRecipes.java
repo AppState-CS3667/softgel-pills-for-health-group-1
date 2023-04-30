@@ -4,13 +4,21 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.util.HashMap;
 import java.rmi.RemoteException;
-
+/**
+ * GelCapRecipes class that keeps the necessary recipes needed
+ * to create the pills.
+ * @author Subteam A
+ * @version 1.0
+ */
 public class GelCapRecipes 
 {
     public static final HashMap<String, CasingGenerator> CASINGS = getCasings();
     public static final HashMap<String, SolutionGenerator> SOLUTIONS = getSolutions();
     public static final HashMap<String, ActiveGenerator> ACTIVES = getActives();
-
+    /**
+     * Gets the casing in HashMap form
+     * @return hashmap
+     */
     private static HashMap<String, CasingGenerator> getCasings()
     {
         HashMap<String, CasingGenerator> thisMap = new HashMap<String, CasingGenerator>();
@@ -36,7 +44,10 @@ public class GelCapRecipes
             return thisMap;
         }
     }
-
+    /**
+     * Gets the solutions in hashmap form.
+     * @return solutions hashmap
+     */
     private static HashMap<String, SolutionGenerator> getSolutions()
     {
         HashMap<String, SolutionGenerator> thisMap = new HashMap<String, SolutionGenerator>();
@@ -61,7 +72,10 @@ public class GelCapRecipes
             return thisMap;
         }
     }
-
+    /**
+     * Gets the actives in hashmap form
+     * @return actives hashmap
+     */
     private static HashMap<String, ActiveGenerator> getActives()
     {
         HashMap<String, ActiveGenerator> thisMap = new HashMap<String, ActiveGenerator>();

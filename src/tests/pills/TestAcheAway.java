@@ -43,13 +43,24 @@ public class TestAcheAway
 	
 	private class AcheAwayMock extends AcheAway
     {
+        /**
+         * AcheAway class mock for testing 
+         * @param strength of pill
+         * @param size of pill
+         * @param color of pill
+         * @param casing of pill
+         * @param solution of pill
+         * @param active of pill
+         */
 		AcheAwayMock(double strength, double size, 
                      String color, String casing, 
                      String solution, String active)
         {
 			super(strength, size, color, casing, solution, active);
 		}
-
+        /**
+         * Shows the acceptance of the inspector object passed
+         */
         @Override
         public void accept(Inspector insp) 
         {

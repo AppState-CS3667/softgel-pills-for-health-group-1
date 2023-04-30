@@ -9,5 +9,10 @@ import java.rmi.RemoteException;
  */
 public interface CasingGenerator extends Remote
 {
+    /**
+     * Will generate the casing needed when
+     * implemented.
+     * @return String as casing
+     */
     public String generateCasing() throws RemoteException;
 }

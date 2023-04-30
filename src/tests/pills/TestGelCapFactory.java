@@ -53,7 +53,9 @@ public class TestGelCapFactory
 	private ByteArrayOutputStream baos;
 	private PrintStream oldOut;
 	private GelCapFactory obj;
-
+	/**
+	 * Mock of the GelCap class for testing
+	 */
 	private class GelCapFactoryMock extends GelCapFactory
 	{
 		/**

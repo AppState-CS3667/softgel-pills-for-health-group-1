@@ -9,12 +9,21 @@ import java.rmi.server.UnicastRemoteObject;
  * @version 1.0
  */
 public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator 
-{
+{   
+    /**
+     * Constructor for an ZolpidemActive object.
+     * @param port for the remote. 
+     */
     protected ZolpidemActive(int port) throws RemoteException
     {
         super(port);
     }
-
+    /**
+     * Generates the active needed with 
+     * the correct amount.
+     * @param amount needed for active. 
+     * @return String as active
+     */
     @Override
     public String generateActive(double amount) 
     {

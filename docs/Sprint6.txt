@@ -23,8 +23,11 @@ _________________________________________________________________________
 
 Sprint Retrospective:
 Good things we did: 
-          
+    Set time to work together
+    Communicated a lot more
+    Distriubted work accurately within branches
 Bad things we did: 
-          
-Improvements for next sprint: 
+    Did not follow backlog as much within this sprint
+    
+
           

@@ -9,5 +9,10 @@ import java.rmi.RemoteException;
  */
 public interface SolutionGenerator extends Remote
 {
+    /**
+     * Will generate a solution when implemented.
+     * @return a String to complete generation of solution
+     * @throws RemoteException
+     */
     public String generateSolution() throws RemoteException;
 }
