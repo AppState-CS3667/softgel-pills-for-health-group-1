@@ -125,5 +125,10 @@ public abstract class GelCap
 	{
 		return active;
 	}
+	
+	/**
+	 * Abstract accept method to access inspector.
+	 * @param Inspector
+	 */
 	public abstract void accept(Inspector insp);	
 }
