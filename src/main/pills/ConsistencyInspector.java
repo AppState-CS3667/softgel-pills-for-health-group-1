@@ -1,7 +1,7 @@
 package pills;
 /**
- * Inspector class that extends the Inspector
- * abstract class that aims to check whether
+ * Inspector class that extends the Inspector.
+ * Abstract class that aims to check whether
  * an order is mixing child and adult pills.
  * author
  * @author Subteam B
@@ -28,8 +28,8 @@ public class ConsistencyInspector extends Inspector
 		return childCount; 
 	}
 	/**
-	 * Inspects the given object passed
-	 * and increases adultCount field
+	 * Inspects the given object passed.
+	 * Increases adultCount field
 	 * @param e an AdultAcheAway object 
 	 */
 	@Override

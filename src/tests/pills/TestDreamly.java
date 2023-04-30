@@ -40,13 +40,12 @@ public class TestDreamly
 	private ChildDreamly childDreamly; 
 	private AdultDreamly adultDreamly; 
 	/**
-     * Dreamly class Mock for testing
+     * Dreamly class Mock for testing.
      */
 	private class DreamlyMock extends Dreamly
     {
         /**
-         * Constructor for mock that calls the superclass's 
-         * constructor
+         * Constructor for mock that calls the superclass's constructor.
          * @param strength of the pill
          * @param size of the pill
          * @param color of the pill

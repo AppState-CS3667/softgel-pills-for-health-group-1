@@ -2,7 +2,9 @@ package pills;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 /**
- * This is the GelatinCasing class, a subclass of the UnicastRemoteObject class and extends CasingGenerator.
+ * This is the GelatinCasing class.
+ * A subclass of the UnicastRemoteObject 
+ * class and extends CasingGenerator.
  * @author Subteam A
  * @version 1.0
  */

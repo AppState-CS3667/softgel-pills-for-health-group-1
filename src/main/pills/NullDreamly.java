@@ -19,6 +19,7 @@ public class NullDreamly extends Dreamly
 	/**
 	 * Allows for the acceptance of an inspector
 	 * from the Inspector abstract class.
+	 * @param insp the inspector object
 	 */
 	public void accept(Inspector insp)
 	{

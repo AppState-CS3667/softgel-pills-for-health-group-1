@@ -20,6 +20,7 @@ public class NullAcheAway extends AcheAway
 	/**
 	 * Method that allows the acceptance of an 
 	 * inspector from the Inspector abstract class.
+	 * @param insp the inspector object
 	 */
 	public void accept(Inspector insp)
 	{

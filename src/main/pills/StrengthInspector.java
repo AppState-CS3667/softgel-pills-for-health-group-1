@@ -48,8 +48,8 @@ public class StrengthInspector extends Inspector
         acheAwayStrength += e.getStrength();
     }
     /**
-    * Inspects object passed and adds 
-    * to dreamlyStrength
+    * Inspects object passed.
+    * Adds to dreamlyStrength
     * @param e a AdultDreamly object
     */
     @Override
@@ -58,8 +58,8 @@ public class StrengthInspector extends Inspector
    		dreamlyStrength += e.getStrength(); 
 	}
     /**
-    * Inspects object passed and adds 
-    * to dreamlyStrength
+    * Inspects object passed.
+    * adds to dreamlyStrength
     * @param e a ChildDreamly object
     */
     @Override

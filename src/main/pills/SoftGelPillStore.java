@@ -20,7 +20,7 @@ public class SoftGelPillStore
     private int customerAge;
     private boolean isLoggedIn;
     /**
-     * Constructor to set all necessary fields
+     * Constructor to set all necessary fields.
      * @param input a scanner to obtain input
      * @param output PrintStream object
      */
@@ -33,7 +33,7 @@ public class SoftGelPillStore
         this.customerName = "";
     }
     /**
-     * Second consructor
+     * Second consructor.
      * @param output a PrintStream object
      */
     public SoftGelPillStore(PrintStream output) 
@@ -41,7 +41,7 @@ public class SoftGelPillStore
         this(new Scanner(System.in), output);
     }
     /**
-     * Third constructor of class
+     * Third constructor of class.
      * @param input a scanner object
      */
     public SoftGelPillStore(Scanner input) 
@@ -49,19 +49,19 @@ public class SoftGelPillStore
         this(input, System.out);
     }
     /**
-     * No-arg constructor for class
+     * No-arg constructor for class.
      */
     public SoftGelPillStore() 
     {
         this(new Scanner(System.in), System.out);
     }
     /**
-     * Method that allows client to checkout their order
+     * Method that allows client to checkout their order.
      * @return a GelCap array that consists of a pill order.
      */
     public GelCap[] checkOut() 
     {
-        // Changes still need to be done here
+        
         
         if (!this.isLoggedIn || this.currentOrder.size() == 0)
         {
@@ -194,8 +194,7 @@ public class SoftGelPillStore
 
     }
     /**
-     * Method for directing client to correct factory
-     * as provided by the parameters.
+     * Method for directing client to correct factory.
      * @param name of the client
      * @param age of the client
      */
@@ -216,7 +215,7 @@ public class SoftGelPillStore
         this.currentOrder = new ArrayList<GelCap>();
     }
     /**
-     * Method that creates the logging out concept
+     * Method that creates the logging out concept.
      * @return whether or not the client is logged out
      * as a boolean
      */
@@ -254,7 +253,7 @@ public class SoftGelPillStore
         this.output = output;
     }
     /**
-     * Sets the scanner field
+     * Sets the scanner field.
      * @param input a scanner object
      */
     public void setInput(Scanner input) 
@@ -262,7 +261,7 @@ public class SoftGelPillStore
         this.input = input;
     }
     /**
-     * Obtaines the output
+     * Obtaines the output.
      * @return the output field
      */
     public PrintStream getOutput() 
@@ -270,7 +269,7 @@ public class SoftGelPillStore
         return this.output;
     }
     /**
-     * Obtaines the input
+     * Obtaines the input.
      * @return the input field
      */
     public Scanner getInput() 
@@ -278,8 +277,8 @@ public class SoftGelPillStore
         return this.input;
     }
     /**
-     * Obtaines the strength of dreamly pills in 
-     * an order using the StrengthInspector class.
+     * Obtaines the strength of dreamly pills. 
+     * Uses the StrengthInspector class.
      * @return the strength
      */
     public double getDreamlyStrength()
@@ -292,8 +291,8 @@ public class SoftGelPillStore
         return sid.getDreamlyStrength();
     }
     /**
-     * Obtaines the strength of AcheAway pills in 
-     * an order using the StrengthInspector class.
+     * Obtaines the strength of AcheAway pills. 
+     * Uses the StrengthInspector class.
      * @return the strength
      */
     public double getAcheAwayStrength()
@@ -307,8 +306,8 @@ public class SoftGelPillStore
         return sia.getAcheAwayStrength();
     }
     /**
-     * Method prints the current order
-     * by iterating through thr GelCap array.
+     * Method prints the current order.
+     * Iterates through thr GelCap array.
      */
     public void printCurrentOrder()
     {
@@ -318,7 +317,7 @@ public class SoftGelPillStore
         }
     }
     /**
-     * Decides whether the failRate is too large
+     * Decides whether the failRate is too large.
      * @param failRate the failure rate in question
      * @return TRUE or FALSE depending on the acceptable 
      * failure rate
@@ -328,8 +327,8 @@ public class SoftGelPillStore
         return (failRate > ACCEPTABLE_FAIL_RATE);
     }
     /**
-     * Obtains the failure rate in an order using the 
-     * FailureInspector class. 
+     * Obtains the failure rate in an order.
+     * Uses the FailureInspector class. 
      * @return the failure rate given by the FailureInspector
      */
     private double checkFailRate()
@@ -342,8 +341,7 @@ public class SoftGelPillStore
 		return fi.getFailRate();
     }
     /**
-     * Returns whether the order is consistent(has no adult and child
-     * pill mixing)
+     * Returns whether the order is consistent.
      * @return TRUE or FALSE depending on the ConsistencyInspector
      */
     private boolean consistentOrder()

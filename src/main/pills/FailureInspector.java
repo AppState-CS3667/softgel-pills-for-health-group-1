@@ -1,7 +1,7 @@
 package pills;
 /**
- * Inspector class that extends the Inspector
- * abstract class that aims to check the failure
+ * Inspector class that extends the Inspector.
+ * Abstract class that aims to check the failure
  * rate of pills in an order.
  * author
  * @author Subteam B
@@ -20,7 +20,7 @@ public class FailureInspector extends Inspector
 		    return nullCount; 
 	  }
     /**
-    * Getter method for totalCount field
+    * Getter method for totalCount field.
     * @return int totalCount 
     */
 	  public int getTotalCount()
@@ -96,7 +96,8 @@ public class FailureInspector extends Inspector
      */
     public String report()
     {
-		    return "Failure Report\n\tNull Pills : " + nullCount + "\n\tChild Pills : " + totalCount; 
+		    return "Failure Report\n\tNull Pills : " + nullCount 
+        + "\n\tChild Pills : " + totalCount; 
 	  }
     /**
      * Resets the private field back to zero.
