@@ -22,9 +22,9 @@ public abstract class GelCap
 	 * @param strength the strength of the GelCap
 	 * @param size the size of the GelCap
 	 * @param color the color of the GelCap
-	 * @param casing
-	 * @param solution
-	 * @param active
+	 * @param casing the casing of the GelCap
+	 * @param solution the solution of the GelCap
+	 * @param active the active of the GelCap
 	 */
 	public GelCap(String name, double strength, double size, String color, 
 				  String casing, String solution, String active)
@@ -128,7 +128,7 @@ public abstract class GelCap
 	
 	/**
 	 * Abstract accept method to access inspector.
-	 * @param Inspector
+	 * @param insp the accepted inspector
 	 */
 	public abstract void accept(Inspector insp);	
 }

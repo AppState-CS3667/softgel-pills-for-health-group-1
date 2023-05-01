@@ -3,7 +3,7 @@ package pills;
 /**
  * This is the ChildGelCapFactory singleton class that extends GelCapFactory.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class ChildGelCapFactory extends GelCapFactory
 {

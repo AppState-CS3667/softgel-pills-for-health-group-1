@@ -7,7 +7,7 @@ import java.rmi.server.UnicastRemoteObject;
  * This is the AcetaminophenActive class that implements ActiveGenerator
  * and extends the UnicastRemoteObject.
  * @author Subteam A
- * @version 1.0
+ * @version 1.2
  */
 public class AcetaminophenActive extends UnicastRemoteObject  implements ActiveGenerator 
 {

@@ -5,7 +5,7 @@ package pills;
  * an order is mixing child and adult pills.
  * author
  * @author Subteam B
- * @version 1.0
+ * @version 1.1
  */
 public class ConsistencyInspector extends Inspector
 {

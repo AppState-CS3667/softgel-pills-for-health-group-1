@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 /**
  * This is the ZolpidemActive class that implements ActiveGenerator.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator 
 {   

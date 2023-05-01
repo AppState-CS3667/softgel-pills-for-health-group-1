@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 /**
  * This is the TestGelCap class, which tests the GelCap class.
  * @author Subteam B
- * @version 1.6
+ * @version 1.7
  */
 public class TestGelCap 
 {
@@ -32,8 +32,8 @@ public class TestGelCap
 	     * @param size the size of the GelCap mock class
 	     * @param color the color of the GelCap mock class
          * @param casing the type of casing
-         * @param solution
-         * @param active
+         * @param solution the solution of the GelCap
+         * @param active the active of the GelCap
          */
         GelCapMock(String name, double strength, 
                    double size, String color, 
@@ -42,8 +42,10 @@ public class TestGelCap
         {
             super(name, strength, size, color, casing, solution, active);
         } 
+
         /**
          * Accepts the inspector object passed.
+         * @param insp the accepted inspector
          */
         @Override
         public void accept(Inspector insp) 

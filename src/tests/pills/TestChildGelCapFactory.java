@@ -12,7 +12,7 @@ import java.io.PrintStream;
 /**
  * This is the TestChildGelCapFactory class, which tests the ChildGelCapFactory class.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public class TestChildGelCapFactory 
 {

@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
  * This is the TestActive class, a class for testing the Acetaminophen and 
  * ZolpidemActive solution classes.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class TestActive 
 {
@@ -28,6 +28,7 @@ public class TestActive
     private PrintStream oldOut;
     private AcetaminophenActive AActive;
     private ZolpidemActive ZActive;
+    
     /**
      * Flushes data from PrintStream into boas.
      * @return the ouput with return characters stripped

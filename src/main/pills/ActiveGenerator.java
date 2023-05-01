@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 /**
  * This is the ActiveGenerator interface.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public interface ActiveGenerator extends Remote
 {

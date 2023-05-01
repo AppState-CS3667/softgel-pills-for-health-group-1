@@ -6,20 +6,10 @@ import org.junit.jupiter.api.Test;
 /**
  * This is the TestGelCapRecipes class, which tests the GelCapRecpies class.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public class TestGelCapRecipes 
 {
-    // private GelCapRecipes gelCapRecipes;
-    
-    // /**
-    //  *  Create a new test GelCapRecipies object before each test.
-    //  */
-    // @BeforeEach
-    // public void beforeEach()
-    // {
-    //     gelCapRecipes = new GelCapRecipes();
-    // }
 
     /**
      *  Test the getCasings method.

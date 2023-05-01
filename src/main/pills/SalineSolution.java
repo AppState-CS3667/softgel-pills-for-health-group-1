@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 /**
  * This is the SalineSolution class that implements SolutionGenerator.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class SalineSolution extends UnicastRemoteObject implements SolutionGenerator
 {

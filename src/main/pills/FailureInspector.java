@@ -5,28 +5,31 @@ package pills;
  * rate of pills in an order.
  * author
  * @author Subteam B
- * @version 1.0
+ * @version 1.1
  */
 public class FailureInspector extends Inspector 
 {
     private int nullCount;
     private int totalCount;
+
     /**
     * Getter method for nullCount field.
     * @return int nullCount 
     */
     public int getNullCount()
     {
-		    return nullCount; 
-	  }
+		return nullCount; 
+    }
+
     /**
     * Getter method for totalCount field.
     * @return int totalCount 
     */
 	  public int getTotalCount()
     {
-		    return totalCount; 
-	  }
+		return totalCount; 
+	}
+
     /**
     * Inspects object passed and adds 
     * to totalCount.
@@ -36,7 +39,8 @@ public class FailureInspector extends Inspector
     public void inspect(AdultAcheAway e)
     {
         totalCount += 1;  
-	  }
+    }
+
     /**
     * Inspects object passed and adds 
     * to totalCount.
@@ -46,7 +50,8 @@ public class FailureInspector extends Inspector
     public void inspect(ChildAcheAway e)
     {
         totalCount += 1; 
-	  }
+	}
+
     /**
     * Inspects object passed and adds 
     * to totalCount and nullCount.
@@ -55,9 +60,10 @@ public class FailureInspector extends Inspector
     @Override
     public void inspect(NullAcheAway e)
     {
-		    nullCount += 1;
+		nullCount += 1;
         totalCount += 1; 
-	  }
+	}
+
     /**
     * Inspects object passed and adds 
     * to totalCount.
@@ -66,8 +72,9 @@ public class FailureInspector extends Inspector
     @Override
     public void inspect(AdultDreamly e)
     {
-		    totalCount += 1; 
-	  }
+		totalCount += 1; 
+	}
+
     /**
     * Inspects object passed and adds 
     * to totalCount.
@@ -76,8 +83,9 @@ public class FailureInspector extends Inspector
     @Override
     public void inspect(ChildDreamly e)
     {
-		    totalCount += 1; 
-	  }
+		totalCount += 1; 
+	}
+
     /**
     * Inspects object passed and adds 
     * to totalCount and nullCount.
@@ -86,9 +94,10 @@ public class FailureInspector extends Inspector
     @Override
     public void inspect(NullDreamly e)
     {
-		    nullCount += 1;
+		nullCount += 1;
         totalCount += 1; 
-	  }
+	}
+
     /**
      * Creates string that is a report
      * of the failures the inspectors caught.
@@ -96,9 +105,10 @@ public class FailureInspector extends Inspector
      */
     public String report()
     {
-		    return "Failure Report\n\tNull Pills : " + nullCount 
-        + "\n\tChild Pills : " + totalCount; 
-	  }
+		return "Failure Report\n\tNull Pills : " + nullCount 
+            + "\n\tChild Pills : " + totalCount; 
+	}
+
     /**
      * Resets the private field back to zero.
      */
@@ -107,6 +117,7 @@ public class FailureInspector extends Inspector
         nullCount = 0; 
         totalCount = 0;
     }
+
     /**
      * Gets final fail rate.
      * @return the rate of failure
@@ -114,5 +125,5 @@ public class FailureInspector extends Inspector
     public double getFailRate()
     {
 		    return nullCount / totalCount;
-	  }
+	}
 }

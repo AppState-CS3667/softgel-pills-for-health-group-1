@@ -8,13 +8,13 @@ import pills.SoftGelPillStore;
 /**
  * Demo class that provides an interface to use the SoftGelPillStore.
  * 
- * @author Willow Sapphire
- * @version 02/24/2023
+ * @author Thayer Ackerman
+ * @version 1.1
  */
 public class Demo 
 {
     /**
-     * A simple interface to interact with the SoftGelPillStore.
+     * An interface to interact with the SoftGelPillStore.
      * 
      * @param args unused
      */
@@ -26,6 +26,7 @@ public class Demo
         String seperator = "------------------------------------";
         String clearScreen = "\033[H\033[2J";
 
+        // Display log in page
         System.out.print(clearScreen);
         System.out.println(seperator);
         System.out.println("|         ePharm - Log In          |");
@@ -83,6 +84,7 @@ public class Demo
             switch (Integer.parseInt(choice)) 
             {
                 case 1:
+                    // Display log out page
                     System.out.print(clearScreen);
                     System.out.println(seperator);
                     System.out.println("|          ePharm - Logout         |");
@@ -96,6 +98,7 @@ public class Demo
                     break;
 
                 case 2: 
+                    // Display order page
                     System.out.print(clearScreen);
                     System.out.println(seperator);
                     System.out.println("|       ePharm - Add to Cart       |");
@@ -106,6 +109,7 @@ public class Demo
                     input.nextLine();
                     break;
                 case 3: 
+                    // Display checkout page
                     GelCap[] order = store.checkOut();
                     System.out.print(clearScreen);
                     System.out.println(seperator);
@@ -135,6 +139,7 @@ public class Demo
                     break;
 
                 case 4:
+                    // Display exit checkout page
                     System.out.print(clearScreen);
                     System.out.println(seperator);
                     System.out.println("|         ePharm - Checkout        |");
@@ -157,6 +162,7 @@ public class Demo
                     input.nextLine();
                     break;
                 case 5:
+                    // Display file complaint page
                     System.out.print(clearScreen);
                     System.out.println(seperator);
                     System.out.println("|     ePharm - File Complaint      |");

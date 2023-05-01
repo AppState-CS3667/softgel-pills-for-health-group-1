@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
  * A subclass of the UnicastRemoteObject 
  * class and extends CasingGenerator.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public class GelatinCasing extends UnicastRemoteObject implements CasingGenerator
 {
@@ -20,6 +20,7 @@ public class GelatinCasing extends UnicastRemoteObject implements CasingGenerato
     {
         super(port);
     }
+    
     /**
      * Implemented method from CasingGenerator interface,
      * Creates gelatin casing.

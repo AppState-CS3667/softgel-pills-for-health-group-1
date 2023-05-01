@@ -3,7 +3,7 @@ package pills;
 /**
  * NullAcheAway is a subclass of the AcheAway class.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class NullAcheAway extends AcheAway
 {
@@ -20,7 +20,7 @@ public class NullAcheAway extends AcheAway
 	/**
 	 * Method that allows the acceptance of an 
 	 * inspector from the Inspector abstract class.
-	 * @param insp the inspector object
+	 * @param insp the accepted inspector
 	 */
 	public void accept(Inspector insp)
 	{

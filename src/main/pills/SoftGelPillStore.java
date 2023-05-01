@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Class that implements a store for pill orders.
  * @author Subteam A
- * @version 1.5
+ * @version 1.6
  */
 public class SoftGelPillStore 
 {

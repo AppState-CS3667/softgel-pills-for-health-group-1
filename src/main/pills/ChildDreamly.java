@@ -3,7 +3,7 @@ package pills;
 /**
  * This is the ChildDreamly class, a subclass of the Dreamly class.
  * @author Subteam A
- * @version 1.0
+ * @version 1.1
  */
 public class ChildDreamly extends Dreamly
 {
@@ -24,6 +24,7 @@ public class ChildDreamly extends Dreamly
     /**
  	 * Accepts an inspector objectfrom
      * the Inspector abstract class.
+     * @param insp the accepted inspector
  	 */ 
     @Override
 	public void accept(Inspector insp)

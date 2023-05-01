@@ -10,17 +10,11 @@ import java.io.PrintStream;
 /**
  * This is the GelCapFactory Test.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 
 public class TestGelCapFactory
 {
-	// private final String TEST_A_CASING = "Gelatin";
-	// private final String TEST_D_CASING = "Plasticizer";
-	// private final String TEST_A_SOLUTION = "Saline";
-	// private final String TEST_D_SOLUTION = "Oil";
-	// private final String TEST_A_ACTIVE = "Acetaminophen";
-	// private final String TEST_D_ACTIVE = "Zolpidem";
 	private final String TEST_PD_P = "Creating a Dreamly pill...\n"
 										+ "getDreamlyStrength called\n"
 										+ "constructDreamly called\n"
@@ -46,13 +40,10 @@ public class TestGelCapFactory
 										+ "quality check failed\n"
                                         + "Error during AcheAway production. Returning null.\n";
 
-
-
-
-	
 	private ByteArrayOutputStream baos;
 	private PrintStream oldOut;
 	private GelCapFactory obj;
+	
 	/**
 	 * Mock of the GelCap class for testing.
 	 */
@@ -61,31 +52,30 @@ public class TestGelCapFactory
 		/**
 		 * Updating abstract method constructDreamly for GelCapFactoryMock to print 
 		 * called statements.
-		 * @param casing
-		 * @param solution
-		 * @param active
+		 * @param casing the casing of the GelCapFactory mock
+		 * @param solution the solution of the GelCapFactory mock
+		 * @param active the active of the GelCapFactory mock
 		 * @return DreamlyMock
 		 */
 		@Override
 		protected Dreamly constructDreamly(String casing, String solution, String active)
 		{
 			System.out.print("constructDreamly called\n");
-			// return super.constructDreamly(casing, solution, active);
 			return null;
 		}
+
 		/**
 		 * Updating abstract method constructAcheAway for GelCapFactoryMock to print 
 		 * called statements.
-		 * @param casing
-		 * @param solution
-		 * @param active
+		 * @param casing the casing of the GelCapFactory mock
+		 * @param solution the solution of the GelCapFactory mock
+		 * @param active the active of the GelCapFactory mock
 		 * @return AcheAwayMock
 		 */
 		@Override
 		protected AcheAway constructAcheAway(String casing, String solution, String active)
 		{
 			System.out.print("constructAcheAway called\n");
-			// return super.constructAcheAway(casing, solution, active);
 			return null;
 		}
 		
@@ -152,27 +142,27 @@ public class TestGelCapFactory
  	 * Test produceDreamly() method, whether the printstatements are correct and
 	 * whether the chances of qualitycheck is around 10%.
  	 */
-	  @Test
-	  public void testDreamlyFactoryType()
-	  {
+	@Test
+	public void testDreamlyFactoryType()
+	{
 		GelCapFactory testAdultFactory = AdultGelCapFactory.getInstance();
 		assertTrue(testAdultFactory.produceDreamly() instanceof Dreamly);
 		testAdultFactory = ChildGelCapFactory.getInstance();
 		assertTrue(testAdultFactory.produceDreamly() instanceof Dreamly);
-	  }
+	}
 
-	  /**
- 	 * Test produceDreamly() method, whether the printstatements are correct and
-	 * whether the chances of qualitycheck is around 10%.
- 	 */
-	  @Test
-	  public void testAcheAwayFactoryType()
-	  {
+	/**
+	 * Test produceDreamly() method, whether the printstatements are correct and
+	* whether the chances of qualitycheck is around 10%.
+	*/
+	@Test
+	public void testAcheAwayFactoryType()
+	{
 		GelCapFactory testAdultFactory = AdultGelCapFactory.getInstance();
 		assertTrue(testAdultFactory.produceAcheAway() instanceof AcheAway);
 		testAdultFactory = ChildGelCapFactory.getInstance();
 		assertTrue(testAdultFactory.produceAcheAway() instanceof AcheAway);
-	  }
+	}
 
 	/**
  	 * Test produceDreamly() method, whether the printstatements are correct and

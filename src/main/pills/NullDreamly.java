@@ -3,7 +3,7 @@ package pills;
 /**
  * NullDreamly is a subclass of the Dreamly class.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class NullDreamly extends Dreamly
 {
@@ -19,7 +19,7 @@ public class NullDreamly extends Dreamly
 	/**
 	 * Allows for the acceptance of an inspector
 	 * from the Inspector abstract class.
-	 * @param insp the inspector object
+	 * @param insp the accepted inspector
 	 */
 	public void accept(Inspector insp)
 	{

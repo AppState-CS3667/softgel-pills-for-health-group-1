@@ -5,7 +5,7 @@ package pills;
  * methods and 2 abstract methods that will require
  * implementation.
  * @author Subteam B
- * @version 1.0
+ * @version 1.1
  */
 public abstract class Inspector
 {
@@ -16,6 +16,7 @@ public abstract class Inspector
 	 */
 	public void inspect(AdultAcheAway e)
 	{ }; 
+	
 	/**
 	 * Empty inspector for an ChildAcheAway
 	 * object.
@@ -23,6 +24,7 @@ public abstract class Inspector
 	 */
 	public void inspect(ChildAcheAway e)
 	{ };
+	
 	/**
 	 * Empty inspector for an NullAcheAway
 	 * object.
@@ -30,6 +32,7 @@ public abstract class Inspector
 	 */
 	public void inspect(NullAcheAway e)
 	{ }; 
+	
 	/**
 	 * Empty inspector for an AdultDreamly
 	 * object.
@@ -37,6 +40,7 @@ public abstract class Inspector
 	 */
 	public void inspect(AdultDreamly e)
 	{ };
+	
 	/**
 	 * Empty inspector for an ChildDreamly
 	 * object.
@@ -44,6 +48,7 @@ public abstract class Inspector
 	 */
 	public void inspect(ChildDreamly e)
 	{ };
+	
 	/**
 	 * Empty inspector for an NullDreamly
 	 * object.
@@ -51,12 +56,14 @@ public abstract class Inspector
 	 */
 	public void inspect(NullDreamly e)
 	{ };
-	/*
+	
+	/**
 	 * Abstract method that will report the
 	 * results obtained from inspectors. 
-	 * Will return a string as report. 
+	 * @return string as report 
 	 */
 	public abstract String report(); 
+	
 	/**
 	 * Abstract method that will reset corresponding
 	 * field for Inspector class. 

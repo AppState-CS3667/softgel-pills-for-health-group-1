@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 /**
  * This is the TestAcheAway class, which tests the AcheAway class.
  * @author Subteam A
- * @version 1.1
+ * @version 1.2
  */
 public class TestAcheAway 
 {
@@ -26,12 +26,12 @@ public class TestAcheAway
                                                + "Casing: %s\n\tSolution: %s"
                                                + "\n\tActive: %s";
 
-   // Adult AcheAway test constants
+    // Adult AcheAway test constants
     private final double ADULT_STRENGTH = 825.00;
     private final double ADULT_SIZE = 8.50;
     private final String ADULT_COLOR = "white"; 
  
- //  Child AcheAway test constants
+    //  Child AcheAway test constants
 	private final double CHILD_STRENGTH = 415.00;
     private final double CHILD_SIZE = 3.25;
     private final String CHILD_COLOR = "cyan";
@@ -60,6 +60,7 @@ public class TestAcheAway
 		}
         /**
          * Shows the acceptance of the inspector object passed.
+         * @param insp the accepted inspector
          */
         @Override
         public void accept(Inspector insp) 

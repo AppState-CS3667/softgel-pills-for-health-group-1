@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * This is the SoftGelPillStore Test.
  * @author Subteam A
- * @version 1.0
+ * @version 1.8
  */
 public class TestSoftGelPillStore 
 {
@@ -137,7 +137,7 @@ public class TestSoftGelPillStore
 	  }
 
     /**
- 	 * Test the checkout method.
+ 	 * Test the checkout method on login failure.
  	 */
 	@Test
 	public void testCheckOutFail1()
@@ -151,73 +151,73 @@ public class TestSoftGelPillStore
     }
 
 	/**
- 	 * Test the checkout method.
+ 	 * Test the checkout method on empty cart failure.
  	 */
-	  @Test
-	  public void testCheckOutFail2()
-	  {
-		  this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
-		  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		  this.obj.setOutput(new PrintStream(baos));
-		  this.obj.checkOut();
-		  System.out.flush();
-		  String result = baos.toString().replaceAll("\r", "");
-		  assertEquals(TEST_CHECKOUT_OUTPUT_FAIL, result);
-	  }
+	@Test
+	public void testCheckOutFail2()
+	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		this.obj.setOutput(new PrintStream(baos));
+		this.obj.checkOut();
+		System.out.flush();
+		String result = baos.toString().replaceAll("\r", "");
+		assertEquals(TEST_CHECKOUT_OUTPUT_FAIL, result);
+	}
 
-	  /**
- 	 * Test the checkout method.
+	/**
+ 	 * Test the checkout method ordering dreamly.
  	 */
-	  @Test
-	  public void testCheckOutOrder1()
-	  {
-		  this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
-		  this.obj.setInput(new Scanner(TEST_ORDER_INPUT_1));
-          this.obj.order();
-		  
-		  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		  this.obj.setOutput(new PrintStream(baos));
-		  this.obj.checkOut();
-		  System.out.flush();
-		  String result = baos.toString().replaceAll("\r", "");
-		  assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_1, result);
-	  }
+	@Test
+	public void testCheckOutOrder1()
+	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
+		this.obj.setInput(new Scanner(TEST_ORDER_INPUT_1));
+		this.obj.order();
+		
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		this.obj.setOutput(new PrintStream(baos));
+		this.obj.checkOut();
+		System.out.flush();
+		String result = baos.toString().replaceAll("\r", "");
+		assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_1, result);
+	}
 
-	  /**
- 	 * Test the checkout method.
+	/**
+ 	 * Test the checkout method ordering acheAway.
  	 */
-	  @Test
-	  public void testCheckOutOrder2()
-	  {
-		  this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
-		  this.obj.setInput(new Scanner(TEST_ORDER_INPUT_2));
-          this.obj.order();
-		  
-		  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		  this.obj.setOutput(new PrintStream(baos));
-		  this.obj.checkOut();
-		  System.out.flush();
-		  String result = baos.toString().replaceAll("\r", "");
-		  assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_2, result);
-	  }
+	@Test
+	public void testCheckOutOrder2()
+	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
+		this.obj.setInput(new Scanner(TEST_ORDER_INPUT_2));
+		this.obj.order();
+		
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		this.obj.setOutput(new PrintStream(baos));
+		this.obj.checkOut();
+		System.out.flush();
+		String result = baos.toString().replaceAll("\r", "");
+		assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_2, result);
+	}
 
-	  /**
- 	 * Test the checkout method.
+	/**
+ 	 * Test the checkout method ordering a combination.
  	 */
-	  @Test
-	  public void testCheckOutOrder3()
-	  {
-		  this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
-		  this.obj.setInput(new Scanner(TEST_ORDER_INPUT_1));
-          this.obj.order();
-		  this.obj.setInput(new Scanner(TEST_ORDER_INPUT_2));
-          this.obj.order();
-		  
-		  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		  this.obj.setOutput(new PrintStream(baos));
-		  this.obj.checkOut();
-		  System.out.flush();
-		  String result = baos.toString().replaceAll("\r", "");
-		  assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_3, result);
-	  }       	
+	@Test
+	public void testCheckOutOrder3()
+	{
+		this.obj.logIn(TEST_LOGIN_NAME, TEST_LOGIN_AGE_ADULT);
+		this.obj.setInput(new Scanner(TEST_ORDER_INPUT_1));
+		this.obj.order();
+		this.obj.setInput(new Scanner(TEST_ORDER_INPUT_2));
+		this.obj.order();
+		
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		this.obj.setOutput(new PrintStream(baos));
+		this.obj.checkOut();
+		System.out.flush();
+		String result = baos.toString().replaceAll("\r", "");
+		assertEquals(TEST_CHECKOUT_OUTPUT_ORDER_3, result);
+	}       	
 }

@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 /**
  * This is the OilSolution class that implements SolutionGenerator.
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class OilSolution extends UnicastRemoteObject implements SolutionGenerator
 {

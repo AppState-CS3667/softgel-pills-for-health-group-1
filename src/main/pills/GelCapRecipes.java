@@ -18,6 +18,7 @@ public class GelCapRecipes
     /**
      * Gets the casing in HashMap form.
      * @return hashmap
+     * @exception e catches a RemoteException, MalformedURLException, NotBoundException
      */
     private static HashMap<String, CasingGenerator> getCasings()
     {
@@ -47,6 +48,7 @@ public class GelCapRecipes
     /**
      * Gets the solutions in hashmap form.
      * @return solutions hashmap
+     * @exception e catches a RemoteException, MalformedURLException, NotBoundException
      */
     private static HashMap<String, SolutionGenerator> getSolutions()
     {
@@ -75,6 +77,7 @@ public class GelCapRecipes
     /**
      * Gets the actives in hashmap form.
      * @return actives hashmap
+     * @exception e catches a RemoteException, MalformedURLException, NotBoundException
      */
     private static HashMap<String, ActiveGenerator> getActives()
     {

@@ -10,26 +10,25 @@ import java.io.PrintStream;
 import java.rmi.RemoteException;	
 
 /**
- * This is the TestSolution class, a class for testing the oil and 
- * saline solution classes.
+ * This is the TestCasing class, a class for testing the gelatin and 
+ * plasticizer solution classes.
  * @author Subteam A
- * @version 1.3
+ * @version 1.1
  */
-public class TestSolution
+public class TestCasing
 {
-    private final String TEST_OIL_RETURN = "oil";
-    private final String TEST_OIL_PRINT = "Extracting pill-sized quantity of oil..."
-                                        + "\nReturning oil solution\n";
-    private final String TEST_SALINE_RETURN = "saline";
-    private final String TEST_SALINE_PRINT = "Mixing salt and water...\n"
-                                             + "Verifying ratio...\n"
-                                             + "Returning saline solution\n";
+    private final String TEST_GELATIN_RETURN = "gelatin";
+    private final String TEST_GELATIN_PRINT = "Mixing gelatin, water, opacifier, and glycerin...\n"
+                                                + "Shaping...\nReturning gelatin casing...\n";
+    private final String TEST_PLAST_RETURN = "plasticizer";
+    private final String TEST_PLAST_PRINT = "Mixing starch, water, opacifier, and glycerin...\n"
+                                                + "Shaping...\nReturning plasticizier casing...\n";
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
-    private OilSolution oilSolution;
-    private SalineSolution salineSolution;
+    private OilSolution gelatinCasing;
+    private SalineSolution plastCasing;
 
     /**
      * Flushes data from PrintStream into boas.
@@ -46,7 +45,8 @@ public class TestSolution
     }
 
     /**
-     *  Redirect output and create a new test Dreamly object before each test.
+     * Redirect output and create a new test Dreamly object before each test.
+     * @exception e RemoteException
      */
     @BeforeEach
     public void beforeEach()
@@ -56,15 +56,15 @@ public class TestSolution
         System.setOut(new PrintStream(baos));
         try
         {
-            final int OILSOLUTIONPORT = 1096;
-            oilSolution = new OilSolution(OILSOLUTIONPORT);
-            final int SALINESOLUTIONPORT = 1095;
-            salineSolution  = new SalineSolution(SALINESOLUTIONPORT);
+            final int GELATIN_CASING_PORT = 1098;
+            gelatinCasing = new OilSolution(GELATIN_CASING_PORT);
+            final int PLAST_CASING_PORT = 1097;
+            plastCasing  = new SalineSolution(PLAST_CASING_PORT);
         }
         catch (RemoteException e)
         {
-            oilSolution = null;
-            salineSolution  = null;
+            gelatinCasing = null;
+            plastCasing  = null;
         }
     }
     
@@ -83,9 +83,9 @@ public class TestSolution
     @Test
     public void testOil()
     {
-        String result = oilSolution.generateSolution();
-        assertEquals(TEST_OIL_RETURN, result);
-        assertEquals(TEST_OIL_PRINT, getOutput());
+        String result = gelatinCasing.generateSolution();
+        assertEquals(TEST_GELATIN_RETURN, result);
+        assertEquals(TEST_GELATIN_PRINT, getOutput());
     }
 
     /**
@@ -94,8 +94,8 @@ public class TestSolution
     @Test
     public void testSaline()
     {
-        String result = salineSolution.generateSolution();
-        assertEquals(TEST_SALINE_RETURN, result);
-        assertEquals(TEST_SALINE_PRINT, getOutput());
+        String result = plastCasing.generateSolution();
+        assertEquals(TEST_PLAST_RETURN, result);
+        assertEquals(TEST_PLAST_PRINT, getOutput());
     }
 }

@@ -5,7 +5,7 @@ package pills;
  * of pills in an order.
  * author
  * @author Subteam B
- * @version 1.0
+ * @version 1.2
  */
 public class StrengthInspector extends Inspector
 {

@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 /**
  * This is the SolutionGenerator interface.
  * @author Subteam B
- * @version 1.0
+ * @version 1.1
  */
 public interface SolutionGenerator extends Remote
 {

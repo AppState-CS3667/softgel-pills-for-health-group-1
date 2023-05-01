@@ -3,15 +3,16 @@ package pills;
 import java.rmi.RemoteException;
 
 /**
- *GelCapFactory class.
- *@author Subteam A
- *@version 1.0
+ * GelCapFactory class.
+ * @author Subteam A
+ * @version 1.1
  */
 public abstract class GelCapFactory 
 {
     /**
  	 * The produceDreamly method.
- 	 * @return a Dreamly object 
+ 	 * @return a Dreamly object
+     * @exception e catches a RemoteException
  	 */ 	
     public final Dreamly produceDreamly() 
     {
@@ -45,7 +46,8 @@ public abstract class GelCapFactory
 
     /**
  	 * The produceAcheAway method.
- 	 * @return a Dreamly object 
+ 	 * @return a Dreamly object
+     * @exception e catches a RemoteException 
  	 */ 	
     public final AcheAway produceAcheAway()
     {

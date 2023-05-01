@@ -25,12 +25,12 @@ public class TestDreamly
                                                + "Casing: %s\n\tSolution: %s"
                                                + "\n\tActive: %s";
 
-   // Adult Dreamly test constants
+    // Adult Dreamly test constants
     private final double ADULT_STRENGTH = 5.2;
     private final double ADULT_SIZE = 12.24;
     private final String ADULT_COLOR = "tan"; 
  
- //  Child Dreamly test constants
+    // Child Dreamly test constants
 	private final double CHILD_STRENGTH = 1.25;
     private final double CHILD_SIZE = 4.5;
     private final String CHILD_COLOR = "fuchsia";
@@ -39,7 +39,8 @@ public class TestDreamly
 	private DreamlyMock dreamly;
 	private ChildDreamly childDreamly; 
 	private AdultDreamly adultDreamly; 
-	/**
+	
+    /**
      * Dreamly class Mock for testing.
      */
 	private class DreamlyMock extends Dreamly
@@ -58,6 +59,7 @@ public class TestDreamly
         {
 			super(strength, size, color, casing, solution, active);
 		}
+        
         /**
          * Shows the accepting of the inspector object passed.
          */
@@ -103,8 +105,8 @@ public class TestDreamly
     }
 
     /**
-    * Test a Dreamly object's description() method against an expected value.
-    */ 
+     * Test a Dreamly object's description() method against an expected value.
+     */ 
     @Test
     public void testDescription() 
     {
@@ -139,7 +141,7 @@ public class TestDreamly
 
     /**
      * Test a Dreamly object's getName() method against an expected value.
-    */ 
+     */ 
     @Test
     public void testName() 
     {

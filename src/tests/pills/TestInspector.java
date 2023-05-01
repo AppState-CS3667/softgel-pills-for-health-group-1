@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * This is the SoftGelPillStore Test.
  * @author Subteam A
- * @version 1.0
+ * @version 1.2
  */
 public class TestInspector 
 {
@@ -41,7 +41,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 * Test the getDreamlyStrength() method. 
+ 	 * Test the strength inspector using adult dreamly. 
  	 */
 	@Test 
 	public void testStrengthInspectorAdultDreamly()
@@ -55,7 +55,7 @@ public class TestInspector
 	}
 
     /**
- 	 * Test the getDreamlyStrength() method.
+ 	 * Test the strength inspector using child dreamly. 
  	 */
 	@Test 
 	public void testStrengthInspectorChildDreamly()
@@ -69,7 +69,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 * Test the getAcheAwayStrength() method.
+ 	 * Test the strength inspector using adult acheAway. 
  	 */
 	@Test
 	public void testStrengthInspectorAdultAdultAcheAway()
@@ -83,7 +83,7 @@ public class TestInspector
 	}
 
     /**
- 	 * Test the getAcheAwayStrength() method.
+ 	 * Test the strength inspector using child acheAway. 
  	 */
 	@Test
 	public void testStrengthInspectorChildAdultAcheAway()
@@ -97,7 +97,7 @@ public class TestInspector
 	}
 	
 	/**
- 	 * Test the report() method.
+ 	 * Test the report() method of the consistency inspector.
  	 */
 	@Test
 	public void testConsistencyResetReport()
@@ -108,7 +108,7 @@ public class TestInspector
 	}    
 	
 	/**
- 	 * Test the report() method.
+ 	 * Test the report() method of the failure inspector.
  	 */
 	  @Test
 	  public void testFailureResetReport()
@@ -119,7 +119,7 @@ public class TestInspector
 	  } 
 
 	  /**
- 	 * Test the report() method.
+ 	 * Test the report() method of the strength inspector.
  	 */
 	  @Test
 	  public void testStrengthResetReport()
