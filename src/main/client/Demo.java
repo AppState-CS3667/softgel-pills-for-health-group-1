@@ -111,13 +111,13 @@ public class Demo
                 case 3: 
                     // Display checkout page
                     GelCap[] order = store.checkOut();
+                    if (order != null) orders.add(order);
                     System.out.print(clearScreen);
                     System.out.println(seperator);
                     System.out.println("|         ePharm - Your Cart       |");
                     System.out.println(seperator);
-                    if (order != null)
+                    if (!orders.isEmpty())
                     {
-                        orders.add(order);
                         int orderNum = 0;
                         for (GelCap[] o : orders) 
                         {
@@ -131,7 +131,7 @@ public class Demo
                     }
                     else 
                     {
-                        System.out.println("        Error Displaying Cart       ");
+                        System.out.println("            Cart is Empty           ");
                     }
                     
                     System.out.print("Press enter/return to exit.");
